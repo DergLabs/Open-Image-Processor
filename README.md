@@ -15,7 +15,7 @@ Logisim Usage:
 The following setup is REQUIRED for anything to happen:
 - The first instruction (LOAD) in the instruction ROM MUST be 0x3F190410 - This loads a pixel into the input registers
 - The last instruction (NEXT) MUST be 0x3F1B0C30 - This sends the loaded pixel into the output register and toggles the pixel clk high, allowing the pixel to be displayed
-- ALL unused instructions between the "LOAD" and "NEX" instructions must be 0x3F180000 - This is a simple "do nothing" instruction that passes the input to the output with no operations performed. 
+- ALL unused instructions between the "LOAD" and "NEXT" instructions must be 0x3F180000 - This is a simple "do nothing" instruction that passes the input to the output with no operations performed. 
 
 The current design is still a work in progress and is continually being updated. The goal for the implemented image processor is as follows: 
 - 16 PLUs are used in parallel to form a single image processing core
