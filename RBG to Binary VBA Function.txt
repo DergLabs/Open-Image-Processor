@@ -1,0 +1,21 @@
+Function RGBToBinary(myCell As Range) As String
+    Dim myText As String
+    Dim myBinary As String
+    Dim i As Integer
+    
+    myText = myCell.Value
+    myBinary = ""
+    
+    For i = 1 To Len(myText)
+        Select Case Mid(myText, i, 1)
+            Case "R"
+                myBinary = myBinary & "00"
+            Case "G"
+                myBinary = myBinary & "01"
+            Case "B"
+                myBinary = myBinary & "10"
+        End Select
+    Next i
+    
+    RGBToBinary = myBinary
+End Function

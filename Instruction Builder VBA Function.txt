@@ -1,0 +1,91 @@
+Function Build_Instruction(ChEnable As String, ColorMux As String, Operation As String) As String
+    Dim ChBinary As String
+    Dim ColorBinary As String
+    Dim OpBinary As String
+
+    ' CH enable conversion
+    Select Case ChEnable
+        Case "CHA"
+            ChBinary = "111000"
+        Case "CHB"
+            ChBinary = "000111"
+        Case "CHA/CHB"
+            ChBinary = "111111"
+        Case Else
+            ChBinary = "000000"
+    End Select
+
+    ' Color mux conversion
+    ColorBinary = ""
+    For i = 1 To Len(ColorMux)
+        Select Case Mid(ColorMux, i, 1)
+            Case "R"
+                ColorBinary = ColorBinary & "00"
+            Case "G"
+                ColorBinary = ColorBinary & "01"
+            Case "B"
+                ColorBinary = ColorBinary & "10"
+        End Select
+    Next i
+
+    ' Operation conversion
+    Select Case Operation
+        Case "PASS A"
+            OpBinary = "0000"
+        Case "PASS B"
+            OpBinary = "0001"
+        Case "ADD A/B"
+            OpBinary = "0010"
+        Case "SUB A/B"
+            OpBinary = "0011"
+        Case "MULT A/B"
+            OpBinary = "0100"
+        Case "DIVIDE A/B"
+            OpBinary = "0101"
+        Case "SHIFT A"
+            OpBinary = "0110"
+        Case "NOT A"
+            OpBinary = "0111"
+        Case "A AND B"
+            OpBinary = "1000"
+        Case "A OR B"
+            OpBinary = "1001"
+        Case "A NAND B"
+            OpBinary = "1010"
+        Case "A NOR B"
+            OpBinary = "1011"
+        Case "A XOR B"
+            OpBinary = "1100"
+        Case "A XNOR B"
+            OpBinary = "1101"
+        Case "0x00"
+            OpBinary = "1110"
+        Case "0xFF"
+            OpBinary = "1111"
+        Case Else
+            OpBinary = "0000"
+    End Select
+
+    ' Combining the binary outputs
+    Dim CombinedBinaryOutput As String
+    CombinedBinaryOutput = "00" & ChBinary & ColorBinary & "00" & OpBinary & "00" & OpBinary & "00" & OpBinary
+
+    ' Splitting the 32-bit value into 4 8-bit bytes
+    Dim Byte1 As String, Byte2 As String, Byte3 As String, Byte4 As String
+    Byte1 = Mid(CombinedBinaryOutput, 1, 8)
+    Byte2 = Mid(CombinedBinaryOutput, 9, 8)
+    Byte3 = Mid(CombinedBinaryOutput, 17, 8)
+    Byte4 = Mid(CombinedBinaryOutput, 25, 8)
+
+    ' Converting each byte to hex
+    Dim HexByte1 As String, HexByte2 As String, HexByte3 As String, HexByte4 As String
+    HexByte1 = Right("00" & WorksheetFunction.Dec2Hex(WorksheetFunction.Bin2Dec(Byte1)), 2)
+    HexByte2 = Right("00" & WorksheetFunction.Dec2Hex(WorksheetFunction.Bin2Dec(Byte2)), 2)
+    HexByte3 = Right("00" & WorksheetFunction.Dec2Hex(WorksheetFunction.Bin2Dec(Byte3)), 2)
+    HexByte4 = Right("00" & WorksheetFunction.Dec2Hex(WorksheetFunction.Bin2Dec(Byte4)), 2)
+
+    ' Combining the 4 hex values into one
+    Build_Instruction = HexByte1 & HexByte2 & HexByte3 & HexByte4
+    Build_Instruction = UCase(Build_Instruction)
+End Function
+
