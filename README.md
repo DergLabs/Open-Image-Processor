@@ -3,6 +3,8 @@ Pixel Logic Unit simulation used to simple image processing applications.
 
 This image processor was designed in Logisim Evolution and is intended for implementation on the ArtixDuo FPGA board.
 
+A sample image png has been provided along with its Hex file generated using my PNG to Hex python script. The two files are titled "Contrast"
+
 The processor architecture is relatively simple, consisting of three 8-bit integer ALU's (one for each color channel). Each ALU can perform Add, Subtract, Multiply, Divide, Bit shift, AND, OR, NOT, NOR, NAND, XOR, XNOR, Passthrough A, Passthrough B, output all 1's, output all 0's.
 
 A 32-bit instruction word is used allowing each ALU to perform a unique operation. Each ALU has two inputs A and B. Input A is designated for the pixel color data to be processed, input B is a control data input used to perform operations on the pixel data and can be any 8-bit data input. 
