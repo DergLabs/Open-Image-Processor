@@ -28,6 +28,7 @@ The current design is still a work in progress and is continually being updated.
 - All 16 PLUs perform the same instruction
 - Multiple image processing cores can be combined in parallel for faster operation. 
 - Current FPGA implementations on an Artix 7 35T (-1 speed grade) result in 350 logic elements per PLU with a maximum clock speed of 166Mhz
+- The final design will implement two cores with a theorhetical pixel throughput of: (32 pixel cores x 166Mhz/Core)/(4 cycles x 1 instruction) = 1.328G pixels/s down to (32 x 166)/(4 cycles x 16 instructions) = 83M pixels/s (This is mostlikely to decrease with aditional overhead, memory bandwidth, video bandwidth etc. So take it with a baseball sized grain of salt) 
 
 **TODO:**
 
