@@ -17,6 +17,7 @@ Logisim Usage:
 The following setup is REQUIRED for anything to happen:
 - The first instruction (LOAD) in the instruction ROM MUST be 0x3F190410 - This loads a pixel into the input registers
 - The last instruction (NEXT) MUST be 0x3F1B0C30 - This sends the loaded pixel into the output register and toggles the pixel clk high, allowing the pixel to be displayed
+- If you do not need 16 instructions, you can use the "NEXT_JUMP" instruction to reset the program counter. 
 - ALL unused instructions between the "LOAD" and "NEXT" instructions must be 0x3F180000 - This is a simple "do nothing" instruction that passes the input to the output with no operations performed. 
 
 The current design is still a work in progress and is continually being updated. The goal for the implemented image processor is as follows: 
@@ -26,7 +27,6 @@ The current design is still a work in progress and is continually being updated.
 - Current FPGA implementations on an Artix 7 35T (-1 speed grade) result in 350 logic elements per PLU with a maximum clock speed of 166Mhz
 
 TODO: 
-- Add instruction to skip empty instructions. Currently all 16 instructions are executed, regardless of whether they do anything or not - VERY INEFFICIENT!!!
 - Reduce Logic size and increase clock speed. Target is 200Mhz
 - Re-build using Vivado IP cores (experimentational, looking to see if there are any improvements)
 - Design Pixel distributor to run multiple PLU's in parallel 
