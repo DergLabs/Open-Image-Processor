@@ -30,3 +30,10 @@ TODO:
 - Reduce Logic size and increase clock speed. Target is 200Mhz
 - Re-build using Vivado IP cores (experimentational, looking to see if there are any improvements)
 - Design Pixel distributor to run multiple PLU's in parallel 
+
+Example Outputs:
+The following output is a result of OR'ing the pixels with some control data and subsequently XOR'ing them with new control data
+
+![Original Image](https://imgur.com/zCOxktV.png)
+
+!Processed Image](https://imgur.com/xH47eJf.png)
