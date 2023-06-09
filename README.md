@@ -36,4 +36,4 @@ The following output is a result of OR'ing the pixels with some control data and
 
 ![Original Image](https://imgur.com/zCOxktV.png)
 
-!Processed Image](https://imgur.com/xH47eJf.png)
+![Processed Image](https://imgur.com/xH47eJf.png)
