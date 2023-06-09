@@ -35,7 +35,9 @@ Example Outputs:
 The following output is a result of OR'ing the pixels with some control data and subsequently XOR'ing them with new control data
 
 Original Image:
+
 ![Original Image](https://imgur.com/zCOxktV.png)
 
 Processed Image:
+
 ![Processed Image](https://imgur.com/xH47eJf.png)
