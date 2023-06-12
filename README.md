@@ -11,7 +11,7 @@ The processor architecture is relatively simple, consisting of three 8-bit integ
 
 A 32-bit instruction word is used allowing each ALU to perform a unique operation for its respective color channel. Each ALU has two inputs A and B. Input A is designated for the pixel color data to be processed, input B is a control data input used to perform operations on the pixel data and can be any 8-bit data input. 
 
-The PLU can perform one operation per clock cycle. A minimum of 4 clock cycles are needed for the current configuration due to the registered inputs and outputs. This can be changed by removing the input/output registers allowing for single clock cycle operation. 
+The PLU can perform one operation per clock cycle. A minimum of 2 clock cycles are needed for the current configuration due to the registered inputs and outputs. This can be changed by removing the input/output registers allowing for single clock cycle operation. 
 
 The input/output registers allow for multiple operations to be performed per pixel. The current design supports up to 16 operations per pixel. An excel file has been created to assemble 32-bit hex instructions that can be loaded into the instruction ROM. The PNG-To-HEX project can be used to generate hex files that can be loaded into the image ROM. The visual basic functions used in the excel file have also been provided. Macros are required for the excel file to work (A proper C assembler will be developed once the PLU architecture is finalized)
 
