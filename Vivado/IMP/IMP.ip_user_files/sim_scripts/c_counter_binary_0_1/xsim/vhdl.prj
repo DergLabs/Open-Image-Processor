@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../IMP.gen/sources_1/ip/c_counter_binary_0/sim/c_counter_binary_0.vhd" \
+
+nosort

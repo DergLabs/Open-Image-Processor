@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="clk_ref_synth_1" LaunchDir="C:/Users/johnh/Desktop/IMP/IMP.runs/clk_ref_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="c_shift_ram_17_synth_1" LaunchDir="C:/Users/johnh/Desktop/IMP/IMP.runs/c_shift_ram_17_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="blk_mem_gen_0_synth_1" LaunchDir="C:/Users/johnh/Desktop/IMP/IMP.runs/blk_mem_gen_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="fifo_generator_0_synth_1" LaunchDir="C:/Users/johnh/Desktop/IMP/IMP.runs/fifo_generator_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="c_shift_ram_sync_buffer_synth_1" LaunchDir="C:/Users/johnh/Desktop/IMP/IMP.runs/c_shift_ram_sync_buffer_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="c_counter_binary_0_synth_1" LaunchDir="C:/Users/johnh/Desktop/IMP/IMP.runs/c_counter_binary_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

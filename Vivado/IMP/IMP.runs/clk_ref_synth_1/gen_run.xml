@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="clk_ref_synth_1" LaunchPart="xc7a35tfgg484-1" LaunchTime="1689975400">
+  <File Type="PA-TCL" Name="clk_ref.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="clk_ref_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="clk_ref_reports.tcl"/>
+  <File Type="RDS-RDS" Name="clk_ref.vds"/>
+  <File Type="RDS-UTIL" Name="clk_ref_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="clk_ref_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="clk_ref.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="clk_ref_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="clk_ref_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/clk_ref">
+    <File Path="$PSRCDIR/sources_1/ip/clk_ref/clk_ref.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/ip/clk_ref/clk_ref.xci"/>
+        <Attr Name="ImportTime" Val="1689486502"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="clk_ref"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/clk_ref">
+    <File Path="$PSRCDIR/sources_1/ip/clk_ref/clk_ref.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/ip/clk_ref/clk_ref.xci"/>
+        <Attr Name="ImportTime" Val="1689486502"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="clk_ref"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/min_max_tb.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2022"/>
+    <Step Id="synth_design">
+      <Option Id="ResourceSharing">2</Option>
+      <Option Id="Directive">7</Option>
+      <Option Id="KeepEquivalentRegisters">1</Option>
+      <Option Id="NoCombineLuts">1</Option>
+      <Option Id="FsmExtraction">1</Option>
+      <Option Id="ShregMinSize">5</Option>
+    </Step>
+  </Strategy>
+</GenRun>

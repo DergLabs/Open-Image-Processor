@@ -1,0 +1,121 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Sun Jul 16 03:16:07 2023
+| Host         : DESKTOP-U9NB2CD running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tfgg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'fifo_generator_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of fifo_generator_0 (xilinx.com:ip:fifo_generator:13.2 (Rev. 7)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Sun Jul 16 03:16:06 2023
+| Host         : DESKTOP-U9NB2CD running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tfgg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'dsp_macro_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of dsp_macro_0 (xilinx.com:ip:dsp_macro:1.0 (Rev. 2)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Sun Jul 16 03:16:04 2023
+| Host         : DESKTOP-U9NB2CD running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tfgg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'clk_ref'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of clk_ref (xilinx.com:ip:clk_wiz:6.0 (Rev. 10)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Sun Jul 16 03:16:02 2023
+| Host         : DESKTOP-U9NB2CD running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tfgg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'c_shift_ram_17'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of c_shift_ram_17 (xilinx.com:ip:c_shift_ram:12.0 (Rev. 14)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Sun Jul 16 03:16:01 2023
+| Host         : DESKTOP-U9NB2CD running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tfgg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'blk_mem_gen_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of blk_mem_gen_0 (xilinx.com:ip:blk_mem_gen:8.4 (Rev. 5)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Sun Jul 16 01:48:22 2023
+| Host         : DESKTOP-U9NB2CD running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tfgg484-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'clk_ref'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of clk_ref (xilinx.com:ip:clk_wiz:6.0 (Rev. 10)) to Vivado generation flows.
+

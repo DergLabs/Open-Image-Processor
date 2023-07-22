@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../IMP.gen/sources_1/ip/c_shift_ram_sync_buffer/sim/c_shift_ram_sync_buffer.vhd" \
+
+nosort

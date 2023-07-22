@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Pixel_Sync_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Pixel_Sync_TB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="3,594.001 ns"></ZoomEndTime>
+      <Cursor1Time time="160.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="372"></NameColumnWidth>
+      <ValueColumnWidth column_width="173"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="9" />
+   <wave_markers>
+      <marker time="100000" label="" />
+      <marker time="3100000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/Pixel_Sync_TB/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Pixel_Sync_TB/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Pixel_Sync_TB/vid_pVDE" type="logic">
+      <obj_property name="ElementShortName">vid_pVDE</obj_property>
+      <obj_property name="ObjectShortName">vid_pVDE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Pixel_Sync_TB/vid_pHSync" type="logic">
+      <obj_property name="ElementShortName">vid_pHSync</obj_property>
+      <obj_property name="ObjectShortName">vid_pHSync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Pixel_Sync_TB/vid_pVSync" type="logic">
+      <obj_property name="ElementShortName">vid_pVSync</obj_property>
+      <obj_property name="ObjectShortName">vid_pVSync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Pixel_Sync_TB/vid_pVDE_o" type="logic">
+      <obj_property name="ElementShortName">vid_pVDE_o</obj_property>
+      <obj_property name="ObjectShortName">vid_pVDE_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Pixel_Sync_TB/vid_pHSync_o" type="logic">
+      <obj_property name="ElementShortName">vid_pHSync_o</obj_property>
+      <obj_property name="ObjectShortName">vid_pHSync_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Pixel_Sync_TB/vid_pVSync_o" type="logic">
+      <obj_property name="ElementShortName">vid_pVSync_o</obj_property>
+      <obj_property name="ObjectShortName">vid_pVSync_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Pixel_Sync_TB/prog_counter" type="array">
+      <obj_property name="ElementShortName">prog_counter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">prog_counter[7:0]</obj_property>
+   </wvobject>
+</wave_config>

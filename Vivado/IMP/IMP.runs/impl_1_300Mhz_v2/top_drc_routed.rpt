@@ -1,0 +1,682 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Fri Jul 21 22:56:12 2023
+| Host         : DESKTOP-U9NB2CD running 64-bit major release  (build 9200)
+| Command      : report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb -rpx top_drc_routed.rpx
+| Design       : top
+| Device       : xc7a35tfgg484-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 126
++-----------+----------+-------------------------------------------------------------------+------------+
+| Rule      | Severity | Description                                                       | Violations |
++-----------+----------+-------------------------------------------------------------------+------------+
+| PDRC-153  | Warning  | Gated clock check                                                 | 33         |
+| RTSTAT-10 | Warning  | No routable loads                                                 | 1          |
+| AVAL-4    | Advisory | enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND | 60         |
+| REQP-22   | Advisory | enum_AREG_1_connects_CEA1_GND                                     | 15         |
+| REQP-26   | Advisory | enum_BREG_1_connects_CEB1_GND                                     | 15         |
+| REQP-165  | Advisory | writefirst                                                        | 2          |
++-----------+----------+-------------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PDRC-153#1 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[0]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[0]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[0]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[10]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[10]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[10]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[11]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[11]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[11]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[12]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[12]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[12]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[13]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[13]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[13]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[14]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[14]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[14]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#7 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[1]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[1]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[1]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#8 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[2]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[2]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#9 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[3]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[3]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#10 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[4]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[4]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[4]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#11 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[5]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[5]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[5]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#12 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[6]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[6]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[6]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#13 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[7]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[7]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[7]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#14 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[8]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[8]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[8]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#15 Warning
+Gated clock check  
+Net image_processor/DMUX_Inst/pixel_pulse_reg[9]_i_2_n_0 is a gated clock net sourced by a combinational pin image_processor/DMUX_Inst/pixel_pulse_reg[9]_i_2/O, cell image_processor/DMUX_Inst/pixel_pulse_reg[9]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#16 Warning
+Gated clock check  
+Net image_processor/ISPCore_inst[1].u_ISPCore/RGB2HSV_Core_Inst/pixel_flow_controller_inst/n_core_busy_reg_1 is a gated clock net sourced by a combinational pin image_processor/ISPCore_inst[1].u_ISPCore/RGB2HSV_Core_Inst/pixel_flow_controller_inst/core_select_reg[3]_i_2/O, cell image_processor/ISPCore_inst[1].u_ISPCore/RGB2HSV_Core_Inst/pixel_flow_controller_inst/core_select_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#17 Warning
+Gated clock check  
+Net image_processor/ISPCore_inst[2].u_ISPCore/RGB2HSV_Core_Inst/pixel_flow_controller_inst/pixel_ready_hsv_reg_0[0] is a gated clock net sourced by a combinational pin image_processor/ISPCore_inst[2].u_ISPCore/RGB2HSV_Core_Inst/pixel_flow_controller_inst/core_select_reg[3]_i_2__0/O, cell image_processor/ISPCore_inst[2].u_ISPCore/RGB2HSV_Core_Inst/pixel_flow_controller_inst/core_select_reg[3]_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#18 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/E[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[6][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[6][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#19 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[0][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[0][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#20 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n_0[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[2][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[2][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#21 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n_10[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[9][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[9][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#22 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n_11[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[11][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[11][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#23 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n_12[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[13][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[13][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#24 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n_1[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[4][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[4][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#25 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n_2[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[8][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[8][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#26 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n_3[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[10][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[10][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#27 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n_4[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[12][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[12][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#28 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n_5[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[14][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[14][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#29 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n_6[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[1][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[1][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#30 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n_7[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[3][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[3][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#31 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n_8[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[5][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[5][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#32 Warning
+Gated clock check  
+Net image_processor/PrioEnc_core_busy_Inst/rst_n_9[0] is a gated clock net sourced by a combinational pin image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[7][23]_i_2/O, cell image_processor/PrioEnc_core_busy_Inst/rgb_out_reg[7][23]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#33 Warning
+Gated clock check  
+Net pixel_sync_inst/counter_CE__0 is a gated clock net sourced by a combinational pin pixel_sync_inst/CE/O, cell pixel_sync_inst/CE. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+20 net(s) have no routable loads. The problem bus(es) and/or net(s) are image_processor/rgb_input_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i,
+image_processor/rgb_input_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i,
+image_processor/rgb_input_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i,
+image_processor/rgb_input_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0],
+image_processor/rgb_input_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0],
+image_processor/rgb_output_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i,
+image_processor/rgb_output_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i,
+image_processor/rgb_output_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/user_valid,
+image_processor/rgb_output_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i,
+image_processor/rgb_output_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i,
+image_processor/rgb_output_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0]
+image_processor/rgb_output_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0].
+Related violations: <none>
+
+AVAL-4#1 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[0].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#2 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[0].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#3 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[0].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#4 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[0].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#5 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[10].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#6 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[10].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#7 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[10].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#8 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[10].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#9 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[11].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#10 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[11].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#11 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[11].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#12 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[11].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#13 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[12].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#14 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[12].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#15 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[12].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#16 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[12].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#17 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[13].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#18 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[13].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#19 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[13].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#20 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[13].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#21 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[14].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#22 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[14].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#23 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[14].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#24 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[14].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#25 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[1].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#26 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[1].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#27 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[1].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#28 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[1].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#29 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[2].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#30 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[2].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#31 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[2].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#32 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[2].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#33 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[3].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#34 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[3].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#35 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[3].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#36 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[3].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#37 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[4].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#38 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[4].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#39 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[4].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#40 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[4].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#41 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[5].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#42 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[5].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#43 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[5].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#44 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[5].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#45 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[6].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#46 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[6].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#47 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[6].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#48 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[6].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#49 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[7].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#50 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[7].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#51 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[7].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#52 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[7].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#53 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[8].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#54 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[8].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#55 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[8].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#56 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[8].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#57 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[9].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_minMax: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#58 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[9].u_ISPCore/HSV2RGB_Core_Inst/back_calculate_d_inst/DSP48E1_d_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#59 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[9].u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#60 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/ISPCore_inst[9].u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+REQP-22#1 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[0].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#2 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[10].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#3 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[11].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#4 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[12].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#5 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[13].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#6 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[14].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#7 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[1].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#8 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[2].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#9 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[3].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#10 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[4].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#11 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[5].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#12 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[6].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#13 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[7].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#14 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[8].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-22#15 Advisory
+enum_AREG_1_connects_CEA1_GND  
+image_processor/ISPCore_inst[9].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#1 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[0].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#2 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[10].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#3 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[11].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#4 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[12].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#5 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[13].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#6 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[14].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#7 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[1].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#8 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[2].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#9 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[3].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#10 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[4].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#11 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[5].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#12 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[6].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#13 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[7].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#14 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[8].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-26#15 Advisory
+enum_BREG_1_connects_CEB1_GND  
+image_processor/ISPCore_inst[9].u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-165#1 Advisory
+writefirst  
+Synchronous clocking is detected for BRAM (image_processor/rgb_input_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmgb.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-165#2 Advisory
+writefirst  
+Synchronous clocking is detected for BRAM (image_processor/rgb_output_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmgb.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+

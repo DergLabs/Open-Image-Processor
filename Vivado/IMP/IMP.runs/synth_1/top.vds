@@ -1,0 +1,1240 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri Jul 21 22:52:11 2023
+# Process ID: 11640
+# Current directory: C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1/top.vds
+# Journal file: C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1\vivado.jou
+# Running On: DESKTOP-U9NB2CD, OS: Windows, CPU Frequency: 3793 MHz, CPU Physical cores: 24, Host memory: 68638 MB
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/Users/johnh/Desktop/IMP/IMP.srcs/utils_1/imports/synth_1/min_max_tb.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/johnh/Desktop/IMP/IMP.srcs/utils_1/imports/synth_1/min_max_tb.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top -part xc7a35tfgg484-1 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tfgg484-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 29388
+WARNING: [Synth 8-6901] identifier 'NUM_CORES' is used before its declaration [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:32]
+WARNING: [Synth 8-6901] identifier 'NUM_CORES' is used before its declaration [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:33]
+WARNING: [Synth 8-6901] identifier 'NUM_CORES' is used before its declaration [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/MUX.sv:24]
+WARNING: [Synth 8-1958] event expressions must result in a singular type [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/MUX.sv:32]
+WARNING: [Synth 8-2254] instance name 'sysclk_BUFG' matches net/port name [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/top.v:126]
+INFO: [Synth 8-6826] previous declaration of 'sysclk_BUFG' is from here [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/top.v:122]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1623.586 ; gain = 0.000
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-9112] actual for formal port 'arst' is neither a static name nor a globally static expression [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Clocking.vhd:128]
+WARNING: [Synth 8-9112] actual for formal port 'arst' is neither a static name nor a globally static expression [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/dvi2rgb.vhd:159]
+WARNING: [Synth 8-9112] actual for formal port 'potherchrdy' is neither a static name nor a globally static expression [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/dvi2rgb.vhd:180]
+WARNING: [Synth 8-9112] actual for formal port 'potherchvld' is neither a static name nor a globally static expression [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/dvi2rgb.vhd:181]
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/Xilinx/Xilinx2022/Vivado/2022.1/scripts/rt/data/unisim_comp.v:59734]
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (0#1) [C:/Xilinx/Xilinx2022/Vivado/2022.1/scripts/rt/data/unisim_comp.v:59734]
+INFO: [Synth 8-638] synthesizing module 'dvi2rgb' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/dvi2rgb.vhd:110]
+	Parameter kEmulateDDC bound to: 1 - type: bool 
+	Parameter kRstActiveHigh bound to: 0 - type: bool 
+	Parameter kAddBUFG bound to: 1 - type: bool 
+	Parameter kClkRange bound to: 1 - type: integer 
+	Parameter kEdidFileName bound to: 720p_edid.txt - type: string 
+	Parameter kIDLY_TapValuePs bound to: 78 - type: integer 
+	Parameter kIDLY_TapWidth bound to: 5 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TMDS_Clocking' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Clocking.vhd:75]
+	Parameter kClkRange bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'ResetBridge' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/SyncAsyncReset.vhd:72]
+	Parameter kPolarity bound to: 1'b1 
+INFO: [Synth 8-638] synthesizing module 'SyncAsync' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/SyncAsync.vhd:72]
+	Parameter kResetTo bound to: 1'b1 
+	Parameter kStages bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'SyncAsync' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/SyncAsync.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'ResetBridge' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/SyncAsyncReset.vhd:72]
+INFO: [Synth 8-113] binding component instance 'IDelayCtrlX' to cell 'IDELAYCTRL' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Clocking.vhd:118]
+	Parameter DIFF_TERM bound to: 0 - type: bool 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: TMDS_33 - type: string 
+INFO: [Synth 8-113] binding component instance 'InputBuffer' to cell 'IBUFDS' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Clocking.vhd:132]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 5.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKIN1_PERIOD bound to: 6.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 1.000000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT4_CASCADE bound to: 0 - type: bool 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter STARTUP_WAIT bound to: 0 - type: bool 
+INFO: [Synth 8-113] binding component instance 'DVI_ClkGenerator' to cell 'MMCME2_ADV' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Clocking.vhd:173]
+INFO: [Synth 8-113] binding component instance 'SerialClkBuffer' to cell 'BUFIO' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Clocking.vhd:232]
+	Parameter BUFR_DIVIDE bound to: 5 - type: string 
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+INFO: [Synth 8-113] binding component instance 'PixelClkBuffer' to cell 'BUFR' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Clocking.vhd:238]
+INFO: [Synth 8-638] synthesizing module 'SyncAsync__parameterized0' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/SyncAsync.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'SyncAsync__parameterized0' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/SyncAsync.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'TMDS_Clocking' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Clocking.vhd:75]
+INFO: [Synth 8-638] synthesizing module 'TMDS_Decoder' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Decoder.vhd:96]
+	Parameter kCtlTknCount bound to: 128 - type: integer 
+	Parameter kTimeoutMs bound to: 50 - type: integer 
+	Parameter kRefClkFrqMHz bound to: 200 - type: integer 
+	Parameter kIDLY_TapValuePs bound to: 78 - type: integer 
+	Parameter kIDLY_TapWidth bound to: 5 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'InputSERDES' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/InputSERDES.vhd:85]
+	Parameter kIDLY_TapWidth bound to: 5 - type: integer 
+	Parameter kParallelWidth bound to: 10 - type: integer 
+	Parameter DIFF_TERM bound to: 0 - type: bool 
+	Parameter IOSTANDARD bound to: TMDS_33 - type: string 
+INFO: [Synth 8-113] binding component instance 'InputBuffer' to cell 'IBUFDS' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/InputSERDES.vhd:92]
+	Parameter CINVCTRL_SEL bound to: FALSE - type: string 
+	Parameter DELAY_SRC bound to: IDATAIN - type: string 
+	Parameter HIGH_PERFORMANCE_MODE bound to: TRUE - type: string 
+	Parameter IDELAY_TYPE bound to: VARIABLE - type: string 
+	Parameter IDELAY_VALUE bound to: 0 - type: integer 
+	Parameter PIPE_SEL bound to: FALSE - type: string 
+	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: double 
+	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
+INFO: [Synth 8-113] binding component instance 'InputDelay' to cell 'IDELAYE2' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/InputSERDES.vhd:102]
+	Parameter DATA_RATE bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter DYN_CLKDIV_INV_EN bound to: FALSE - type: string 
+	Parameter DYN_CLK_INV_EN bound to: FALSE - type: string 
+	Parameter INTERFACE_TYPE bound to: NETWORKING - type: string 
+	Parameter IOBDELAY bound to: IFD - type: string 
+	Parameter NUM_CE bound to: 2 - type: integer 
+	Parameter OFB_USED bound to: FALSE - type: string 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+INFO: [Synth 8-113] binding component instance 'DeserializerMaster' to cell 'ISERDESE2' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/InputSERDES.vhd:130]
+	Parameter DATA_RATE bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter DYN_CLKDIV_INV_EN bound to: FALSE - type: string 
+	Parameter DYN_CLK_INV_EN bound to: FALSE - type: string 
+	Parameter INTERFACE_TYPE bound to: NETWORKING - type: string 
+	Parameter IOBDELAY bound to: IFD - type: string 
+	Parameter NUM_CE bound to: 2 - type: integer 
+	Parameter OFB_USED bound to: FALSE - type: string 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+INFO: [Synth 8-113] binding component instance 'DeserializerSlave' to cell 'ISERDESE2' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/InputSERDES.vhd:172]
+INFO: [Synth 8-256] done synthesizing module 'InputSERDES' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/InputSERDES.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'SyncBase' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/SyncBase.vhd:74]
+	Parameter kResetTo bound to: 1'b0 
+	Parameter kStages bound to: 2 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'SyncAsync__parameterized1' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/SyncAsync.vhd:72]
+	Parameter kResetTo bound to: 1'b0 
+	Parameter kStages bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'SyncAsync__parameterized1' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/SyncAsync.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'SyncBase' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/SyncBase.vhd:74]
+INFO: [Synth 8-638] synthesizing module 'SyncBase__parameterized0' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/SyncBase.vhd:74]
+	Parameter kResetTo bound to: 1'b1 
+	Parameter kStages bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'SyncBase__parameterized0' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/SyncBase.vhd:74]
+INFO: [Synth 8-638] synthesizing module 'PhaseAlign' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/PhaseAlign.vhd:95]
+	Parameter kUseFastAlgorithm bound to: 0 - type: bool 
+	Parameter kCtlTknCount bound to: 128 - type: integer 
+	Parameter kIDLY_TapValuePs bound to: 78 - type: integer 
+	Parameter kIDLY_TapWidth bound to: 5 - type: integer 
+WARNING: [Synth 8-614] signal 'pEyeOpenCnt' is read in the process but is not in the sensitivity list [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/PhaseAlign.vhd:318]
+INFO: [Synth 8-256] done synthesizing module 'PhaseAlign' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/PhaseAlign.vhd:95]
+INFO: [Synth 8-638] synthesizing module 'ChannelBond' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/ChannelBond.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'ChannelBond' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/ChannelBond.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'TMDS_Decoder' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Decoder.vhd:96]
+INFO: [Synth 8-638] synthesizing module 'ResyncToBUFG' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/ResyncToBUFG.vhd:78]
+INFO: [Synth 8-113] binding component instance 'InstBUFG' to cell 'BUFG' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/ResyncToBUFG.vhd:84]
+INFO: [Synth 8-256] done synthesizing module 'ResyncToBUFG' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/ResyncToBUFG.vhd:78]
+INFO: [Synth 8-638] synthesizing module 'EEPROM_8b' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/EEPROM_8b.vhd:85]
+	Parameter kSampleClkFreqInMHz bound to: 200 - type: integer 
+	Parameter kSlaveAddress bound to: 7'b1010000 
+	Parameter kAddrBits bound to: 7 - type: integer 
+	Parameter kWritable bound to: 0 - type: bool 
+	Parameter kInitFileName bound to: 720p_edid.txt - type: string 
+INFO: [Synth 8-638] synthesizing module 'TWI_SlaveCtl' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TWI_SlaveCtl.vhd:87]
+	Parameter SLAVE_ADDRESS bound to: 8'b10100000 
+	Parameter kSampleClkFreqInMHz bound to: 200 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'GlitchFilter' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/GlitchFilter.vhd:69]
+	Parameter kNoOfPeriodsToFilter bound to: 10 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'GlitchFilter' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/GlitchFilter.vhd:69]
+INFO: [Synth 8-256] done synthesizing module 'TWI_SlaveCtl' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TWI_SlaveCtl.vhd:87]
+INFO: [Synth 8-226] default block is never used [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/EEPROM_8b.vhd:201]
+INFO: [Synth 8-256] done synthesizing module 'EEPROM_8b' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/EEPROM_8b.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'dvi2rgb' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/dvi2rgb.vhd:110]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Xilinx2022/Vivado/2022.1/scripts/rt/data/unisim_comp.v:1082]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [C:/Xilinx/Xilinx2022/Vivado/2022.1/scripts/rt/data/unisim_comp.v:1082]
+INFO: [Synth 8-6157] synthesizing module 'Pixel_Sync' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/Pixel_Sync.v:23]
+INFO: [Synth 8-6157] synthesizing module 'c_counter_binary_0' [C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1/.Xil/Vivado-11640-DESKTOP-U9NB2CD/realtime/c_counter_binary_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'c_counter_binary_0' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1/.Xil/Vivado-11640-DESKTOP-U9NB2CD/realtime/c_counter_binary_0_stub.v:5]
+WARNING: [Synth 8-567] referenced signal 'rst_n' should be on the sensitivity list [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/Pixel_Sync.v:57]
+WARNING: [Synth 8-567] referenced signal 'count' should be on the sensitivity list [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/Pixel_Sync.v:57]
+INFO: [Synth 8-6157] synthesizing module 'BUFGCE' [C:/Xilinx/Xilinx2022/Vivado/2022.1/scripts/rt/data/unisim_comp.v:1092]
+INFO: [Synth 8-6155] done synthesizing module 'BUFGCE' (0#1) [C:/Xilinx/Xilinx2022/Vivado/2022.1/scripts/rt/data/unisim_comp.v:1092]
+INFO: [Synth 8-6155] done synthesizing module 'Pixel_Sync' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/Pixel_Sync.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ISP_Top' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/ISP_Top.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'ISPCore' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ISPCore.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RGB2HSV_Top' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/RGB2HSV_Top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'c_shift_ram_17' [C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1/.Xil/Vivado-11640-DESKTOP-U9NB2CD/realtime/c_shift_ram_17_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'c_shift_ram_17' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1/.Xil/Vivado-11640-DESKTOP-U9NB2CD/realtime/c_shift_ram_17_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'pixel_flow_controller' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/pixel_flow_controller.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'pixel_flow_controller' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/pixel_flow_controller.vhd:44]
+INFO: [Synth 8-638] synthesizing module 'calculate_min_max' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_min_max.vhd:55]
+	Parameter ACASCREG bound to: 1 - type: integer 
+	Parameter ADREG bound to: 1 - type: integer 
+	Parameter ALUMODEREG bound to: 1 - type: integer 
+	Parameter AREG bound to: 1 - type: integer 
+	Parameter AUTORESET_PATDET bound to: NO_RESET - type: string 
+	Parameter A_INPUT bound to: DIRECT - type: string 
+	Parameter BCASCREG bound to: 1 - type: integer 
+	Parameter BREG bound to: 1 - type: integer 
+	Parameter B_INPUT bound to: DIRECT - type: string 
+	Parameter CARRYINREG bound to: 1 - type: integer 
+	Parameter CARRYINSELREG bound to: 1 - type: integer 
+	Parameter CREG bound to: 1 - type: integer 
+	Parameter DREG bound to: 1 - type: integer 
+	Parameter INMODEREG bound to: 1 - type: integer 
+	Parameter MASK bound to: 48'b001111111111111111111111111111111111111111111111 
+	Parameter MREG bound to: 0 - type: integer 
+	Parameter OPMODEREG bound to: 1 - type: integer 
+	Parameter PATTERN bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter PREG bound to: 1 - type: integer 
+	Parameter SEL_MASK bound to: MASK - type: string 
+	Parameter SEL_PATTERN bound to: PATTERN - type: string 
+	Parameter USE_DPORT bound to: 0 - type: bool 
+	Parameter USE_MULT bound to: NONE - type: string 
+	Parameter USE_PATTERN_DETECT bound to: NO_PATDET - type: string 
+	Parameter USE_SIMD bound to: FOUR12 - type: string 
+INFO: [Synth 8-113] binding component instance 'DSP48E1_minMax' to cell 'DSP48E1' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_min_max.vhd:118]
+INFO: [Synth 8-226] default block is never used [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_min_max.vhd:216]
+INFO: [Synth 8-256] done synthesizing module 'calculate_min_max' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_min_max.vhd:55]
+INFO: [Synth 8-6157] synthesizing module 'inverse_value_rom' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/inverse_value_ram.v:23]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1/.Xil/Vivado-11640-DESKTOP-U9NB2CD/realtime/blk_mem_gen_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1/.Xil/Vivado-11640-DESKTOP-U9NB2CD/realtime/blk_mem_gen_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'inverse_value_rom' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/inverse_value_ram.v:23]
+INFO: [Synth 8-638] synthesizing module 'calculate_s' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_s.vhd:54]
+	Parameter ACASCREG bound to: 1 - type: integer 
+	Parameter ADREG bound to: 1 - type: integer 
+	Parameter ALUMODEREG bound to: 1 - type: integer 
+	Parameter AREG bound to: 1 - type: integer 
+	Parameter AUTORESET_PATDET bound to: NO_RESET - type: string 
+	Parameter A_INPUT bound to: DIRECT - type: string 
+	Parameter BCASCREG bound to: 1 - type: integer 
+	Parameter BREG bound to: 1 - type: integer 
+	Parameter B_INPUT bound to: DIRECT - type: string 
+	Parameter CARRYINREG bound to: 1 - type: integer 
+	Parameter CARRYINSELREG bound to: 1 - type: integer 
+	Parameter CREG bound to: 1 - type: integer 
+	Parameter DREG bound to: 1 - type: integer 
+	Parameter INMODEREG bound to: 1 - type: integer 
+	Parameter MASK bound to: 48'b001111111111111111111111111111111111111111111111 
+	Parameter MREG bound to: 1 - type: integer 
+	Parameter OPMODEREG bound to: 1 - type: integer 
+	Parameter PATTERN bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter PREG bound to: 1 - type: integer 
+	Parameter SEL_MASK bound to: MASK - type: string 
+	Parameter SEL_PATTERN bound to: PATTERN - type: string 
+	Parameter USE_DPORT bound to: 0 - type: bool 
+	Parameter USE_MULT bound to: MULTIPLY - type: string 
+	Parameter USE_PATTERN_DETECT bound to: NO_PATDET - type: string 
+	Parameter USE_SIMD bound to: ONE48 - type: string 
+INFO: [Synth 8-113] binding component instance 'DSP48E1_s_mult' to cell 'DSP48E1' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_s.vhd:79]
+INFO: [Synth 8-256] done synthesizing module 'calculate_s' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_s.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'calculate_h' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_h.vhd:53]
+	Parameter ACASCREG bound to: 1 - type: integer 
+	Parameter ADREG bound to: 1 - type: integer 
+	Parameter ALUMODEREG bound to: 1 - type: integer 
+	Parameter AREG bound to: 1 - type: integer 
+	Parameter AUTORESET_PATDET bound to: NO_RESET - type: string 
+	Parameter A_INPUT bound to: DIRECT - type: string 
+	Parameter BCASCREG bound to: 1 - type: integer 
+	Parameter BREG bound to: 1 - type: integer 
+	Parameter B_INPUT bound to: DIRECT - type: string 
+	Parameter CARRYINREG bound to: 1 - type: integer 
+	Parameter CARRYINSELREG bound to: 1 - type: integer 
+	Parameter CREG bound to: 1 - type: integer 
+	Parameter DREG bound to: 1 - type: integer 
+	Parameter INMODEREG bound to: 1 - type: integer 
+	Parameter MASK bound to: 48'b001111111111111111111111111111111111111111111111 
+	Parameter MREG bound to: 1 - type: integer 
+	Parameter OPMODEREG bound to: 1 - type: integer 
+	Parameter PATTERN bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter PREG bound to: 1 - type: integer 
+	Parameter SEL_MASK bound to: MASK - type: string 
+	Parameter SEL_PATTERN bound to: PATTERN - type: string 
+	Parameter USE_DPORT bound to: 0 - type: bool 
+	Parameter USE_MULT bound to: MULTIPLY - type: string 
+	Parameter USE_PATTERN_DETECT bound to: NO_PATDET - type: string 
+	Parameter USE_SIMD bound to: ONE48 - type: string 
+INFO: [Synth 8-113] binding component instance 'DSP48E1_h_mult' to cell 'DSP48E1' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_h.vhd:84]
+INFO: [Synth 8-256] done synthesizing module 'calculate_h' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_h.vhd:53]
+INFO: [Synth 8-6155] done synthesizing module 'RGB2HSV_Top' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/RGB2HSV_Top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'HSV2RGB_Top' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/HSV2RGB_Top.v:23]
+INFO: [Synth 8-638] synthesizing module 'input_pixel_flow_controller' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/input_pixel_flow_controller.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'input_pixel_flow_controller' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/input_pixel_flow_controller.vhd:51]
+INFO: [Synth 8-638] synthesizing module 'back_calculate_d' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_d.vhd:47]
+	Parameter ACASCREG bound to: 1 - type: integer 
+	Parameter ADREG bound to: 1 - type: integer 
+	Parameter ALUMODEREG bound to: 1 - type: integer 
+	Parameter AREG bound to: 1 - type: integer 
+	Parameter AUTORESET_PATDET bound to: NO_RESET - type: string 
+	Parameter A_INPUT bound to: DIRECT - type: string 
+	Parameter BCASCREG bound to: 1 - type: integer 
+	Parameter BREG bound to: 1 - type: integer 
+	Parameter B_INPUT bound to: DIRECT - type: string 
+	Parameter CARRYINREG bound to: 1 - type: integer 
+	Parameter CARRYINSELREG bound to: 1 - type: integer 
+	Parameter CREG bound to: 1 - type: integer 
+	Parameter DREG bound to: 1 - type: integer 
+	Parameter INMODEREG bound to: 1 - type: integer 
+	Parameter MASK bound to: 48'b001111111111111111111111111111111111111111111111 
+	Parameter MREG bound to: 1 - type: integer 
+	Parameter OPMODEREG bound to: 1 - type: integer 
+	Parameter PATTERN bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter PREG bound to: 1 - type: integer 
+	Parameter SEL_MASK bound to: MASK - type: string 
+	Parameter SEL_PATTERN bound to: PATTERN - type: string 
+	Parameter USE_DPORT bound to: 0 - type: bool 
+	Parameter USE_MULT bound to: MULTIPLY - type: string 
+	Parameter USE_PATTERN_DETECT bound to: NO_PATDET - type: string 
+	Parameter USE_SIMD bound to: ONE48 - type: string 
+INFO: [Synth 8-113] binding component instance 'DSP48E1_d_mult' to cell 'DSP48E1' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_d.vhd:65]
+INFO: [Synth 8-256] done synthesizing module 'back_calculate_d' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_d.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'back_calculate_c_m' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_c_m.vhd:50]
+	Parameter ACASCREG bound to: 1 - type: integer 
+	Parameter ADREG bound to: 1 - type: integer 
+	Parameter ALUMODEREG bound to: 1 - type: integer 
+	Parameter AREG bound to: 1 - type: integer 
+	Parameter AUTORESET_PATDET bound to: NO_RESET - type: string 
+	Parameter A_INPUT bound to: DIRECT - type: string 
+	Parameter BCASCREG bound to: 1 - type: integer 
+	Parameter BREG bound to: 1 - type: integer 
+	Parameter B_INPUT bound to: DIRECT - type: string 
+	Parameter CARRYINREG bound to: 1 - type: integer 
+	Parameter CARRYINSELREG bound to: 1 - type: integer 
+	Parameter CREG bound to: 1 - type: integer 
+	Parameter DREG bound to: 1 - type: integer 
+	Parameter INMODEREG bound to: 1 - type: integer 
+	Parameter MASK bound to: 48'b001111111111111111111111111111111111111111111111 
+	Parameter MREG bound to: 1 - type: integer 
+	Parameter OPMODEREG bound to: 1 - type: integer 
+	Parameter PATTERN bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter PREG bound to: 1 - type: integer 
+	Parameter SEL_MASK bound to: MASK - type: string 
+	Parameter SEL_PATTERN bound to: PATTERN - type: string 
+	Parameter USE_DPORT bound to: 0 - type: bool 
+	Parameter USE_MULT bound to: MULTIPLY - type: string 
+	Parameter USE_PATTERN_DETECT bound to: NO_PATDET - type: string 
+	Parameter USE_SIMD bound to: ONE48 - type: string 
+INFO: [Synth 8-113] binding component instance 'DSP48E1_minMax' to cell 'DSP48E1' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_c_m.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'back_calculate_c_m' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_c_m.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'back_calculate_i' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_i.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'back_calculate_i' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_i.vhd:46]
+INFO: [Synth 8-638] synthesizing module 'generate_rgb_out' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/generate_rgb_out.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'generate_rgb_out' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/generate_rgb_out.vhd:54]
+INFO: [Synth 8-6155] done synthesizing module 'HSV2RGB_Top' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/HSV2RGB_Top.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ISPCore' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ISPCore.v:23]
+INFO: [Synth 8-6157] synthesizing module 'fifo_generator_0' [C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1/.Xil/Vivado-11640-DESKTOP-U9NB2CD/realtime/fifo_generator_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_generator_0' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1/.Xil/Vivado-11640-DESKTOP-U9NB2CD/realtime/fifo_generator_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'DMUX' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'DMUX' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'PriorityEncoder' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/PriorityEncoder.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'PriorityEncoder' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/PriorityEncoder.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'MUX' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/MUX.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'MUX' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/MUX.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'ISP_Top' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/ISP_Top.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_ref' [C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1/.Xil/Vivado-11640-DESKTOP-U9NB2CD/realtime/clk_ref_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_ref' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1/.Xil/Vivado-11640-DESKTOP-U9NB2CD/realtime/clk_ref_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'rgb2dvi' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/rgb2dvi.vhd:89]
+	Parameter kGenerateSerialClk bound to: 1 - type: bool 
+	Parameter kClkRange bound to: 1 - type: integer 
+	Parameter kRstActiveHigh bound to: 1 - type: bool 
+INFO: [Synth 8-638] synthesizing module 'ClockGen' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/ClockGen.vhd:46]
+	Parameter kClkRange bound to: 1 - type: integer 
+	Parameter kClkPrimitive bound to: MMCM - type: string 
+WARNING: [Synth 8-614] signal 'pRst' is read in the process but is not in the sensitivity list [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/ClockGen.vhd:71]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 5.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKIN1_PERIOD bound to: 6.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 1.000000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT1_DIVIDE bound to: 5 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT4_CASCADE bound to: 0 - type: bool 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter STARTUP_WAIT bound to: 0 - type: bool 
+INFO: [Synth 8-113] binding component instance 'DVI_ClkGenerator' to cell 'MMCME2_ADV' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/ClockGen.vhd:113]
+INFO: [Synth 8-256] done synthesizing module 'ClockGen' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/ClockGen.vhd:46]
+INFO: [Synth 8-638] synthesizing module 'OutputSERDES' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/OutputSERDES.vhd:76]
+	Parameter kParallelWidth bound to: 10 - type: integer 
+	Parameter IOSTANDARD bound to: TMDS_33 - type: string 
+INFO: [Synth 8-113] binding component instance 'OutputBuffer' to cell 'OBUFDS' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/OutputSERDES.vhd:83]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: SDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'SerializerMaster' to cell 'OSERDESE2' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/OutputSERDES.vhd:92]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: SDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'SerializerSlave' to cell 'OSERDESE2' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/OutputSERDES.vhd:135]
+INFO: [Synth 8-256] done synthesizing module 'OutputSERDES' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/OutputSERDES.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'TMDS_Encoder' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Encoder.vhd:80]
+INFO: [Synth 8-256] done synthesizing module 'TMDS_Encoder' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Encoder.vhd:80]
+INFO: [Synth 8-638] synthesizing module 'OutputSERDES__parameterized0' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/OutputSERDES.vhd:76]
+	Parameter kParallelWidth bound to: 10 - type: integer 
+	Parameter IOSTANDARD bound to: TMDS_33 - type: string 
+INFO: [Synth 8-113] binding component instance 'OutputBuffer' to cell 'OBUFDS' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/OutputSERDES.vhd:83]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: SDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'SerializerMaster' to cell 'OSERDESE2' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/OutputSERDES.vhd:92]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: SDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'SerializerSlave' to cell 'OSERDESE2' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/OutputSERDES.vhd:135]
+INFO: [Synth 8-256] done synthesizing module 'OutputSERDES__parameterized0' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/OutputSERDES.vhd:76]
+INFO: [Synth 8-256] done synthesizing module 'rgb2dvi' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/rgb2dvi.vhd:89]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/top.v:3]
+WARNING: [Synth 8-6014] Unused sequential element pTkn0FlagQ_reg was removed.  [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/PhaseAlign.vhd:172]
+WARNING: [Synth 8-6014] Unused sequential element pTkn1FlagQ_reg was removed.  [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/PhaseAlign.vhd:173]
+WARNING: [Synth 8-6014] Unused sequential element pTkn2FlagQ_reg was removed.  [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/PhaseAlign.vhd:174]
+WARNING: [Synth 8-6014] Unused sequential element pTkn3FlagQ_reg was removed.  [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/PhaseAlign.vhd:175]
+WARNING: [Synth 8-6014] Unused sequential element pDelayFastOvf_reg was removed.  [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/PhaseAlign.vhd:209]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ChannelBondX'. This will prevent further optimization [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Decoder.vhd:241]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'InputSERDES_X'. This will prevent further optimization [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Decoder.vhd:116]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PhaseAlignX'. This will prevent further optimization [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Decoder.vhd:182]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'GenerateBUFG.ResyncToBUFG_X'. This will prevent further optimization [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/dvi2rgb.vhd:213]
+WARNING: [Synth 8-3917] design top has port HDMI_hdmi_in_OEN[0] driven by constant 0
+WARNING: [Synth 8-7129] Port SerialClk in module TMDS_Encoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aRst in module TMDS_Encoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aRst_n in module rgb2dvi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module PriorityEncoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module PriorityEncoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module DMUX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aRst in module dvi2rgb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pRst in module dvi2rgb is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1645.586 ; gain = 22.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1645.586 ; gain = 22.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1645.586 ; gain = 22.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.373 . Memory (MB): peak = 1645.586 ; gain = 0.000
+WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'pixel_sync_inst/pixel_clk_BUFG' of type 'BUFGCE' is 'ULTRASCALE'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist. 
+WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'pixel_sync_inst/serial_clk_BUFG' of type 'BUFGCE' is 'ULTRASCALE'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist. 
+INFO: [Netlist 29-17] Analyzing 99 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/clk_ref/clk_ref/clk_ref_in_context.xdc] for cell 'clk_refm0'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/clk_ref/clk_ref/clk_ref_in_context.xdc] for cell 'clk_refm0'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[0].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[0].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[1].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[1].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[2].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[2].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[3].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[3].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[4].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[4].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[5].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[5].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[6].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[6].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[7].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[7].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[8].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[8].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[9].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[9].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[10].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[10].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[11].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[11].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[12].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[12].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[13].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[13].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[14].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'image_processor/ISPCore_inst[14].u_ISPCore/RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'image_processor/rgb_input_fifo'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'image_processor/rgb_input_fifo'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'image_processor/rgb_output_fifo'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'image_processor/rgb_output_fifo'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[0].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[0].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[0].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[0].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[1].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[1].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[1].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[1].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[2].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[2].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[2].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[2].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[3].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[3].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[3].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[3].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[4].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[4].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[4].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[4].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[5].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[5].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[5].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[5].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[6].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[6].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[6].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[6].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[7].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[7].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[7].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[7].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[8].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[8].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[8].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[8].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[9].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[9].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[9].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[9].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[10].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[10].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[10].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[10].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[11].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[11].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[11].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[11].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[12].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[12].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[12].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[12].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[13].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[13].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[13].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[13].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[14].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[14].u_ISPCore/RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[14].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17/c_shift_ram_17_in_context.xdc] for cell 'image_processor/ISPCore_inst[14].u_ISPCore/HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb'
+Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_counter_binary_0/c_counter_binary_0/c_counter_binary_0_in_context.xdc] for cell 'pixel_sync_inst/lost_pixel_counter'
+Finished Parsing XDC File [c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_counter_binary_0/c_counter_binary_0/c_counter_binary_0_in_context.xdc] for cell 'pixel_sync_inst/lost_pixel_counter'
+Parsing XDC File [C:/Users/johnh/Desktop/IMP/IMP.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [C:/Users/johnh/Desktop/IMP/IMP.srcs/constrs_1/new/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/johnh/Desktop/IMP/IMP.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1727.441 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  BUFGCE => BUFGCTRL: 2 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.103 . Memory (MB): peak = 1727.441 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1727.441 ; gain = 103.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tfgg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1727.441 ; gain = 103.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for clk_refm0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[0].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[1].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[2].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[3].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[4].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[5].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[6].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[7].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[8].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[9].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[10].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[11].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[12].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[13].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[14].u_ISPCore /RGB2HSV_Core_Inst/inverse_value_rom_inst/inverse_value_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/rgb_input_fifo. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/rgb_output_fifo. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[0].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[1].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[2].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[3].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[4].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[5].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[6].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[7].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[8].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[9].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[10].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[11].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[12].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[13].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[14].u_ISPCore /HSV2RGB_Core_Inst/data_valid_delay_hsv2rgb. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[0].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[1].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[2].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[3].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[4].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[5].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[6].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[7].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[8].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[9].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[10].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[11].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[12].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[13].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for image_processor/\ISPCore_inst[14].u_ISPCore /RGB2HSV_Core_Inst/data_valid_delay_rgb2hsv. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for pixel_sync_inst/lost_pixel_counter. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1727.441 ; gain = 103.855
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'pState_reg' in module 'PhaseAlign'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'TWI_SlaveCtl'
+INFO: [Synth 8-802] inferred FSM for state register 'sState_reg' in module 'EEPROM_8b'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                 resetst |                      00000000001 |                      00000000001
+                  idlest |                      00000000010 |                      00000000010
+                 tokenst |                      00000000100 |                      00000000100
+               eyeopenst |                      00000001000 |                      00000001000
+               jtrzonest |                      00000010000 |                      00000010000
+                dlydecst |                      00010000000 |                      00010000000
+          dlytstcenterst |                      00100000000 |                      00100000000
+               alignedst |                      01000000000 |                      01000000000
+                dlyincst |                      00000100000 |                      00000100000
+             dlytstovfst |                      00001000000 |                      00001000000
+            alignerrorst |                      10000000000 |                      10000000000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'pState_reg' in module 'PhaseAlign'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  stidle |                              000 |                              000
+               staddress |                              011 |                              001
+            stturnaround |                              110 |                              110
+                  stsack |                              100 |                              100
+                  stread |                              001 |                              010
+                  stmack |                              010 |                              101
+                 stwrite |                              111 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'gray' in module 'TWI_SlaveCtl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  stidle |                             0001 |                               00
+                  stread |                             0010 |                               01
+            stregaddress |                             0100 |                               11
+                 stwrite |                             1000 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'sState_reg' using encoding 'one-hot' in module 'EEPROM_8b'
+WARNING: [Synth 8-327] inferring latch for variable 'vid_pVDE_d0_reg' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/Pixel_Sync.v:69]
+WARNING: [Synth 8-327] inferring latch for variable 'vid_pHSync_d0_reg' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/Pixel_Sync.v:70]
+WARNING: [Synth 8-327] inferring latch for variable 'vid_pVSync_d0_reg' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/Pixel_Sync.v:71]
+WARNING: [Synth 8-327] inferring latch for variable 'hdm_out_oen_d0_reg' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/Pixel_Sync.v:72]
+WARNING: [Synth 8-327] inferring latch for variable 'CE_reg' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/Pixel_Sync.v:59]
+WARNING: [Synth 8-327] inferring latch for variable 'counter_CE_reg' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/Pixel_Sync.v:53]
+WARNING: [Synth 8-327] inferring latch for variable 'i_reg_reg' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_i.vhd:51]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[14]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[13]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[12]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[11]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[10]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[9]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[8]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[7]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[6]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[5]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[4]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[3]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[2]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[1]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'rgb_out_reg[0]' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:55]
+WARNING: [Synth 8-327] inferring latch for variable 'pixel_pulse_reg' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:56]
+WARNING: [Synth 8-327] inferring latch for variable 'prev_sel_reg' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv:58]
+WARNING: [Synth 8-327] inferring latch for variable 'core_select_reg' [C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/PriorityEncoder.sv:38]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1727.441 ; gain = 103.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   24 Bit       Adders := 63    
+	   3 Input    8 Bit       Adders := 135   
+	   2 Input    8 Bit       Adders := 15    
+	   2 Input    7 Bit       Adders := 4     
+	   2 Input    6 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 13    
+	   3 Input    5 Bit       Adders := 9     
+	   4 Input    5 Bit       Adders := 3     
+	   2 Input    4 Bit       Adders := 5     
+	   8 Input    4 Bit       Adders := 6     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 6     
++---XORs : 
+	   2 Input      1 Bit         XORs := 84    
++---Registers : 
+	               48 Bit    Registers := 30    
+	               30 Bit    Registers := 30    
+	               24 Bit    Registers := 169   
+	               18 Bit    Registers := 45    
+	               16 Bit    Registers := 45    
+	               12 Bit    Registers := 135   
+	               10 Bit    Registers := 9     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 398   
+	                7 Bit    Registers := 4     
+	                6 Bit    Registers := 3     
+	                5 Bit    Registers := 13    
+	                4 Bit    Registers := 11    
+	                3 Bit    Registers := 77    
+	                2 Bit    Registers := 23    
+	                1 Bit    Registers := 200   
++---RAMs : 
+	              320 Bit	(32 X 10 bit)          RAMs := 3     
++---Muxes : 
+	   2 Input   24 Bit        Muxes := 75    
+	   4 Input   24 Bit        Muxes := 15    
+	   2 Input   16 Bit        Muxes := 15    
+	   2 Input   15 Bit        Muxes := 6     
+	  12 Input   11 Bit        Muxes := 3     
+	   2 Input   11 Bit        Muxes := 3     
+	   2 Input   10 Bit        Muxes := 3     
+	   4 Input   10 Bit        Muxes := 3     
+	   2 Input    9 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 22    
+	   5 Input    8 Bit        Muxes := 3     
+	 129 Input    8 Bit        Muxes := 1     
+	   8 Input    8 Bit        Muxes := 45    
+	   7 Input    8 Bit        Muxes := 45    
+	   2 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 6     
+	   2 Input    5 Bit        Muxes := 12    
+	   2 Input    4 Bit        Muxes := 7     
+	   4 Input    4 Bit        Muxes := 1     
+	  15 Input    4 Bit        Muxes := 2     
+	   7 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 15    
+	   8 Input    3 Bit        Muxes := 15    
+	   6 Input    3 Bit        Muxes := 15    
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 174   
+	  12 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 7     
+	   4 Input    1 Bit        Muxes := 4     
+	   5 Input    1 Bit        Muxes := 6     
+	   7 Input    1 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 15    
+	   6 Input    1 Bit        Muxes := 15    
+	  15 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: Generating DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg, operation Mode is: (A2*B2)'.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_d_inst/d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: register HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+DSP Report: operator HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d0 is absorbed into DSP HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_reg.
+WARNING: [Synth 8-3917] design top has port HDMI_hdmi_in_OEN[0] driven by constant 0
+WARNING: [Synth 8-7129] Port aRst_n in module rgb2dvi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SerialClk in module rgb2dvi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module DMUX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aRst in module dvi2rgb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pRst in module dvi2rgb is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__2.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__2.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__2.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__3.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__3.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__3.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__4.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__4.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__4.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__5.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__5.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__5.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__6.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__6.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__6.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__7.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__7.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__7.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__8.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__8.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__8.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__9.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__9.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__9.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__10.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__10.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__10.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__11.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__11.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__11.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__12.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__12.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__12.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__13.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__13.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__13.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore__xdcDup__14.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore__xdcDup__14.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore__xdcDup__14.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[2]) is unused and will be removed from module ISPCore.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[1]) is unused and will be removed from module ISPCore.
+WARNING: [Synth 8-3332] Sequential element (HSV2RGB_Core_Inst/back_calculate_i_inst/i_reg_reg[0]) is unused and will be removed from module ISPCore.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1727.441 ; gain = 103.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++---------------------------------------------------+------------+-----------+----------------------+-------------+
+|Module Name                                        | RTL Object | Inference | Size (Depth x Width) | Primitives  | 
++---------------------------------------------------+------------+-----------+----------------------+-------------+
+|\dvi2rgb_m0/DataDecoders[2].DecoderX/ChannelBondX  | pFIFO_reg  | Implied   | 32 x 10              | RAM32M x 2  | 
+|\dvi2rgb_m0/DataDecoders[1].DecoderX/ChannelBondX  | pFIFO_reg  | Implied   | 32 x 10              | RAM32M x 2  | 
+|\dvi2rgb_m0/DataDecoders[0].DecoderX/ChannelBondX  | pFIFO_reg  | Implied   | 32 x 10              | RAM32M x 2  | 
++---------------------------------------------------+------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|ISPCore     | (A2*B2)'    | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1729.246 ; gain = 105.660
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 1762.355 ; gain = 138.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++---------------------------------------------------+------------+-----------+----------------------+-------------+
+|Module Name                                        | RTL Object | Inference | Size (Depth x Width) | Primitives  | 
++---------------------------------------------------+------------+-----------+----------------------+-------------+
+|\dvi2rgb_m0/DataDecoders[2].DecoderX/ChannelBondX  | pFIFO_reg  | Implied   | 32 x 10              | RAM32M x 2  | 
+|\dvi2rgb_m0/DataDecoders[1].DecoderX/ChannelBondX  | pFIFO_reg  | Implied   | 32 x 10              | RAM32M x 2  | 
+|\dvi2rgb_m0/DataDecoders[0].DecoderX/ChannelBondX  | pFIFO_reg  | Implied   | 32 x 10              | RAM32M x 2  | 
++---------------------------------------------------+------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 1833.258 ; gain = 209.672
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:00 ; elapsed = 00:01:02 . Memory (MB): peak = 1846.055 ; gain = 222.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:00 ; elapsed = 00:01:02 . Memory (MB): peak = 1846.055 ; gain = 222.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 1846.055 ; gain = 222.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 1846.055 ; gain = 222.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 1846.055 ; gain = 222.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 1846.055 ; gain = 222.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++-----------------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name            | DSP Mapping         | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|back_calculate_c_m_128 | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_129   | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_124        | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_125  | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_126        | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m_119 | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_120   | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_115        | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_116  | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_117        | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m_110 | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_111   | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_106        | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_107  | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_108        | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m_101 | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_102   | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_97         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_98   | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_99         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m_92  | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_93    | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_88         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_89   | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_90         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m_83  | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_84    | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_79         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_80   | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_81         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m_74  | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_75    | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_70         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_71   | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_72         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m_65  | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_66    | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_61         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_62   | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_63         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m_56  | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_57    | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_52         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_53   | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_54         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m_47  | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_48    | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_43         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_44   | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_45         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m_38  | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_39    | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_34         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_35   | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_36         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m_29  | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_30    | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_25         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_26   | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_27         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m_20  | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_21    | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_16         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_17   | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_18         | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m_11  | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d_12    | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h_7          | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max_8    | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s_9          | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_c_m     | (not(C'+(A'*B')'))' | 16     | 3      | 24     | -      | 24     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|ISPCore                | ((A'*B')')'         | 24     | 8      | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|back_calculate_d       | (C'+(A'*B')')'      | 16     | 8      | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calculate_h            | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calculate_min_max      | (not(C'+A':B'))'    | 26     | 18     | 44     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calculate_s            | ((A'*B')')'         | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
++-----------------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++------+-------------------+----------+
+|      |BlackBox name      |Instances |
++------+-------------------+----------+
+|1     |clk_ref            |         1|
+|2     |fifo_generator_0   |         2|
+|3     |c_shift_ram_17     |        30|
+|4     |blk_mem_gen_0      |        15|
+|5     |c_counter_binary_0 |         1|
++------+-------------------+----------+
+
+Report Cell Usage: 
++------+-----------------+------+
+|      |Cell             |Count |
++------+-----------------+------+
+|1     |blk_mem_gen      |     1|
+|2     |blk_mem_gen_0    |    14|
+|16    |c_counter_binary |     1|
+|17    |c_shift_ram      |     1|
+|18    |c_shift_ram_17   |    29|
+|47    |clk_ref          |     1|
+|48    |fifo_generator   |     1|
+|49    |fifo_generator_0 |     1|
+|50    |BUFG             |     3|
+|51    |BUFGCE           |     2|
+|52    |BUFIO            |     1|
+|53    |BUFR             |     1|
+|54    |CARRY4           |   438|
+|55    |DSP48E1          |    90|
+|58    |IDELAYCTRL       |     1|
+|59    |IDELAYE2         |     3|
+|60    |ISERDESE2        |     6|
+|62    |LUT1             |   438|
+|63    |LUT2             |  2053|
+|64    |LUT3             |   246|
+|65    |LUT4             |  1062|
+|66    |LUT5             |   644|
+|67    |LUT6             |  1292|
+|68    |MMCME2_ADV       |     2|
+|69    |MUXF7            |     8|
+|70    |OSERDESE2        |     8|
+|72    |RAM32M           |     6|
+|73    |FDCE             |    11|
+|74    |FDPE             |    28|
+|75    |FDRE             |  9965|
+|76    |FDSE             |    42|
+|77    |LD               |   393|
+|78    |LDC              |     5|
+|79    |LDP              |     1|
+|80    |IBUF             |     2|
+|81    |IBUFDS           |     4|
+|82    |IOBUF            |     2|
+|83    |OBUF             |     3|
+|84    |OBUFDS           |     4|
++------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 1846.055 ; gain = 222.469
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 77 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:48 ; elapsed = 00:00:59 . Memory (MB): peak = 1846.055 ; gain = 140.613
+Synthesis Optimization Complete : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 1846.055 ; gain = 222.469
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.347 . Memory (MB): peak = 1855.156 ; gain = 0.000
+WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'pixel_sync_inst/pixel_clk_BUFG' of type 'BUFGCE' is 'ULTRASCALE'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist. 
+WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'pixel_sync_inst/serial_clk_BUFG' of type 'BUFGCE' is 'ULTRASCALE'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist. 
+INFO: [Netlist 29-17] Analyzing 965 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 3 inverter(s) to 6 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1862.797 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 409 instances were transformed.
+  BUFGCE => BUFGCTRL: 2 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  LD => LDCE: 393 instances
+  LDC => LDCE: 5 instances
+  LDP => LDPE: 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+Synth Design complete, checksum: b5f16c48
+INFO: [Common 17-83] Releasing license: Synthesis
+154 Infos, 108 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:09 ; elapsed = 00:01:28 . Memory (MB): peak = 1862.797 ; gain = 239.211
+INFO: [Common 17-1381] The checkpoint 'C:/Users/johnh/Desktop/IMP/IMP.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 21 22:53:51 2023...

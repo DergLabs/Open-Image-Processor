@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="RGB2HSV_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="RGB2HSV_TB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="365.401 ns"></ZoomEndTime>
+      <Cursor1Time time="110.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="233"></NameColumnWidth>
+      <ValueColumnWidth column_width="194"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="25" />
+   <wvobject fp_name="/RGB2HSV_TB/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/rgb_in" type="array">
+      <obj_property name="ElementShortName">rgb_in[23:0]</obj_property>
+      <obj_property name="ObjectShortName">rgb_in[23:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/h" type="array">
+      <obj_property name="ElementShortName">h[23:0]</obj_property>
+      <obj_property name="ObjectShortName">h[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/s" type="array">
+      <obj_property name="ElementShortName">s[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/v" type="array">
+      <obj_property name="ElementShortName">v[7:0]</obj_property>
+      <obj_property name="ObjectShortName">v[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/data_valid" type="logic">
+      <obj_property name="ElementShortName">data_valid</obj_property>
+      <obj_property name="ObjectShortName">data_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/n_core_busy" type="logic">
+      <obj_property name="ElementShortName">n_core_busy</obj_property>
+      <obj_property name="ObjectShortName">n_core_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/data_out_ready" type="logic">
+      <obj_property name="ElementShortName">data_out_ready</obj_property>
+      <obj_property name="ObjectShortName">data_out_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_min_max_inst/r" type="array">
+      <obj_property name="ElementShortName">r[7:0]</obj_property>
+      <obj_property name="ObjectShortName">r[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_min_max_inst/g" type="array">
+      <obj_property name="ElementShortName">g[7:0]</obj_property>
+      <obj_property name="ObjectShortName">g[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_min_max_inst/b" type="array">
+      <obj_property name="ElementShortName">b[7:0]</obj_property>
+      <obj_property name="ObjectShortName">b[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_min_max_inst/min" type="array">
+      <obj_property name="ElementShortName">min[7:0]</obj_property>
+      <obj_property name="ObjectShortName">min[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_min_max_inst/max" type="array">
+      <obj_property name="ElementShortName">max[7:0]</obj_property>
+      <obj_property name="ObjectShortName">max[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_min_max_inst/mid" type="array">
+      <obj_property name="ElementShortName">mid[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mid[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_min_max_inst/diff" type="array">
+      <obj_property name="ElementShortName">diff[7:0]</obj_property>
+      <obj_property name="ObjectShortName">diff[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/prog_counter" type="array">
+      <obj_property name="ElementShortName">prog_counter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">prog_counter[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_s_inst/delta" type="array">
+      <obj_property name="ElementShortName">delta[7:0]</obj_property>
+      <obj_property name="ObjectShortName">delta[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_s_inst/v" type="array">
+      <obj_property name="ElementShortName">v[7:0]</obj_property>
+      <obj_property name="ObjectShortName">v[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_s_inst/inverse_ram_data" type="array">
+      <obj_property name="ElementShortName">inverse_ram_data[17:0]</obj_property>
+      <obj_property name="ObjectShortName">inverse_ram_data[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_s_inst/multiplier/A" type="array">
+      <obj_property name="ElementShortName">A[23:0]</obj_property>
+      <obj_property name="ObjectShortName">A[23:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_s_inst/multiplier/B" type="array">
+      <obj_property name="ElementShortName">B[17:0]</obj_property>
+      <obj_property name="ObjectShortName">B[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_s_inst/multiplier/P" type="array">
+      <obj_property name="ElementShortName">P[41:0]</obj_property>
+      <obj_property name="ObjectShortName">P[41:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_s_inst/stage_3_mult_out" type="array">
+      <obj_property name="ElementShortName">stage_3_mult_out[41:0]</obj_property>
+      <obj_property name="ObjectShortName">stage_3_mult_out[41:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/RGB2HSV_TB/TOP/calculate_s_inst/s" type="array">
+      <obj_property name="ElementShortName">s[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s[15:0]</obj_property>
+   </wvobject>
+</wave_config>
