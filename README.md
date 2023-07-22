@@ -1,4 +1,4 @@
-#Open Image Processor
+# Open Image Processor
 An open-source, multi-core image processor capable of real-time video and image processing. It is implemented using logisim evolution, Python, C++, Vivado, VHDL, Verilog, and SystemVerilog.
 
 ## Structure
