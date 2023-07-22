@@ -31,4 +31,5 @@ This is an example output using the **fast_image_edditor** python program, imple
 
 **Processed Image:**
 
-![Processed Image](https://imgur.com/a/E9Fj7eH.png)
+![Processed Image](https://imgur.com/z2iWIP8.png)
+
