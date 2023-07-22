@@ -13,9 +13,9 @@ The processing cores currently perform a simple RGB-HSV-RGB passthrough. DSP cor
 
 The processing cores have 2 primary inputs (RGB in and Data Valid) and 4 primary outputs (RGB OUT, rgb2hsv_data_ready, n_core_busy, hsv2rgb_data_ready). When a pixel is sent to the core, data valid must be pulsed high at the same time for exactly one clock cycle. Once a pixel is sent to the core, the n_core_busy signal will be driven low (This is an active low signal). The data valid pulse will propagate through the core with the pixel and after 13 clock cycles, the pixel will be sent from the RGB2HSV core to the HSV2RGB core. At this time, n_core_busy will go high, signifying that it is free to receive a new pixel. The n_core_busy signals of all cores are connected to a priority encoder. The output of this encoder is then connected to the DMUX select input. A similar scheme is used for the output MUX. When a pixel has finished processing, the hsv2rgb_data_ready signal will go high. This signal is sent to another priority encoder with its output connected to the MUX select signal. The output of the mux feeds into the output fifo which handles the clk domain crossing. 
 
-**FPGA Implementation:**
+**FPGA Implementation (Blue - 15 Processor Cores, Red - HDMI-RGB, Orange - RGB-HDMI):**
 
-![(Blue - 15 Processor Cores, Red - HDMI-RGB, Orange - RGB-HDMI)](https://imgur.com/8mgcja6.png)
+![(Core)](https://imgur.com/8mgcja6.png)
 
 
 ## Future Work
