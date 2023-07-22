@@ -3,10 +3,15 @@ An open-source, multi-core image processor capable of real-time video and image 
 
 ## Structure
 **Old Designs:** This folder contains early designs of the image processing core developed in logisim.
+  
 **Processor Verification Programs:** This folder contains three test programs:
-**C++ Program:** Offers a fast accuracy test for the integer-based RGB-HSV and HSV-RGB conversion algorithm used in the image processor cores. Detailed functionality in the **integer_based_rgb2hsv** Python program, but faster in C++.
-**Python Programs:** The **fast_image_editor** provides a live image editing window with RGB and HSV sliders, used for quality and functionality testing. The **integer_based_rgb2hsv** script includes live image editing, color accuracy testing, single-color conversions, and more.
-**Vivado Project & FPGA Implementation:** The full project is found in Vivado/IMP, built in Vivado 2022.1 and synthesized for an Artix-7 35T FPGA on the Alynx AX7035 board. In the near future, expect implementation on the Artix Duo FPGA board and Kintex/Zynq FPGA's. Current power consumption is estimated at ~0.8W at 1680x1050p 60FPS with 15 Cores.
+  
+-  **C++ Program:** Offers a fast accuracy test for the integer-based RGB-HSV and HSV-RGB conversion algorithm used in the image processor cores. Detailed functionality in the **integer_based_rgb2hsv** Python program, but faster in C++.
+  
+-  **Python Programs:** The **fast_image_editor** provides a live image editing window with RGB and HSV sliders, used for quality and functionality testing. The **integer_based_rgb2hsv** script includes live image editing, color accuracy testing, single-color conversions, and more.
+
+**Vivado Project & FPGA Implementation:** 
+- The full project is found in Vivado/IMP, built in Vivado 2022.1 and synthesized for an Artix-7 35T FPGA on the Alynx AX7035 board. In the near future, expect implementation on the Artix Duo FPGA board and Kintex/Zynq FPGA's. Current power consumption is estimated at ~0.8W at 1680x1050p 60FPS with 15 Cores.
 
 ## Architecture
 The processing cores currently perform a simple RGB-HSV-RGB passthrough. DSP cores will be added to provide RGB and HSV adjustment. With the RGB and HSV adjustment included, upto 10 Cores can be implemented on the Artix-7 35T. This is purely limited by the number of DSP cores. A total of 9 DSP's are used per core, 3 in the RGB-HSV conversion, 3 in the HSV-RGB conversion, 1 for the RGB adjustment, and 2 for the HSV adjustment. The cores are linked using a simple combinational logic-based arbiter. The arbiter consists of a dual clock input FIFO, input DMUX, core priority/availability encoder, output MUX and output dual clock FIFO. 
@@ -17,6 +22,9 @@ The processing cores have 2 primary inputs (RGB in and Data Valid) and 4 primary
 
 ![(Core)](https://imgur.com/8mgcja6.png)
 
+## Performance: 
+- Each core takes 13 clock cycles to process a pixel. At 250Mhz with 15 cores, a theoretical total throughput of 288.46 Million Pixels/second is possible. (~19.2MP/s/core)
+- Adding the RGB and HSV ALU's will increase the cycle count to ~17 cycles, resulting in a theoretical total throughput of 147.05 Million Pixels/second (~14.7MP/s/core, 5 cores lost due to an increase in DSP usage)
 
 ## Future Work
 - Add RGB/HSV adjustment cores using DSP processors, 32-bit registers will be used for control data
@@ -28,7 +36,7 @@ The processing cores have 2 primary inputs (RGB in and Data Valid) and 4 primary
 
 ## Example Outputs:
 
-This is an example output using the **fast_image_edditor** python program, implementing the integer conversion algorithm.
+This is an example output using the integer conversion algorithm implemented in the **fast_image_edditor** python program.
 
 **Original Image:**
 
