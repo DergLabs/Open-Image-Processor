@@ -25,7 +25,7 @@ The processing cores have 2 primary inputs (RGB in and Data Valid) and 4 primary
 ## Performance: 
 - Each core takes 13 clock cycles to process a pixel. At 250Mhz with 15 cores, a theoretical total throughput of 288.46 Million Pixels/second is possible. (~19.2MP/s/core)
 - Adding the RGB and HSV ALU's will increase the cycle count to ~17 cycles, resulting in a theoretical total throughput of 147.05 Million Pixels/second (~14.7MP/s/core, 5 cores lost due to an increase in DSP usage)
-- A Ryzen 9 3900X takes 0.83s to process 16.7 million pixels at 4Ghz (Measured using the C++ accuracy test program, which also times execution time). A rough estimation for the power draw is in the 10's of watts. In comparison, at 250Mhz, 10 OIP cores can process 16.7 million pixels in ~0.113s while consuming ~1W of power. 
+- A Ryzen 9 3900X takes 0.83s to process 16.7 million pixels at 4Ghz (Measured using the C++ accuracy test program, which also records execution time). A rough estimation for the power draw is in the range of 10's of watts. In comparison, at 250Mhz, 10 OIP cores can process 16.7 million pixels in ~0.113s while consuming ~1W of power. 
 
 ## Future Work
 - Add RGB/HSV adjustment cores using DSP processors, 32-bit registers will be used for control data
