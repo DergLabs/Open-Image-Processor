@@ -1,57 +1,34 @@
-# PLU
-Pixel Logic Unit simulation used to simple image processing applications.
+#Open Image Processor
+An open-source, multi-core image processor capable of real-time video and image processing. It is implemented using logisim evolution, Python, C++, Vivado, VHDL, Verilog, and SystemVerilog.
 
-**Overview**
+## Structure
+**Old Designs:** This folder contains early designs of the image processing core developed in logisim.
+**Processor Verification Programs:** This folder contains three test programs:
+**C++ Program:** Offers a fast accuracy test for the integer-based RGB-HSV and HSV-RGB conversion algorithm used in the image processor cores. Detailed functionality in the **integer_based_rgb2hsv** Python program, but faster in C++.
+**Python Programs:** The **fast_image_editor** provides a live image editing window with RGB and HSV sliders, used for quality and functionality testing. The **integer_based_rgb2hsv** script includes live image editing, color accuracy testing, single-color conversions, and more.
+**Vivado Project & FPGA Implementation:** The full project is found in Vivado/IMP, built in Vivado 2022.1 and synthesized for an Artix-7 35T FPGA on the Alynx AX7035 board. In the near future, expect implementation on the Artix Duo FPGA board and Kintex/Zynq FPGA's. Current power consumption is estimated at ~0.8W at 1680x1050p 60FPS with 15 Cores.
 
-This image processor was designed in Logisim Evolution and is intended for implementation on the ArtixDuo FPGA board.
+## Architecture
+The processing cores currently perform a simple RGB-HSV-RGB passthrough. DSP cores will be added to provide RGB and HSV adjustment. With the RGB and HSV adjustment included, upto 10 Cores can be implemented on the Artix-7 35T. This is purely limited by the number of DSP cores. A total of 9 DSP's are used per core, 3 in the RGB-HSV conversion, 3 in the HSV-RGB conversion, 1 for the RGB adjustment, and 2 for the HSV adjustment. The cores are linked using a simple combinational logic-based arbiter. The arbiter consists of a dual clock input FIFO, input DMUX, core priority/availability encoder, output MUX and output dual clock FIFO. 
 
-A sample image png has been provided along with its Hex file generated using my PNG to Hex python script. The two files are titled "Contrast"
+The processing cores have 2 primary inputs (RGB in and Data Valid) and 4 primary outputs (RGB OUT, rgb2hsv_data_ready, n_core_busy, hsv2rgb_data_ready). When a pixel is sent to the core, data valid must be pulsed high at the same time for exactly one clock cycle. Once a pixel is sent to the core, the n_core_busy signal will be driven low (This is an active low signal). The data valid pulse will propagate through the core with the pixel and after 13 clock cycles, the pixel will be sent from the RGB2HSV core to the HSV2RGB core. At this time, n_core_busy will go high, signifying that it is free to receive a new pixel. The n_core_busy signals of all cores are connected to a priority encoder. The output of this encoder is then connected to the DMUX select input. A similar scheme is used for the output MUX. When a pixel has finished processing, the hsv2rgb_data_ready signal will go high. This signal is sent to another priority encoder with its output connected to the MUX select signal. The output of the mux feeds into the output fifo which handles the clk domain crossing. 
 
-The processor architecture is relatively simple, consisting of three 8-bit integer ALU's (one for each color channel). Each ALU can perform Add, Subtract, Multiply, Divide, Bit shift left/right, AND, OR, NOT, NOR, NAND, XOR, XNOR, Passthrough A, and Passthrough B.
+## Future Work
+- Add RGB/HSV adjustment cores using DSP processors, 32-bit registers will be used for control data
+- Fix Hsync/Vsync delays
+- Fix unexpected reset behavior
+- Fix core clock incompatibility (Currently the cores must operate at an integer multiple of pixel clk)
+- Add 1920x1080p 60FPS support. The cores can support this but some issue in the encode/decode logic causes instability
+- Investigate convolution image compression engine & DDR3 Frame buffering
 
-A 32-bit instruction word is used allowing each ALU to perform a unique operation for its respective color channel. Each ALU has two inputs A and B. Input A is designated for the pixel color data to be processed, input B is a control data input used to perform operations on the pixel data and can be any 8-bit data input. 
+## Example Outputs:
 
-The PLU can perform one operation per clock cycle. A minimum of 2 clock cycles are needed for the current configuration due to the registered inputs and outputs. This can be changed by removing the input/output registers allowing for single clock cycle operation. 
-
-The input/output registers allow for multiple operations to be performed per pixel. The current design supports up to 16 operations per pixel. An excel file has been created to assemble 32-bit hex instructions that can be loaded into the instruction ROM. The PNG-To-HEX project can be used to generate hex files that can be loaded into the image ROM. The visual basic functions used in the excel file have also been provided. Macros are required for the excel file to work (A proper C assembler will be developed once the PLU architecture is finalized)
-
-**Logisim Usage:**
-
-The following setup is REQUIRED for anything to happen:
-- The first instruction (LOAD) in the instruction ROM MUST be 0x3F190410 - This loads a pixel into the input registers
-- The last instruction (NEXT) MUST be 0x3F1B0C30 - This sends the loaded pixel into the output register and toggles the pixel clk high, allowing the pixel to be displayed
-- If you do not need 16 instructions, you can use the "NEXT_JUMP" instruction to reset the program counter. 
-- ALL unused instructions between the "LOAD" and "NEXT" instructions must be 0x3F180000 - This is a simple "do nothing" instruction that passes the input to the output with no operations performed. 
-
-The current design is still a work in progress and is continually being updated. The goal for the implemented image processor is as follows: 
-- 16 PLUs are used in parallel to form a single image processing core
-- All 16 PLUs perform the same instruction
-- Multiple image processing cores can be combined in parallel for faster operation. 
-- Current FPGA implementations on an Artix 7 35T (-1 speed grade) result in 350 logic elements per PLU with a maximum clock speed of 166Mhz
-- The final design will implement two cores with a theoretical pixel throughput of: (32-pixel cores x 166Mhz/Core)/(2 cycles x 1 instruction) = 2.656G pixels/s down to (32 x 166)/(2 cycles x 16 instructions) = 166M pixels/s (This is most likely to decrease with additional overhead, memory bandwidth, video bandwidth, etc. So take it with a baseball-sized grain of salt) 
-
-**TODO:**
-
-- Implement pipelined design to improve performance
-- Re-design processor using custom Integer RGB-HSV and HSV-RGB converters (ENORMOUS improvement in capabilities from this)
-- Add custom instruction decode and control data path for easier programming
-- Reduce instruction set
-- Design Pixel distributor to run multiple PLUs in parallel 
-
-**Future Revisions:**
-
-Revision 3 of the PLU is currently being developed. This revision will include a significant architectural change. Currently, the PLU's ALU's cannot operate on each other's output. They can only operate on their own output. Additionally, input B cannot be set to input A. Revision 3 solves these limitations by adding a two-stage mux. The first MUX stage allows for any combination of data input to be sent to inputs A and B of the ALU's. This provides the ability to copy over the incoming Pixel data into the B register for use in later operations. The second MUX stage allows for any color channel to be sent to any ALU. This allows for operations such as R + G + B, R * G + B etc. to be performed on any given pixel. These new instructions provide the ability to do full contrast and vibrance operations. 
-
-Branching has not yet been implemented and may not be implemented at all. The purpose of these cores are to be very fast and lightweight. Adding Branching will significantly increase the complexity and can substantially lower the processing speed. Currently, 2 cycles are needed per operation. However, 3 instructions can be performed in parallel per PLU, vastly reducing the required program size and number of steps. 
-
-**Example Outputs:**
-
-The following output is a result of OR'ing the pixels with some control data and subsequently XOR'ing them with new control data
+This is an example output using the **fast_image_edditor** python program, implementing the integer conversion algorithm.
 
 **Original Image:**
 
-![Original Image](https://imgur.com/zCOxktV.png)
+![Original Image](https://imgur.com/4zXKKuI.png)
 
 **Processed Image:**
 
-![Processed Image](https://imgur.com/xH47eJf.png)
+![Processed Image](https://imgur.com/a/E9Fj7eH.png)
