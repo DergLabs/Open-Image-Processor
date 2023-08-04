@@ -18,7 +18,7 @@ The processing cores currently perform a simple RGB-HSV-RGB passthrough. DSP cor
 
 The processing cores have 2 primary inputs (RGB in and Data Valid) and 4 primary outputs (RGB OUT, rgb2hsv_data_ready, n_core_busy, hsv2rgb_data_ready). When a pixel is sent to the core, data valid must be pulsed high at the same time. Once a pixel is sent to the core, the n_core_busy signal will be driven low (This is an active low signal). When data on the ISP core output is valid, the pixel_ready_out signal will go high. The current implementation does not need the pixel ready out signal since only one ISP core is used and operates at the pixel clock, it can be inferred that there will always be a new valid pixel on each clock cycle. 
 
-**FPGA Implementation (Blue - single ISP Processor Cores, Red - HDMI to RGB, Green - RGB to HDMI, Light Turquoise - Internal Logic Analyzer):**
+**FPGA Implementation (Blue - Single ISP Processor Core, Red - HDMI to RGB, Green - RGB to HDMI, Light Turquoise - Internal Logic Analyzer):**
 
 ![(Core)](https://imgur.com/20avd61.png)
 
