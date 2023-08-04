@@ -55,17 +55,14 @@ architecture Behavioral of generate_rgb_out is
 begin
 
     pixel_ready_logic : process(clk)
-    variable isHigh : std_logic;
     begin
         if rising_edge(clk) then
             if (rst = '1') then
                 pixel_ready_out <= '0';
             else
-                if (pixel_ready_in = '0') OR (isHigh = '1') then
-                    isHigh := '0';
+                if (pixel_ready_in = '0') then
                     pixel_ready_out <= '0';
                 elsif pixel_ready_in = '1' then
-                    isHigh := '1';
                     pixel_ready_out <= '1';
                 end if;
             end if;

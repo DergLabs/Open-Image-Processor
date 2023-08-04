@@ -44,6 +44,20 @@ entity back_calculate_i is
 end back_calculate_i;
 
 architecture Behavioral of back_calculate_i is
+    -- Components
+    component vector_delay_line
+        generic (
+            WIDTH : integer;
+            DEPTH : integer
+        );
+        PORT(
+            clk : in std_logic;
+            reset : in std_logic;
+            data_in : in std_logic_vector;
+            data_out : out std_logic_vector
+        ); 
+    end component;
+
     signal h_reg : STD_LOGIC_VECTOR(23 downto 0);
     signal i_reg : STD_LOGIC_VECTOR(2 downto 0);
 begin
@@ -57,19 +71,28 @@ begin
         b"101" when h_reg >= X"04FFFF";
 
 
-
-    register_input_output : process(clk)
+    register_input : process(clk)
     begin
         if rising_edge(clk) then
             if rst = '1' then
-                i <= "000";
                 h_reg <= (others => '0');
             else
-                i <= i_reg;
                 h_reg <= h;
             end if;
         end if;
-    end process register_input_output;
+    end process register_input;
+
+    output_delay_line : vector_delay_line
+    generic map (
+        WIDTH => 3, -- delay line bit width
+        DEPTH => 5 -- Number of delay stages
+    )
+    port map (
+        clk => clk,
+        reset => rst,
+        data_in => i_reg,
+        data_out => i
+    );
 
 
 end Behavioral;

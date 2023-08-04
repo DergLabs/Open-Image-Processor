@@ -1824,7 +1824,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.core_clk" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_COMMON_CLOCK&apos;)) != 0)">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.core_clk" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_COMMON_CLOCK&apos;)) != 0)">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -2091,7 +2091,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.write_clk" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_COMMON_CLOCK&apos;)) = 0)">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.write_clk" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_COMMON_CLOCK&apos;)) = 0)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -2185,7 +2185,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.read_clk" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_COMMON_CLOCK&apos;)) = 0)">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.read_clk" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_COMMON_CLOCK&apos;)) = 0)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -2328,6 +2328,25 @@
   <spirit:model>
     <spirit:views>
       <spirit:view>
+        <spirit:name>xilinx_veriloginstantiationtemplate</spirit:name>
+        <spirit:displayName>Verilog Instantiation Template</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis.template</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_veriloginstantiationtemplate_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Fri Aug 04 05:20:54 UTC 2023</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:5b4243fb</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
         <spirit:name>xilinx_vhdlsynthesis</spirit:name>
         <spirit:displayName>VHDL Synthesis</spirit:displayName>
         <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
@@ -2342,11 +2361,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jul 18 06:52:31 UTC 2023</spirit:value>
+            <spirit:value>Fri Aug 04 05:20:54 UTC 2023</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f8d39252</spirit:value>
+            <spirit:value>9:5b4243fb</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2360,11 +2379,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jul 18 06:52:31 UTC 2023</spirit:value>
+            <spirit:value>Fri Aug 04 05:20:54 UTC 2023</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f8d39252</spirit:value>
+            <spirit:value>9:5b4243fb</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2380,11 +2399,68 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jul 18 06:52:31 UTC 2023</spirit:value>
+            <spirit:value>Fri Aug 04 05:20:54 UTC 2023</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f8d39252</spirit:value>
+            <spirit:value>9:5b4243fb</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:modelName>fifo_generator_v13_2_7</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Fri Aug 04 05:20:54 UTC 2023</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:ca9fec9f</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_verilogsimulationwrapper</spirit:name>
+        <spirit:displayName>Verilog Simulation Wrapper</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation.wrapper</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>fifo_generator_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogsimulationwrapper_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Fri Aug 04 05:20:54 UTC 2023</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:ca9fec9f</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_versioninformation</spirit:name>
+        <spirit:displayName>Version Information</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:docs.versioninfo</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_versioninformation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Fri Aug 04 05:20:54 UTC 2023</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:5b4243fb</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2398,11 +2474,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jul 18 06:54:03 UTC 2023</spirit:value>
+            <spirit:value>Fri Aug 04 05:22:15 UTC 2023</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f8d39252</spirit:value>
+            <spirit:value>9:5b4243fb</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2416,6 +2492,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2438,6 +2515,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2460,6 +2538,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2469,7 +2548,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.clk" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_COMMON_CLOCK&apos;)) != 0)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.clk" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_COMMON_CLOCK&apos;)) != 0)">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2482,6 +2561,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2491,7 +2571,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.rst" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_RST&apos;)) = 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_ENABLE_RST_SYNC&apos;)) = 1)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.rst" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_RST&apos;)) = 1 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_ENABLE_RST_SYNC&apos;)) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2504,6 +2584,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2513,7 +2594,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.srst" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_SRST&apos;)) != 0)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.srst" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_SRST&apos;)) != 0)">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2526,6 +2607,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2535,7 +2617,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.wr_clk" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_COMMON_CLOCK&apos;)) = 0)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.wr_clk" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_COMMON_CLOCK&apos;)) = 0)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2548,6 +2630,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2570,6 +2653,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2579,7 +2663,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.rd_clk" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_COMMON_CLOCK&apos;)) = 0)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.rd_clk" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0 and spirit:decode(id(&apos;MODELPARAM_VALUE.C_COMMON_CLOCK&apos;)) = 0)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2592,6 +2676,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2618,6 +2703,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2640,6 +2726,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2662,6 +2749,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2688,6 +2776,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2714,6 +2803,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2740,6 +2830,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2766,6 +2857,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2792,6 +2884,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2818,6 +2911,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2840,6 +2934,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2862,6 +2957,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2884,6 +2980,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2906,6 +3003,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2932,6 +3030,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2954,6 +3053,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2976,6 +3076,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -2998,6 +3099,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3020,6 +3122,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3042,6 +3145,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3064,6 +3168,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3086,6 +3191,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3108,6 +3214,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3127,13 +3234,14 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DATA_COUNT_WIDTH&apos;)) - 1)">3</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DATA_COUNT_WIDTH&apos;)) - 1)">4</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3153,13 +3261,14 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_RD_DATA_COUNT_WIDTH&apos;))-1">3</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_RD_DATA_COUNT_WIDTH&apos;))-1">4</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3179,13 +3288,14 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_WR_DATA_COUNT_WIDTH&apos;))-1">3</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_WR_DATA_COUNT_WIDTH&apos;))-1">4</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3208,6 +3318,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3230,6 +3341,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3252,6 +3364,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3274,6 +3387,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3296,6 +3410,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3305,7 +3420,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.wr_rst_busy" xilinx:dependency="((((spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexu&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;kintexu&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;artixu&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;zynquplus&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexuplus&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;kintexuplus&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;zynquplusrfsoc&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexuplushbm&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexuplus58g&apos;) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_SRST&apos;)) = 1 or spirit:decode(id(&apos;MODELPARAM_VALUE.C_MEMORY_TYPE&apos;)) = 4)) or spirit:decode(id(&apos;MODELPARAM_VALUE.C_EN_SAFETY_CKT&apos;))) = 1)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.wr_rst_busy" xilinx:dependency="((((spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexu&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;kintexu&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;artixu&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;zynquplus&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexuplus&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;kintexuplus&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;zynquplusrfsoc&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexuplushbm&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexuplus58g&apos;) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_SRST&apos;)) = 1 or spirit:decode(id(&apos;MODELPARAM_VALUE.C_MEMORY_TYPE&apos;)) = 4)) or spirit:decode(id(&apos;MODELPARAM_VALUE.C_EN_SAFETY_CKT&apos;))) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3318,6 +3433,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3327,7 +3443,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.rd_rst_busy" xilinx:dependency="((((spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexu&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;kintexu&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;artixu&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;zynquplus&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexuplus&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;kintexuplus&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;zynquplusrfsoc&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexuplushbm&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexuplus58g&apos;) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_SRST&apos;)) = 1 or spirit:decode(id(&apos;MODELPARAM_VALUE.C_MEMORY_TYPE&apos;)) = 4)) or spirit:decode(id(&apos;MODELPARAM_VALUE.C_EN_SAFETY_CKT&apos;))) = 1)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.rd_rst_busy" xilinx:dependency="((((spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexu&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;kintexu&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;artixu&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;zynquplus&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexuplus&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;kintexuplus&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;zynquplusrfsoc&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexuplushbm&apos; or spirit:decode(id(&apos;MODELPARAM_VALUE.C_FAMILY&apos;)) = &apos;virtexuplus58g&apos;) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) = 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_SRST&apos;)) = 1 or spirit:decode(id(&apos;MODELPARAM_VALUE.C_MEMORY_TYPE&apos;)) = 4)) or spirit:decode(id(&apos;MODELPARAM_VALUE.C_EN_SAFETY_CKT&apos;))) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3340,6 +3456,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3362,6 +3479,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3384,6 +3502,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3406,6 +3525,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3428,6 +3548,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3454,6 +3575,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3480,6 +3602,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3506,6 +3629,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3532,6 +3656,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3558,6 +3683,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3584,6 +3710,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3610,6 +3737,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3636,6 +3764,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3662,6 +3791,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3688,6 +3818,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3714,6 +3845,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3736,6 +3868,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3758,6 +3891,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3784,6 +3918,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3810,6 +3945,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3836,6 +3972,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3858,6 +3995,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3884,6 +4022,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3906,6 +4045,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3928,6 +4068,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3954,6 +4095,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -3980,6 +4122,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4006,6 +4149,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4028,6 +4172,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4050,6 +4195,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4076,6 +4222,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4102,6 +4249,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4128,6 +4276,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4154,6 +4303,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4180,6 +4330,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4206,6 +4357,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4232,6 +4384,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4258,6 +4411,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4284,6 +4438,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4310,6 +4465,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4336,6 +4492,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4358,6 +4515,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4380,6 +4538,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4406,6 +4565,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4432,6 +4592,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4458,6 +4619,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4480,6 +4642,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4506,6 +4669,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4528,6 +4692,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4550,6 +4715,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4576,6 +4742,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4602,6 +4769,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4628,6 +4796,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4650,6 +4819,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4672,6 +4842,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4698,6 +4869,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4724,6 +4896,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4750,6 +4923,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4776,6 +4950,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4802,6 +4977,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4828,6 +5004,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4854,6 +5031,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4880,6 +5058,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4906,6 +5085,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4932,6 +5112,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4958,6 +5139,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -4980,6 +5162,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5002,6 +5185,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5028,6 +5212,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5054,6 +5239,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5080,6 +5266,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5102,6 +5289,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5128,6 +5316,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5150,6 +5339,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5172,6 +5362,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5198,6 +5389,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5224,6 +5416,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5250,6 +5443,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5276,6 +5470,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5302,6 +5497,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5328,6 +5524,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5354,6 +5551,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5380,6 +5578,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5406,6 +5605,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5432,6 +5632,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5458,6 +5659,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5480,6 +5682,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5502,6 +5705,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5528,6 +5732,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5554,6 +5759,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5580,6 +5786,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5602,6 +5809,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5628,6 +5836,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5650,6 +5859,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5672,6 +5882,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5694,6 +5905,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5716,6 +5928,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5742,6 +5955,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5768,6 +5982,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5794,6 +6009,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5816,6 +6032,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5842,6 +6059,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5868,6 +6086,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5894,6 +6113,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5916,6 +6136,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5938,6 +6159,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5964,6 +6186,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -5990,6 +6213,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6016,6 +6240,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6038,6 +6263,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6064,6 +6290,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6090,6 +6317,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6116,6 +6344,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6138,6 +6367,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6160,6 +6390,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6186,6 +6417,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6212,6 +6444,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6238,6 +6471,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6264,6 +6498,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6290,6 +6525,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6312,6 +6548,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6334,6 +6571,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6356,6 +6594,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6378,6 +6617,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6400,6 +6640,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>STD_LOGIC</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6422,6 +6663,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>STD_LOGIC</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6444,6 +6686,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6466,6 +6709,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6492,6 +6736,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6518,6 +6763,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6544,6 +6790,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6570,6 +6817,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6596,6 +6844,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6618,6 +6867,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6640,6 +6890,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6662,6 +6913,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6684,6 +6936,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6706,6 +6959,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>STD_LOGIC</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6728,6 +6982,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>STD_LOGIC</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6750,6 +7005,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6772,6 +7028,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6798,6 +7055,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6824,6 +7082,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6850,6 +7109,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6876,6 +7136,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6902,6 +7163,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6924,6 +7186,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6946,6 +7209,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6968,6 +7232,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -6990,6 +7255,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7012,6 +7278,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>STD_LOGIC</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7034,6 +7301,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>STD_LOGIC</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7056,6 +7324,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7078,6 +7347,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7104,6 +7374,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7130,6 +7401,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7156,6 +7428,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7182,6 +7455,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7208,6 +7482,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7230,6 +7505,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7252,6 +7528,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7274,6 +7551,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7296,6 +7574,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7318,6 +7597,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>STD_LOGIC</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7340,6 +7620,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>STD_LOGIC</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7362,6 +7643,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7384,6 +7666,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7410,6 +7693,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7436,6 +7720,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7462,6 +7747,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7488,6 +7774,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7514,6 +7801,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7536,6 +7824,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7558,6 +7847,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7580,6 +7870,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7602,6 +7893,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7624,6 +7916,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>STD_LOGIC</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7646,6 +7939,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>STD_LOGIC</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7668,6 +7962,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7690,6 +7985,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7716,6 +8012,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7742,6 +8039,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7768,6 +8066,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7794,6 +8093,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7820,6 +8120,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7842,6 +8143,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7864,6 +8166,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7886,6 +8189,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7908,6 +8212,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7930,6 +8235,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>STD_LOGIC</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7952,6 +8258,7 @@
             <spirit:wireTypeDef>
               <spirit:typeName>STD_LOGIC</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
@@ -7970,7 +8277,7 @@
     <spirit:modelParameters>
       <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
         <spirit:name>C_COMMON_CLOCK</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COMMON_CLOCK">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COMMON_CLOCK">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_SELECT_XPM</spirit:name>
@@ -7982,7 +8289,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DATA_COUNT_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DATA_COUNT_WIDTH">4</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DATA_COUNT_WIDTH">5</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_DEFAULT_VALUE</spirit:name>
@@ -8010,7 +8317,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_FULL_FLAGS_RST_VAL</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_FULL_FLAGS_RST_VAL">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_FULL_FLAGS_RST_VAL">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_ALMOST_EMPTY</spirit:name>
@@ -8050,11 +8357,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_RST</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_RST">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_RST">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_SRST</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_SRST">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_SRST">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_UNDERFLOW</spirit:name>
@@ -8078,7 +8385,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_IMPLEMENTATION_TYPE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_IMPLEMENTATION_TYPE">2</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_IMPLEMENTATION_TYPE">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_INIT_WR_PNTR_VAL</spirit:name>
@@ -8138,7 +8445,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_RD_DATA_COUNT_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_RD_DATA_COUNT_WIDTH">4</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_RD_DATA_COUNT_WIDTH">5</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_RD_DEPTH</spirit:name>
@@ -8182,7 +8489,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_USE_FWFT_DATA_COUNT</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_USE_FWFT_DATA_COUNT">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_USE_FWFT_DATA_COUNT">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_VALID_LOW</spirit:name>
@@ -8194,7 +8501,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_WR_DATA_COUNT_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_WR_DATA_COUNT_WIDTH">4</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_WR_DATA_COUNT_WIDTH">5</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_WR_DEPTH</spirit:name>
@@ -8222,7 +8529,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_EN_SAFETY_CKT</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_EN_SAFETY_CKT">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_EN_SAFETY_CKT">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_ERROR_INJECTION_TYPE</spirit:name>
@@ -8846,10 +9153,6 @@
       <spirit:enumeration spirit:text="Active Low">Active_Low</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
-      <spirit:name>choice_pairs_26bda4ef</spirit:name>
-      <spirit:enumeration spirit:text="Asynchronous Reset">Asynchronous_Reset</spirit:enumeration>
-    </spirit:choice>
-    <spirit:choice>
       <spirit:name>choice_pairs_2d5d8925</spirit:name>
       <spirit:enumeration spirit:text="Common Clock Block RAM">Common_Clock_Block_RAM</spirit:enumeration>
       <spirit:enumeration spirit:text="Common Clock Distributed RAM">Common_Clock_Distributed_RAM</spirit:enumeration>
@@ -8917,6 +9220,11 @@
       <spirit:enumeration spirit:text="Light Weight">Light_Weight</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
+      <spirit:name>choice_pairs_ae1178b5</spirit:name>
+      <spirit:enumeration spirit:text="Asynchronous Reset">Asynchronous_Reset</spirit:enumeration>
+      <spirit:enumeration spirit:text="Synchronous Reset">Synchronous_Reset</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
       <spirit:name>choice_pairs_b3e9d19b</spirit:name>
       <spirit:enumeration spirit:text="FIFO">FIFO</spirit:enumeration>
       <spirit:enumeration spirit:text="Register Slice">Register_Slice</spirit:enumeration>
@@ -8953,6 +9261,17 @@
   </spirit:choices>
   <spirit:fileSets>
     <spirit:fileSet>
+      <spirit:name>xilinx_veriloginstantiationtemplate_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>fifo_generator_0.vho</spirit:name>
+        <spirit:userFileType>vhdlTemplate</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>fifo_generator_0.veo</spirit:name>
+        <spirit:userFileType>verilogTemplate</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_xilinx_com_ip_blk_mem_gen_8_4__ref_view_fileset</spirit:name>
       <spirit:file>
         <spirit:name>hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd</spirit:name>
@@ -8972,14 +9291,6 @@
       <spirit:file>
         <spirit:name>fifo_generator_0.xdc</spirit:name>
         <spirit:userFileType>xdc</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>fifo_generator_0_clocks.xdc</spirit:name>
-        <spirit:userFileType>xdc</spirit:userFileType>
-        <spirit:define>
-          <spirit:name>processing_order</spirit:name>
-          <spirit:value>late</spirit:value>
-        </spirit:define>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/fifo_generator_v13_2_vhsyn_rfs.vhd</spirit:name>
@@ -9003,6 +9314,43 @@
         <spirit:name>synth/fifo_generator_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>simulation/fifo_generator_vlog_beh.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>fifo_generator_v13_2_7</spirit:logicalName>
+        <spirit:exportedName>fifo_generator_vlog_beh</spirit:exportedName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/fifo_generator_v13_2_rfs.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>fifo_generator_v13_2_7</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/fifo_generator_v13_2_rfs.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+        <spirit:logicalName>fifo_generator_v13_2_7</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogsimulationwrapper_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>sim/fifo_generator_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_versioninformation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>doc/fifo_generator_v13_2_changelog.txt</spirit:name>
+        <spirit:userFileType>text</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -9057,7 +9405,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Fifo_Implementation</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Fifo_Implementation" spirit:choiceRef="choice_pairs_2d5d8925" spirit:order="2">Independent_Clocks_Block_RAM</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Fifo_Implementation" spirit:choiceRef="choice_pairs_2d5d8925" spirit:order="2">Common_Clock_Block_RAM</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -9204,29 +9552,29 @@
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Enable_Reset_Synchronization">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Enable_Reset_Synchronization">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Reset_Type</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Reset_Type" spirit:choiceRef="choice_pairs_26bda4ef" spirit:order="14">Asynchronous_Reset</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Reset_Type" spirit:choiceRef="choice_pairs_ae1178b5" spirit:order="14">Synchronous_Reset</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Reset_Type">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Reset_Type">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Full_Flags_Reset_Value</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Full_Flags_Reset_Value" spirit:choiceRef="choice_list_8af5a703" spirit:order="15">1</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Full_Flags_Reset_Value" spirit:choiceRef="choice_list_8af5a703" spirit:order="15">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Full_Flags_Reset_Value">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Full_Flags_Reset_Value">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -9409,11 +9757,11 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Use_Extra_Logic</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Use_Extra_Logic" spirit:order="30">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Use_Extra_Logic" spirit:order="30">true</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Use_Extra_Logic">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Use_Extra_Logic">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -9424,14 +9772,14 @@
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Data_Count">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Data_Count">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Data_Count_Width</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Data_Count_Width" spirit:order="32" spirit:minimum="1" spirit:maximum="4" spirit:rangeType="long">4</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Data_Count_Width" spirit:order="32" spirit:minimum="1" spirit:maximum="5" spirit:rangeType="long">5</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -9446,14 +9794,14 @@
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Write_Data_Count">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Write_Data_Count">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Write_Data_Count_Width</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Write_Data_Count_Width" spirit:order="34" spirit:minimum="1" spirit:maximum="4" spirit:rangeType="long">4</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Write_Data_Count_Width" spirit:order="34" spirit:minimum="1" spirit:maximum="5" spirit:rangeType="long">5</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -9468,14 +9816,14 @@
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Read_Data_Count">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Read_Data_Count">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Read_Data_Count_Width</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Read_Data_Count_Width" spirit:order="36" spirit:minimum="1" spirit:maximum="4" spirit:rangeType="long">4</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Read_Data_Count_Width" spirit:order="36" spirit:minimum="1" spirit:maximum="5" spirit:rangeType="long">5</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -9490,7 +9838,7 @@
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Disable_Timing_Violations">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Disable_Timing_Violations">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -9530,7 +9878,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Full_Threshold_Assert_Value</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Full_Threshold_Assert_Value" spirit:order="41" spirit:minimum="13" spirit:maximum="15" spirit:rangeType="long">15</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Full_Threshold_Assert_Value" spirit:order="41" spirit:minimum="6" spirit:maximum="15" spirit:rangeType="long">15</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -9541,7 +9889,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Full_Threshold_Negate_Value</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Full_Threshold_Negate_Value" spirit:order="42" spirit:minimum="12" spirit:maximum="14" spirit:rangeType="long">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Full_Threshold_Negate_Value" spirit:order="42" spirit:minimum="5" spirit:maximum="14" spirit:rangeType="long">14</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -9563,7 +9911,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Empty_Threshold_Assert_Value</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Empty_Threshold_Assert_Value" spirit:order="44" spirit:minimum="4" spirit:maximum="13" spirit:rangeType="long">4</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Empty_Threshold_Assert_Value" spirit:order="44" spirit:minimum="4" spirit:maximum="14" spirit:rangeType="long">4</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -9574,7 +9922,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Empty_Threshold_Negate_Value</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Empty_Threshold_Negate_Value" spirit:order="45" spirit:minimum="5" spirit:maximum="14" spirit:rangeType="long">5</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Empty_Threshold_Negate_Value" spirit:order="45" spirit:minimum="5" spirit:maximum="15" spirit:rangeType="long">5</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -10919,11 +11267,11 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Enable_Safety_Circuit</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Enable_Safety_Circuit" spirit:order="180">true</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Enable_Safety_Circuit" spirit:order="180">false</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Enable_Safety_Circuit">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Enable_Safety_Circuit">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -10997,6 +11345,7 @@
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Read_Data_Count_Width" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Reset_Type" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Use_Embedded_Registers" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Use_Extra_Logic" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Valid_Flag" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Write_Data_Count_Width" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.synchronization_stages" xilinx:valueSource="user"/>

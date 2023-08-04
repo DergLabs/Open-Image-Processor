@@ -46,19 +46,16 @@ begin
     
 
     core_busy_logic : process(clk)
-    variable isHigh : std_logic := '0';
     begin   
         if rising_edge(clk) then
             if (rst = '1') then
                 n_core_busy <= '1';
                 pixel_ready_hsv <= '0';
             else
-                if ((data_input_valid = '1' AND pixel_ready = '0') OR (isHigh = '1')) then
-                    isHigh := '0';
+                if ((data_input_valid = '1' AND pixel_ready = '0')) then
                     n_core_busy <= '0';
                     pixel_ready_hsv <= '0';
-                elsif (pixel_ready = '1' AND data_input_valid = '0') then
-                    isHigh := '1';
+                elsif (pixel_ready = '1') then
                     n_core_busy <= '1';
                     pixel_ready_hsv <= '1';
                 end if;

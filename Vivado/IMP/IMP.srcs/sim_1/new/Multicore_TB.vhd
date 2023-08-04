@@ -39,7 +39,7 @@ architecture sim of Multicore_TB is
     constant pixel_clock : integer := 74250000; -- pixel clk in Mhz
     constant pxclk_period : time := 1 sec / pixel_clock;
 
-    constant clock : integer := 2*pixel_clock; -- core clk in Mhz -- !!!fix me!!! Unable to run at clk speeds that are not a multiple of pixel clk
+    constant clock : integer := pixel_clock; -- core clk in Mhz -- !!!fix me!!! Unable to run at clk speeds that are not a multiple of pixel clk
     constant ClkPeriod : time := 1 sec / clock;
 
     signal clk : std_logic := '1';

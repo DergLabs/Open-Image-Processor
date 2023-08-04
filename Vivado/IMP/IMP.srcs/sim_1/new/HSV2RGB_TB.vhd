@@ -85,24 +85,64 @@ begin
     end process;
 
     process is
-    variable delay_ns : integer := 140;
+    variable wait_rst : boolean := TRUE;
+    variable delay_ns : integer := 10;
     begin
         rst <= '1';
+        wait_rst := FALSE;
         pixel_ready_in <= '0';
         h <= X"000000";
         s <= X"0000";
         v <= X"00";
-        wait for 100 ns;
+        wait for 50 ns;
 
         rst <= '0';
+        wait_rst := TRUE; 
         pixel_ready_in <= '1';
         h <= X"038019";
-        s <= X"48C7";
+        s <= X"00FF";
         v <= X"EF";
-        wait for 10 ns;
-        pixel_ready_in <= '0';
         wait for delay_ns * ns;
 
-    end process;
+        pixel_ready_in <= '1';
+        h <= X"000000";
+        s <= X"fffe";
+        v <= X"ff";
+        wait for delay_ns * ns;
 
+        h <= X"050000";
+        s <= X"d9aa";
+        v <= X"ff";
+        wait for delay_ns * ns;
+
+        h <= X"03ab87";
+        s <= X"f0c0";
+        v <= X"79";
+        wait for delay_ns * ns;
+
+        h <= X"02190c";
+        s <= X"15df";
+        v <= X"98";
+        wait for delay_ns * ns;
+
+        h <= X"021000";
+        s <= X"c825";
+        v <= X"bb";
+        wait for delay_ns * ns;
+
+        h <= X"0118f1";
+        s <= X"edec";
+        v <= X"EF";
+        wait for delay_ns * ns;
+
+        h <= X"02e9f4";
+        s <= X"edec";
+        v <= X"ff";
+        wait for delay_ns * ns;
+
+        if (wait_rst) then
+            wait for 300 ns;
+        end if;
+
+    end process;
 end sim;

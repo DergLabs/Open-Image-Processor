@@ -44,19 +44,12 @@ module RGB2HSV_Top(
     wire [7:0] mid;
     wire [7:0] delta;
     wire [2:0] index;
-    
-    // internal signal Buffer registers 
-    reg [7:0] min_r;
-    reg [7:0] max_r;
-    reg [7:0] mid_r;
-    reg [7:0] delta_r;
-    reg [2:0] index_r;
 
-    reg [7:0] min_r_2;
-    reg [7:0] max_r_2;
-    reg [7:0] mid_r_2;
-    reg [7:0] delta_r_2;
-    reg [2:0] index_r_2;
+    wire [7:0] min_delayed;
+    wire [7:0] mid_delayed;
+    wire [7:0] max_delayed;
+    wire [7:0] delta_delayed;
+    wire [2:0] index_delayed;
 
 
     // Ram wires/buffer registers
@@ -64,11 +57,19 @@ module RGB2HSV_Top(
     wire [17:0] doutb;
 
     wire Q;
-    c_shift_ram_17 data_valid_delay_rgb2hsv (
+
+    /*c_shift_ram_17 data_valid_delay_rgb2hsv (
       .D(data_valid),         // input wire [0 : 0] D
       .CLK(clk),              // input wire CLK
       .SCLR(rst),             // input wire SCLR
       .Q(Q)      // output wire [0 : 0] Q
+    );*/
+
+    vector_delay_line #(1, 14) data_valid_delay( //1 bit, 19 stages -- Delay for pixel ready signal
+        .clk(clk),
+        .reset(rst),
+        .data_in(data_valid),
+        .data_out(Q)
     );
 
     pixel_flow_controller pixel_flow_controller_inst (
@@ -95,6 +96,7 @@ module RGB2HSV_Top(
         .r(RGB[23:16]),
         .g(RGB[15:8]),
         .b(RGB[7:0]),
+        .data_in_valid(data_valid),
 
         //outputs
         .min(min),
@@ -107,6 +109,7 @@ module RGB2HSV_Top(
     inverse_value_rom inverse_value_rom_inst
     (
         .clk(clk),
+        .rst(rst),
         .douta(douta), // To S calculator
         .doutb(doutb), // TO H calculator
         
@@ -114,14 +117,13 @@ module RGB2HSV_Top(
         .addrb(delta) //Use the value of delta as the address for the second RAM - feeds into the H calculation
     );
 
-
     calculate_s calculate_s_inst
     (
         //inputs
         .clk(clk),
         .rst(rst),
-        .delta(delta_r_2),
-        .v(max_r_2),
+        .delta(delta_delayed),
+        .v(max_delayed),
         
         // ROM inputs/output
         .inverse_ram_data(douta),
@@ -135,10 +137,10 @@ module RGB2HSV_Top(
         //inputs
         .clk(clk),
         .rst(rst),
-        .min(min_r_2),
-        .mid(mid_r_2),
+        .min(min_delayed),
+        .mid(mid_delayed),
         //.delta(delta_r),
-        .selector_index(index_r_2),
+        .selector_index(index_delayed),
 
         // ROM inputs/output
         .inverse_ram_data(doutb),
@@ -147,38 +149,46 @@ module RGB2HSV_Top(
         .h(h_w)
     );
 
-    
-    // Buffer registers. ROM takes 2 clk cycles to produce output so we must delay other signals by 2 clk cycles
-    always@(posedge clk)
-    begin
-        if(rst) begin
-            min_r <= 0;
-            max_r <= 0;
-            mid_r <= 0;
-            delta_r <= 0;
-            index_r <= 0;
+    vector_delay_line #(8, 2) min_data_delay(
+        .clk(clk),
+        .reset(rst),
+        .data_in(min),
+        .data_out(min_delayed)
+    );
 
-            min_r_2 <= 0;
-            max_r_2 <= 0;
-            mid_r_2 <= 0;
-            delta_r_2 <= 0;
-            index_r_2 <= 0;
+    vector_delay_line #(8, 2) mid_data_delay(
+        .clk(clk),
+        .reset(rst),
+        .data_in(mid),
+        .data_out(mid_delayed)
+    );
 
-        end else begin
-            min_r <= min;
-            max_r <= max;
-            mid_r <= mid;
-            delta_r <= delta;
-            index_r <= index;
+    vector_delay_line #(8, 2) max_data_delay(
+        .clk(clk),
+        .reset(rst),
+        .data_in(max),
+        .data_out(max_delayed)
+    );
 
-            min_r_2 <= min_r;
-            max_r_2 <= max_r;
-            mid_r_2 <= mid_r;
-            delta_r_2 <= delta_r;
-            index_r_2 <= index_r;
+    vector_delay_line #(8, 2) delta_data_delay( // 8 = data width, 2 = delay length
+        .clk(clk),
+        .reset(rst),
+        .data_in(delta),
+        .data_out(delta_delayed)
+    );
 
-        end
-    end
+    vector_delay_line #(3, 2) index_data_delay(
+        .clk(clk),
+        .reset(rst),
+        .data_in(index),
+        .data_out(index_delayed)
+    );
 
-    assign v_w = max_r_2;
+    vector_delay_line #(8, 10) v_data_delay(
+        .clk(clk),
+        .reset(rst),
+        .data_in(max),
+        .data_out(v_w)
+    );
+
 endmodule

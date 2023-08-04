@@ -52,10 +52,22 @@ end calculate_s;
 
 
 architecture rtl of calculate_s is
-    -- retiming register signals
-    signal ram_data_reg1 : std_logic_vector (17 downto 0) := (others => '0');
-    signal ram_data_reg2 : std_logic_vector (17 downto 0) := (others => '0');
+    -- Components
+    component vector_delay_line
+        generic (
+            WIDTH : integer;
+            DEPTH : integer
+        );
+        PORT(
+            clk : in std_logic;
+            reset : in std_logic;
+            data_in : in std_logic_vector;
+            data_out : out std_logic_vector
+        ); 
+    end component;
 
+    -- rom data delay signals
+    signal rom_data_delayed : std_logic_vector (17 downto 0) := (others => '0');
 
     -- DSP Signals
     signal carry_out : std_logic_vector (3 downto 0) := (others => '0');
@@ -69,10 +81,14 @@ architecture rtl of calculate_s is
     signal stage_2_delta_bitshifted : unsigned (29 downto 0) := (others => '0'); -- Internal stage signal
 
     -- stage 3: multiply (d << 16) - 1 by v_inv and store result in s
-    --signal dsp_a_input_24b : std_logic_vector (23 downto 0) := (others => '0');
-    --signal inverse_value : std_logic_vector (17 downto 0) := (others => '0'); -- Internal stage signal
     signal stage_3_mult_out : std_logic_vector (47 downto 0) := (others => '0'); -- Internal stage signal
     signal stage_3_mult_out_shifted : std_logic_vector (47 downto 0) := (others => '0'); -- Internal stage signal
+
+    -- delay signals for delta = 0 and v = 0 check 
+    signal delta_delayed : std_logic_vector (7 downto 0) := (others => '0');
+    signal v_delayed : std_logic_vector (7 downto 0) := (others => '0');
+
+    signal s_delayed : std_logic_vector (15 downto 0) := (others => '0');
 
 begin
 
@@ -130,7 +146,7 @@ begin
 
     -- Data: 30-bit (each) input: Data Ports
     A => std_logic_vector(stage_2_delta_bitshifted),               -- 30-bit input: A data input
-    B => ram_data_reg1,                 -- 18-bit input: B data input
+    B => rom_data_delayed,                 -- 18-bit input: B data input
     C => (others => '0'),               -- 48-bit input: C data input
     CARRYIN => '0',                     -- 1-bit input: Carry input signal
     D => (others => '0'),               -- 25-bit input: D data input
@@ -162,20 +178,41 @@ begin
 
     );
 
-    -- Input registers
-    register_inputs : process(clk)
-    begin
-        if rising_edge(clk) then
-            if rst = '1' then
-                ram_data_reg1 <= (others => '0');
-                --ram_data_reg2 <= (others => '0');
-            else
-                -- Assign RGB inpit to Register, resize to 12-bits. MSB's are 0
-                ram_data_reg1 <= inverse_ram_data(17 downto 0);
-                --ram_data_reg2 <= ram_data_reg1;
-            end if;
-        end if; 
-    end process register_inputs;
+    ram_data_delay_line : vector_delay_line
+    generic map (
+        WIDTH => 18, -- delay line bit width
+        DEPTH => 2 -- Number of delay stages
+    )
+    port map (
+        clk => clk,
+        reset => rst,
+        data_in => inverse_ram_data,
+        data_out => rom_data_delayed
+    );
+
+    delta_delay_line : vector_delay_line
+    generic map (
+        WIDTH => 8, -- delay line bit width
+        DEPTH => 5 -- Number of delay stages
+    )
+    port map (
+        clk => clk,
+        reset => rst,
+        data_in => delta,
+        data_out => delta_delayed
+    );
+
+    v_delay_line : vector_delay_line
+    generic map (
+        WIDTH => 8, -- delay line bit width
+        DEPTH => 5 -- Number of delay stages
+    )
+    port map (
+        clk => clk,
+        reset => rst,
+        data_in => v,
+        data_out => v_delayed
+    );
 
     delta_24b <= (23 downto 8 => '0') & unsigned(delta); -- Convert delta to 24 bit unsigned
 
@@ -208,18 +245,29 @@ begin
     begin
         if rising_edge(clk) then
             if rst = '1' then
-                s <= (others => '0');
+                s_delayed <= (others => '0');
                 stage_3_mult_out_shifted <= (others => '0');
             else
                 stage_3_mult_out_shifted <= stage_3_mult_out srl 16; -- Bit shift right by 16 (precision factor)
-                if delta = X"00" or v = X"00" then
+                s_delayed <= stage_3_mult_out_shifted(15 downto 0); -- Assign output
+            end if;
+        end if;
+    end process shift;
+
+    output_s : process(clk)
+    begin
+        if rising_edge(clk) then
+            if rst = '1' then
+                s <= (others => '0');
+            else
+                if (v_delayed = X"00") then
                     s <= (others => '0');
                 else
-                    s <= stage_3_mult_out_shifted(15 downto 0); -- Assign output
+                    s <= s_delayed; -- Assign output
                 end if;
 
             end if;
         end if;
-    end process shift;
+    end process output_s;
 
 end rtl;

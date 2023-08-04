@@ -127,8 +127,7 @@ set rc [catch {
   create_msg_db write_bitstream.pb
   set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 6
-  set_param synth.incrementalSynthesisCache C:/Users/johnh/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-16936-DESKTOP-U9NB2CD/incrSyn
-  set_param xicom.use_bs_reader 1
+  set_param synth.incrementalSynthesisCache C:/Users/johnh/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-31052-DESKTOP-U9NB2CD/incrSyn
   open_checkpoint top_routed.dcp
   set_property webtalk.parent_dir C:/Users/johnh/Desktop/IMP/IMP.cache/wt [current_project]
 set_property TOP top [current_fileset]

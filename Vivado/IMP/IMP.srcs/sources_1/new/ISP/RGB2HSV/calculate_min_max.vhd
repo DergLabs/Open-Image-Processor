@@ -42,6 +42,8 @@ entity calculate_min_max is
         g : in std_logic_vector(7 downto 0);
         b : in std_logic_vector(7 downto 0);
 
+        data_in_valid : in std_logic;
+
         -- Outputs
         min : out std_logic_vector(7 downto 0);
         max : out std_logic_vector(7 downto 0);
@@ -74,7 +76,7 @@ architecture rtl of calculate_min_max is
     signal mux_sel : std_logic_vector(2 downto 0) := (others => '0');
 begin
 
-    -- Register the RGB inputs for the adders and mux's
+    -- pipeline the RGB inputs for the adders and mux's
     register_inputs : process(clk)
     begin
         if rising_edge(clk) then
@@ -90,7 +92,7 @@ begin
                 g_retime2 <= (others => '0');
                 b_retime2 <= (others => '0');
 
-            else
+            elsif (data_in_valid = '1') then
                 -- Assign RGB inpit to Register, resize to 12-bits. MSB's are 0
                 r_reg(7 downto 0) <= r;
                 g_reg(7 downto 0) <= g;
@@ -104,7 +106,6 @@ begin
                 r_retime2 <= r_retime1;
                 g_retime2 <= g_retime1;
                 b_retime2 <= b_retime1;
-
             end if;
         end if; 
     end process register_inputs;
@@ -212,6 +213,7 @@ begin
                 mid <= (others => '0');
                 max <= (others => '0');
                 index <= (others => '0');
+                diff <= (others => '0');
             else
                 case mux_sel is
                     when "000" => 

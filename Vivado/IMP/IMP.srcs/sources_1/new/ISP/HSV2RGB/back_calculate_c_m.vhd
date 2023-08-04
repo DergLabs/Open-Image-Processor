@@ -48,13 +48,31 @@ entity back_calculate_c_m is
 end back_calculate_c_m;
 
 architecture Behavioral of back_calculate_c_m is
+    -- Components
+    component vector_delay_line
+        generic (
+            WIDTH : integer;
+            DEPTH : integer
+        );
+        PORT(
+            clk : in std_logic;
+            reset : in std_logic;
+            data_in : in std_logic_vector;
+            data_out : out std_logic_vector
+        ); 
+    end component;
+    
+
+    -- Delay Line signals
+    signal d_delayed : std_logic_vector(7 downto 0) := (others => '0');
+    signal v_delayed : std_logic_vector(7 downto 0) := (others => '0');
+    signal i_delayed : std_logic_vector(2 downto 0) := (others => '0');
+    signal h_delayed : std_logic_vector(23 downto 0) := (others => '0');
+
     -- RGB input signals
     signal h_reg : std_logic_vector(23 downto 0) := (others => '0');
     signal i_reg : std_logic_vector(2 downto 0) := (others => '0');
     signal d_reg : std_logic_vector(7 downto 0) := (others => '0');
-    signal v_reg : std_logic_vector(7 downto 0) := (others => '0');
-    -- Bitshift signal
-    signal i_shift : std_logic_vector(17 downto 0) := (others => '0');
 
     -- DSP Input Signals
     signal a_input : std_logic_vector(29 downto 0) := (others => '0');
@@ -64,7 +82,9 @@ architecture Behavioral of back_calculate_c_m is
     -- DSP Output Signals
     signal carry_out : std_logic_vector(3 downto 0) := (others => '0');
     signal p_out : std_logic_vector(47 downto 0) := (others => '0');
-    alias p_out_24b : std_logic_vector(23 downto 0) is p_out(23 downto 0);
+    signal p_out_reg : unsigned(23 downto 0) := (others => '0');
+    signal p_out_24b_reg : unsigned(23 downto 0) := (others => '0');
+    signal p_out_24b_sub_reg : unsigned(23 downto 0) := (others => '0');
 
     -- check f signals
     signal f : unsigned(23 downto 0) := (others => '0');
@@ -80,30 +100,76 @@ architecture Behavioral of back_calculate_c_m is
 
 begin
 
-    register_inputs : process(clk)
+    d_delay_line : vector_delay_line
+    generic map (
+        WIDTH => 8, -- delay line bit width
+        DEPTH => 7 -- Number of delay stages
+    )
+    port map (
+        clk => clk,
+        reset => rst,
+        data_in => d,
+        data_out => d_delayed
+    );
+
+    v_delay_line : vector_delay_line
+    generic map (
+        WIDTH => 8, -- delay line bit width
+        DEPTH => 8 -- Number of delay stages
+    )
+    port map (
+        clk => clk,
+        reset => rst,
+        data_in => v,
+        data_out => v_delayed
+    );
+
+    i_delay_line : vector_delay_line
+    generic map (
+        WIDTH => 3, -- delay line bit width
+        DEPTH => 7 -- Number of delay stages
+    )
+    port map (
+        clk => clk,
+        reset => rst,
+        data_in => i,
+        data_out => i_delayed 
+    );
+
+    h_delay_line : vector_delay_line
+    generic map (
+        WIDTH => 24, -- delay line bit width
+        DEPTH => 5 -- Number of delay stages
+    )
+    port map (
+        clk => clk,
+        reset => rst,
+        data_in => h,
+        data_out => h_delayed
+    );
+
+    registers : process(clk)
     begin
         if rising_edge(clk) then
             if rst = '1' then
                 h_reg <= (others => '0');
                 i_reg <= (others => '0');
                 d_reg <= (others => '0');
-                v_reg <= (others => '0');
             else
                 -- Assign RGB inpit to Register, resize to 12-bits. MSB's are 0
                 h_reg <= h;
                 i_reg <= i;
-                d_reg <= d;
-                v_reg <= v;
+                d_reg <= d_delayed;
             end if;
         end if; 
-    end process register_inputs;
+    end process registers;
 
     -- Assign inputs to DSP48E1 inputs
     a_input(15 downto 0) <= X"FFFF";
     b_input(2 downto 0) <= i_reg;
-    C_input(23 downto 0) <= h_reg;
+    --C_input(23 downto 0) <= h_reg;
 
-    DSP48E1_minMax : DSP48E1
+    DSP48E1_F_Calculate : DSP48E1
     generic map (
     -- Feature Control Attributes: Data Path Selection
     A_INPUT => "DIRECT",                -- Selects A input source, "DIRECT" (A port) or "CASCADE" (ACIN port)
@@ -149,16 +215,16 @@ begin
     PCIN => (others => '0'),            -- 48-bit input: P cascade input
 
     -- Control: 4-bit (each) input: Control Inputs/Status Bits
-    ALUMODE => "0011",                  -- 4-bit input: ALU control input (0011 for sub (C-A*B))
+    ALUMODE => "0000",                  -- 4-bit input: ALU control input (0011 for sub (C-A*B))
     CARRYINSEL => "000",                -- 3-bit input: Carry select input
-    CLK => CLK,                         -- 1-bit input: Clock input
-    INMODE => "10001",                  -- 5-bit input: INMODE control input
-    OPMODE => "0110101",                -- 7-bit input: Operation mode input (C-A*B)
+    CLK => clk,                         -- 1-bit input: Clock input
+    INMODE => "00000",                  -- 5-bit input: INMODE control input
+    OPMODE => "0000101",                -- 7-bit input: Operation mode input (C-A*B)
 
     -- Data: 30-bit (each) input: Data Ports
     A => a_input,                       -- 30-bit input: A data input
     B => b_input,                       -- 18-bit input: B data input
-    C => c_input,                       -- 48-bit input: C data input
+    C => (others => '0'),                       -- 48-bit input: C data input
     CARRYIN => '0',                     -- 1-bit input: Carry input signal
     D => (others => '0'),               -- 25-bit input: D data input
 
@@ -186,8 +252,43 @@ begin
     RSTINMODE => rst,                   -- 1-bit input: Reset input for INMODEREG
     RSTM => rst,                        -- 1-bit input: Reset input for MREG
     RSTP => rst                         -- 1-bit input: Reset input for PREG
-
     );
+
+    -- retiming registers for the output of the multiplier
+    register_mult_out : process(clk)
+    begin
+        if rising_edge(clk) then
+            if (rst = '1') then
+                p_out_reg <= (others => '0');
+            else
+                p_out_reg <= unsigned(p_out(23 downto 0));
+            end if;
+        end if;
+    end process register_mult_out;
+
+    -- second Register for the output of the multiplier
+    register_mult_out2 : process(clk)
+    begin
+        if rising_edge(clk) then
+            if (rst = '1') then
+                p_out_24b_reg <= (others => '0');
+            else
+                p_out_24b_reg <= (unsigned(h_delayed) - p_out_reg);
+            end if;
+        end if;
+    end process register_mult_out2;
+
+    -- Subtraction output register
+    register_sub_out : process(clk)
+    begin
+        if rising_edge(clk) then
+            if (rst = '1') then
+                p_out_24b_sub_reg <= (others => '0');
+            else
+                p_out_24b_sub_reg <= 65535 - p_out_24b_reg;
+            end if;
+        end if;
+    end process register_sub_out;
 
     check_selector_index : process(clk)
     begin
@@ -195,10 +296,10 @@ begin
             if rst = '1' then
                 f <= (others => '0');
             else
-                if (i_reg = b"001" or i_reg = b"011" or i_reg = b"101") then
-                    f <= 65535 - unsigned(p_out_24b); 
+                if (i_delayed = b"001" or i_delayed = b"011" or i_delayed = b"101") then
+                    f <= p_out_24b_sub_reg; 
                 else
-                    f <= unsigned(p_out_24b);
+                    f <= p_out_24b_reg;
                 end if;
             end if;
         end if;
@@ -211,7 +312,7 @@ begin
             if rst = '1' then
                 f_d <= (others => '0');
             else
-                f_d <= f * unsigned(d);
+                f_d <= f * unsigned(d_delayed);
             end if;
         end if;
     end process calculate_c_mult_f_d;
@@ -235,19 +336,20 @@ begin
             if rst = '1' then
                 min <= (others => '0');
             else
-                min <= unsigned(v_reg) - unsigned(d_reg);
+                min <= unsigned(v_delayed) - unsigned(d_reg);
             end if;
         end if;
     end process calculate_m;
 
+
     generate_m_c : process(clk)
     begin
         if rising_edge(clk) then
-            if (rst = '1' or v = X"00") then
+            if (rst = '1' or v_delayed = X"00") then
                 c <= (others => '0');
                 m <= (others => '0');
             else
-                c <= std_logic_vector(f_d_shift + min + 1);
+                c <= std_logic_vector(f_d_shift + min);
                 m <= std_logic_vector(min);
             end if;
         end if;

@@ -169,7 +169,7 @@ begin
             if rst = '1' then
                 bit_shift_out <= (others => '0');
             else
-                bit_shift_out <= std_logic_vector(shift_right(unsigned(mult_out_48b), 16)(7 downto 0));
+                bit_shift_out <= std_logic_vector(shift_right(unsigned(mult_out), 16)(7 downto 0));
 
             end if;
         end if;
@@ -181,7 +181,7 @@ begin
             if rst = '1' then
                 d <= (others => '0');
             else
-                d <= std_logic_vector(unsigned(bit_shift_out) + 1);
+                d <= std_logic_vector(unsigned(bit_shift_out));
             end if;
         end if;
     end process add_and_output;

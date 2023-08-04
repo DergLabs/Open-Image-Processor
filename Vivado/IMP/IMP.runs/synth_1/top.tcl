@@ -71,9 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param chipscope.maxJobs 6
-set_param synth.incrementalSynthesisCache C:/Users/johnh/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-16936-DESKTOP-U9NB2CD/incrSyn
-set_param xicom.use_bs_reader 1
+set_param synth.incrementalSynthesisCache C:/Users/johnh/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-31052-DESKTOP-U9NB2CD/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -95,10 +93,7 @@ OPTRACE "Adding files" START { }
 add_files C:/Users/johnh/Desktop/divisor_inv.coe
 add_files C:/Users/johnh/Desktop/IMP/divisor_inv.coe
 read_verilog -library xil_defaultlib -sv {
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/ISP_Top.sv
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/MUX.sv
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/PriorityEncoder.sv
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/top.v
 }
 read_verilog -library xil_defaultlib {
@@ -125,6 +120,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Clocking.vhd
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Decoder.vhd
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Encoder.vhd
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Common/delay_line.vhd
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/dvi2rgb.vhd
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/rgb2dvi.vhd
 }
@@ -149,14 +145,16 @@ set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop
 
 read_ip -quiet C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/fifo_generator_0/fifo_generator_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/fifo_generator_0/fifo_generator_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/fifo_generator_0/fifo_generator_0_ooc.xdc]
-
-read_ip -quiet C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/c_shift_ram_17/c_shift_ram_17.xci
-set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_shift_ram_17/c_shift_ram_17_ooc.xdc]
 
 read_ip -quiet C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/c_counter_binary_0_1/c_counter_binary_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_counter_binary_0/c_counter_binary_0_ooc.xdc]
+
+read_ip -quiet C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_0/ila_0.xci
+set_property used_in_synthesis false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

@@ -55,12 +55,16 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 blk_mem_gen_0 your_instance_name (
-  .clka(clka),    // input wire clka
-  .addra(addra),  // input wire [7 : 0] addra
-  .douta(douta),  // output wire [17 : 0] douta
-  .clkb(clkb),    // input wire clkb
-  .addrb(addrb),  // input wire [7 : 0] addrb
-  .doutb(doutb)  // output wire [17 : 0] doutb
+  .clka(clka),            // input wire clka
+  .rsta(rsta),            // input wire rsta
+  .addra(addra),          // input wire [7 : 0] addra
+  .douta(douta),          // output wire [17 : 0] douta
+  .clkb(clkb),            // input wire clkb
+  .rstb(rstb),            // input wire rstb
+  .addrb(addrb),          // input wire [7 : 0] addrb
+  .doutb(doutb),          // output wire [17 : 0] doutb
+  .rsta_busy(rsta_busy),  // output wire rsta_busy
+  .rstb_busy(rstb_busy)  // output wire rstb_busy
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

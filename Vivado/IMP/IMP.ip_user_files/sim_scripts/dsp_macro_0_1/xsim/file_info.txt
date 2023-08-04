@@ -1,0 +1,2 @@
+dsp_macro_0.vhd,vhdl,xil_defaultlib,../../../../IMP.gen/sources_1/ip/dsp_macro_0/sim/dsp_macro_0.vhd,
+glbl.v,Verilog,xil_defaultlib,glbl.v

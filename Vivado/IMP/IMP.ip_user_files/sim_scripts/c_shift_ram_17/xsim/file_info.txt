@@ -1,2 +1,0 @@
-c_shift_ram_17.vhd,vhdl,xil_defaultlib,../../../../IMP.gen/sources_1/ip/c_shift_ram_17/sim/c_shift_ram_17.vhd,
-glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -32,7 +32,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity RGB_ALU is
---  Port ( );
+    Port ( 
+        clk : in STD_LOGIC;
+        rst : in STD_LOGIC;
+
+        -- Inputs
+        rgb_data_in : in STD_LOGIC_VECTOR (23 downto 0);
+        rgb_operand : in STD_LOGIC_VECTOR (23 downto 0);
+        opcode : in STD_LOGIC_VECTOR (3 downto 0);
+
+        -- Outputs
+        rgb_data_out : out STD_LOGIC_VECTOR (23 downto 0)
+    );
 end RGB_ALU;
 
 architecture Behavioral of RGB_ALU is

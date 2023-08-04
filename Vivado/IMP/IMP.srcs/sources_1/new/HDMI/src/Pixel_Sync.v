@@ -34,7 +34,8 @@ module Pixel_Sync(
     output vid_pVSync_out,
     output serial_clk_out,
     output pixel_clk_out,
-    output hdmi_out_oen_out
+    output hdmi_out_oen_out, 
+    output [5:0] count_out
     );
 
     reg CE = 0;
@@ -58,7 +59,7 @@ module Pixel_Sync(
       if (rst_n == 1'b0) begin
         CE <= 1'b0;
         counter_CE <= 1'b1;
-      end else if (count == 6'h32) begin
+      end else if (count == 6'h1E) begin //Count to 30 (number of pixels we need to delay by before they're present on output)
           CE <= 1'b1;
           counter_CE <= 1'b0;
       end

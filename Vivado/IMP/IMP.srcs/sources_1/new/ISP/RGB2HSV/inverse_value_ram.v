@@ -20,8 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module inverse_value_rom(clk, douta, doutb, addra, addrb);
+module inverse_value_rom(clk, rst, douta, doutb, addra, addrb);
     input clk;
+    input rst;
     input [7:0] addra;
     input [7:0] addrb;
 
@@ -30,15 +31,24 @@ module inverse_value_rom(clk, douta, doutb, addra, addrb);
 
     wire [17:0] dina = 18'b0;
     wire [17:0] dinb = 18'b0;
+    
+    wire rsta_busy = 1'b0;
+    wire rstb_busy = 1'b0;
 
     blk_mem_gen_0 inverse_value_rom (
-      .clka(clk),    // input wire clka
-      .addra(addra),  // input wire [7 : 0] addra
-      .douta(douta),  // output wire [17 : 0] douta
-      .clkb(clk),    // input wire clkb
-      .addrb(addrb),  // input wire [7 : 0] addrb
-      .doutb(doutb)  // output wire [17 : 0] doutb
-    );
+      .clka(clk),            // input wire clka
+      .rsta(rst),            // input wire rsta
+      .addra(addra),          // input wire [7 : 0] addra
+      .douta(douta),          // output wire [17 : 0] douta
+
+      .clkb(clk),            // input wire clkb
+      .rstb(rst),            // input wire rstb
+      .addrb(addrb),          // input wire [7 : 0] addrb
+      .doutb(doutb),          // output wire [17 : 0] doutb
+
+      .rsta_busy(rsta_busy),  // output wire rsta_busy
+      .rstb_busy(rstb_busy)  // output wire rstb_busy
+  );
 
 
 endmodule

@@ -84,9 +84,11 @@ begin
     end process;
 
     process is
-    variable delay_ns : integer := 130;
+    variable wait_rst : boolean := TRUE;
+    variable delay_ns : integer := 10;
     begin
         rst <= '1';
+        wait_rst := FALSE;
         data_in_valid <= '0';
         rgb_in <= X"000000";
         wait for 100 ns;
@@ -94,28 +96,33 @@ begin
         rst <= '0';
         data_in_valid <= '1';
         rgb_in <= X"abcdef";
-        wait for 10 ns;
-        data_in_valid <= '0';
         wait for delay_ns * ns;
 
-        data_in_valid <= '1';
-        rgb_in <= X"00FFFF";
-        wait for 10 ns;
-        data_in_valid <= '0';
+        rgb_in <= X"FFFFFF";
         wait for delay_ns * ns;
 
-        data_in_valid <= '1';
         rgb_in <= X"FF00FF";
-        wait for 10 ns;
-        data_in_valid <= '0';
         wait for delay_ns * ns;
 
-        data_in_valid <= '1';
-        rgb_in <= X"FFFF00";
-        wait for 10 ns;
-        data_in_valid <= '0';
+        rgb_in <= X"123479";
         wait for delay_ns * ns;
 
+        rgb_in <= X"099817";
+        wait for delay_ns * ns;
+
+        rgb_in <= X"abbbac";
+        wait for delay_ns * ns;
+
+        rgb_in <= X"ddef34";
+        wait for delay_ns * ns;
+
+        rgb_in <= X"12ffeb";
+        wait_rst := TRUE;
+        wait for delay_ns * ns;
+        
+        if (wait_rst) then
+            wait for 500 ns;
+        end if;
 
     end process;
 

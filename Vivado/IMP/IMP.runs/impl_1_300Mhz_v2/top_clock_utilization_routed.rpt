@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Fri Jul 21 22:56:19 2023
+| Date         : Fri Aug  4 01:39:29 2023
 | Host         : DESKTOP-U9NB2CD running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file top_clock_utilization_routed.rpt
 | Design       : top
@@ -55,20 +55,20 @@ Table of Contents
 2. Global Clock Resources
 -------------------------
 
-+-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+------------------+-------------------------------------------------------------+------------------------------------------------------+
-| Global Id | Source Id | Driver Type/Pin | Constraint | Site           | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock            | Driver Pin                                                  | Net                                                  |
-+-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+------------------+-------------------------------------------------------------+------------------------------------------------------+
-| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |                 7 |        9867 |               0 |              |                  | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/InstBUFG/O           | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut   |
-| g1        | src1      | BUFR/O          | None       | BUFR_X1Y5      | X1Y1         |                 2 |         341 |               1 |              |                  | dvi2rgb_m0/TMDS_ClockingX/PixelClkBuffer/O                  | dvi2rgb_m0/TMDS_ClockingX/PixelClk_int               |
-| g2        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |                 2 |         165 |               0 |        5.000 | clk_out1_clk_ref | clk_refm0/inst/clkout1_buf/O                                | clk_refm0/inst/clk_out1                              |
-| g3        | src3      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y17 | n/a          |                 3 |         153 |               0 |              |                  | pixel_sync_inst/pixel_clk_BUFG/O                            | pixel_sync_inst/CLK                                  |
-| g3        | src4      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y17 | n/a          |                 3 |         153 |               0 |              |                  | pixel_sync_inst/pixel_clk_BUFG/O                            | pixel_sync_inst/CLK                                  |
-| g4        | src5      | BUFG/O          | None       | BUFGCTRL_X0Y1  | n/a          |                 1 |           8 |               0 |              |                  | rgb2dvi_m0/ClockGenInternal.ClockGenX/PixelClk_BUFG_inst/O  | rgb2dvi_m0/ClockGenInternal.ClockGenX/PixelClk_BUFG  |
-| g5        | src6      | BUFG/O          | None       | BUFGCTRL_X0Y2  | n/a          |                 1 |           8 |               0 |              |                  | rgb2dvi_m0/ClockGenInternal.ClockGenX/SerialClk_BUFG_inst/O | rgb2dvi_m0/ClockGenInternal.ClockGenX/SerialClk_BUFG |
-| g6        | src7      | BUFG/O          | None       | BUFGCTRL_X0Y3  | n/a          |                 1 |           4 |               0 |              |                  | prev_sel_reg[3]_i_1/O                                       | DMUX_Inst/green_light                                |
-| g7        | src8      | BUFG/O          | None       | BUFGCTRL_X0Y5  | n/a          |                 1 |           1 |               0 |       20.000 | sys_clk          | clk_refm0/inst/clkin1_bufg/O                                | clk_refm0/inst/clk_in1_clk_ref                       |
-| g8        | src9      | BUFG/O          | None       | BUFGCTRL_X0Y4  | n/a          |                 1 |           1 |               0 |       20.000 | clkfbout_clk_ref | clk_refm0/inst/clkf_buf/O                                   | clk_refm0/inst/clkfbout_buf_clk_ref                  |
-+-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+------------------+-------------------------------------------------------------+------------------------------------------------------+
++-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------+
+| Global Id | Source Id | Driver Type/Pin | Constraint | Site           | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock                                                                                      | Driver Pin                                                           | Net                                                  |
++-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------+
+| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |                 5 |        2549 |               0 |        5.000 | clk_out1_clk_ref                                                                           | clk_refm0/inst/clkout1_buf/O                                         | clk_refm0/inst/clk_out1                              |
+| g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |                 4 |        1084 |               2 |              |                                                                                            | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/InstBUFG/O                    | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut   |
+| g2        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y3  | n/a          |                 3 |         461 |               0 |       33.000 | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O | dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i               |
+| g3        | src3      | BUFR/O          | None       | BUFR_X1Y5      | X1Y1         |                 2 |         341 |               1 |              |                                                                                            | dvi2rgb_m0/TMDS_ClockingX/PixelClkBuffer/O                           | dvi2rgb_m0/TMDS_ClockingX/PixelClk_int               |
+| g4        | src4      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y17 | n/a          |                 2 |         153 |               2 |              |                                                                                            | pixel_sync_inst/pixel_clk_BUFG/O                                     | pixel_sync_inst/pixel_clk_out                        |
+| g4        | src5      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y17 | n/a          |                 2 |         153 |               2 |              |                                                                                            | pixel_sync_inst/pixel_clk_BUFG/O                                     | pixel_sync_inst/pixel_clk_out                        |
+| g5        | src6      | BUFG/O          | None       | BUFGCTRL_X0Y1  | n/a          |                 1 |           8 |               0 |              |                                                                                            | rgb2dvi_m0/ClockGenInternal.ClockGenX/PixelClk_BUFG_inst/O           | rgb2dvi_m0/ClockGenInternal.ClockGenX/PixelClk_BUFG  |
+| g6        | src7      | BUFG/O          | None       | BUFGCTRL_X0Y2  | n/a          |                 1 |           8 |               0 |              |                                                                                            | rgb2dvi_m0/ClockGenInternal.ClockGenX/SerialClk_BUFG_inst/O          | rgb2dvi_m0/ClockGenInternal.ClockGenX/SerialClk_BUFG |
+| g7        | src8      | BUFG/O          | None       | BUFGCTRL_X0Y5  | n/a          |                 1 |           1 |               0 |       20.000 | sys_clk                                                                                    | clk_refm0/inst/clkin1_bufg/O                                         | clk_refm0/inst/clk_in1_clk_ref                       |
+| g8        | src9      | BUFG/O          | None       | BUFGCTRL_X0Y4  | n/a          |                 1 |           1 |               0 |       20.000 | clkfbout_clk_ref                                                                           | clk_refm0/inst/clkf_buf/O                                            | clk_refm0/inst/clkfbout_buf_clk_ref                  |
++-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 
@@ -76,20 +76,20 @@ Table of Contents
 3. Global Clock Source Details
 ------------------------------
 
-+-----------+-----------+---------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+------------------+---------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| Source Id | Global Id | Driver Type/Pin     | Constraint | Site            | Clock Region | Clock Loads | Non-Clock Loads | Source Clock Period | Source Clock     | Driver Pin                                                                                              | Net                                                                                                      |
-+-----------+-----------+---------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+------------------+---------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| src0      | g0        | BUFR/O              | None       | BUFR_X1Y5       | X1Y1         |         384 |               0 |                     |                  | dvi2rgb_m0/TMDS_ClockingX/PixelClkBuffer/O                                                              | dvi2rgb_m0/TMDS_ClockingX/PixelClk_int                                                                   |
-| src1      | g1        | MMCME2_ADV/CLKOUT0  | None       | MMCME2_ADV_X1Y1 | X1Y1         |           2 |               0 |                     |                  | dvi2rgb_m0/TMDS_ClockingX/DVI_ClkGenerator/CLKOUT0                                                      | dvi2rgb_m0/TMDS_ClockingX/CLK_OUT_5x_hdmi_clk                                                            |
-| src2      | g2        | MMCME2_ADV/CLKOUT0  | None       | MMCME2_ADV_X0Y0 | X0Y0         |           1 |               0 |               5.000 | clk_out1_clk_ref | clk_refm0/inst/mmcm_adv_inst/CLKOUT0                                                                    | clk_refm0/inst/clk_out1_clk_ref                                                                          |
-| src3      | g3        | BUFG/O              | None       | BUFGCTRL_X0Y16  | n/a          |        9867 |               0 |                     |                  | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/InstBUFG/O                                                       | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut                                                       |
-| src4      | g3        | VCC/P               | None       |                 | n/a          |           0 |               0 |                     |                  | pixel_sync_inst/VCC_1/P                                                                                 | pixel_sync_inst/VCC_2                                                                                    |
-| src5      | g4        | MMCME2_ADV/CLKOUT1  | None       | MMCME2_ADV_X1Y0 | X1Y0         |           1 |               0 |                     |                  | rgb2dvi_m0/ClockGenInternal.ClockGenX/GenMMCM.DVI_ClkGenerator/CLKOUT1                                  | rgb2dvi_m0/ClockGenInternal.ClockGenX/PixelClk                                                           |
-| src6      | g5        | MMCME2_ADV/CLKOUT0  | None       | MMCME2_ADV_X1Y0 | X1Y0         |           1 |               0 |                     |                  | rgb2dvi_m0/ClockGenInternal.ClockGenX/GenMMCM.DVI_ClkGenerator/CLKOUT0                                  | rgb2dvi_m0/ClockGenInternal.ClockGenX/SerialClk                                                          |
-| src7      | g6        | LUT5/O              | None       | SLICE_X36Y46    | X1Y0         |           1 |              37 |                     |                  | image_processor/ISPCore_inst[8].u_ISPCore/RGB2HSV_Core_Inst/pixel_flow_controller_inst/i_0_LOPT_REMAP/O | image_processor/ISPCore_inst[8].u_ISPCore/RGB2HSV_Core_Inst/pixel_flow_controller_inst/n_core_busy_reg_1 |
-| src8      | g7        | IBUF/O              | IOB_X0Y24  | IOB_X0Y24       | X0Y0         |           1 |               0 |              20.000 | sys_clk          | sys_clk_IBUF_inst/O                                                                                     | sys_clk_IBUF                                                                                             |
-| src9      | g8        | MMCME2_ADV/CLKFBOUT | None       | MMCME2_ADV_X0Y0 | X0Y0         |           1 |               0 |              20.000 | clkfbout_clk_ref | clk_refm0/inst/mmcm_adv_inst/CLKFBOUT                                                                   | clk_refm0/inst/clkfbout_clk_ref                                                                          |
-+-----------+-----------+---------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+------------------+---------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
++-----------+-----------+---------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| Source Id | Global Id | Driver Type/Pin     | Constraint | Site            | Clock Region | Clock Loads | Non-Clock Loads | Source Clock Period | Source Clock                                                                               | Driver Pin                                                                                 | Net                                                               |
++-----------+-----------+---------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| src0      | g0        | MMCME2_ADV/CLKOUT0  | None       | MMCME2_ADV_X0Y0 | X0Y0         |           1 |               0 |               5.000 | clk_out1_clk_ref                                                                           | clk_refm0/inst/mmcm_adv_inst/CLKOUT0                                                       | clk_refm0/inst/clk_out1_clk_ref                                   |
+| src1      | g1        | BUFR/O              | None       | BUFR_X1Y5       | X1Y1         |         384 |               0 |                     |                                                                                            | dvi2rgb_m0/TMDS_ClockingX/PixelClkBuffer/O                                                 | dvi2rgb_m0/TMDS_ClockingX/PixelClk_int                            |
+| src2      | g2        | BSCANE2/TCK         | None       | BSCAN_X0Y0      | X0Y0         |           1 |               0 |              33.000 | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/TCK |
+| src3      | g3        | MMCME2_ADV/CLKOUT0  | None       | MMCME2_ADV_X1Y1 | X1Y1         |           2 |               0 |                     |                                                                                            | dvi2rgb_m0/TMDS_ClockingX/DVI_ClkGenerator/CLKOUT0                                         | dvi2rgb_m0/TMDS_ClockingX/CLK_OUT_5x_hdmi_clk                     |
+| src4      | g4        | BUFG/O              | None       | BUFGCTRL_X0Y16  | n/a          |        1084 |               2 |                     |                                                                                            | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/InstBUFG/O                                          | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut                |
+| src5      | g4        | VCC/P               | None       |                 | n/a          |           0 |               0 |                     |                                                                                            | pixel_sync_inst/VCC_1/P                                                                    | pixel_sync_inst/VCC_2                                             |
+| src6      | g5        | MMCME2_ADV/CLKOUT1  | None       | MMCME2_ADV_X1Y0 | X1Y0         |           1 |               0 |                     |                                                                                            | rgb2dvi_m0/ClockGenInternal.ClockGenX/GenMMCM.DVI_ClkGenerator/CLKOUT1                     | rgb2dvi_m0/ClockGenInternal.ClockGenX/PixelClk                    |
+| src7      | g6        | MMCME2_ADV/CLKOUT0  | None       | MMCME2_ADV_X1Y0 | X1Y0         |           1 |               0 |                     |                                                                                            | rgb2dvi_m0/ClockGenInternal.ClockGenX/GenMMCM.DVI_ClkGenerator/CLKOUT0                     | rgb2dvi_m0/ClockGenInternal.ClockGenX/SerialClk                   |
+| src8      | g7        | IBUF/O              | IOB_X0Y24  | IOB_X0Y24       | X0Y0         |           1 |               0 |              20.000 | sys_clk                                                                                    | sys_clk_IBUF_inst/O                                                                        | sys_clk_IBUF                                                      |
+| src9      | g8        | MMCME2_ADV/CLKFBOUT | None       | MMCME2_ADV_X0Y0 | X0Y0         |           1 |               0 |              20.000 | clkfbout_clk_ref                                                                           | clk_refm0/inst/mmcm_adv_inst/CLKFBOUT                                                      | clk_refm0/inst/clkfbout_clk_ref                                   |
++-----------+-----------+---------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 
@@ -97,11 +97,11 @@ Table of Contents
 4. Local Clock Details
 ----------------------
 
-+----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+--------------------------+-----------------------+
-| Local Id | Driver Type/Pin | Constraint | Site/BEL         | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin               | Net                   |
-+----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+--------------------------+-----------------------||
-| 0        | LDCE/Q          | None       | SLICE_X39Y47/AFF | X1Y0         |           4 |               1 |              |       | pixel_sync_inst/CE_reg/Q | pixel_sync_inst/CE__0 - Static -
-+----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+--------------------------+-----------------------||
++----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+--------------------------+--------------------+
+| Local Id | Driver Type/Pin | Constraint | Site/BEL         | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin               | Net                |
++----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+--------------------------+--------------------||
+| 0        | LDCE/Q          | None       | SLICE_X29Y57/AFF | X0Y1         |           4 |               1 |              |       | pixel_sync_inst/CE_reg/Q | pixel_sync_inst/CE - Static -
++----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+--------------------------+--------------------||
 * Local Clocks in this context represents only clocks driven by non-global buffers
 ** Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
 *** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -115,12 +115,12 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
-| X0Y0              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 1403 |  1200 |  594 |   400 |    0 |    20 |    0 |    10 |   15 |    20 |
-| X1Y0              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 1874 |  1500 |  710 |   450 |    0 |    40 |    0 |    20 |   16 |    20 |
-| X0Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2401 |  1200 | 1100 |   400 |    0 |    20 |    0 |    10 |   20 |    20 |
-| X1Y1              |    8 |    12 |    1 |     4 |    0 |     2 |    1 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    6 |    50 |    8 |    50 | 3018 |  1500 | 1159 |   450 |    3 |    40 |    0 |    20 |   20 |    20 |
-| X0Y2              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 1038 |  1800 |  350 |   400 |    0 |    20 |    0 |    10 |   10 |    20 |
-| X1Y2              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     1 |    0 |     0 |    0 |     0 |  614 |   950 |  262 |   300 |    0 |    10 |    0 |     5 |    9 |    20 |
+| X0Y0              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    4 |  1200 |    5 |   400 |    0 |    20 |    2 |    10 |    0 |    20 |
+| X1Y0              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   76 |  1500 |    8 |   450 |    0 |    40 |   13 |    20 |    0 |    20 |
+| X0Y1              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  929 |  1200 |  251 |   400 |    0 |    20 |    3 |    10 |    0 |    20 |
+| X1Y1              |    8 |    12 |    1 |     4 |    0 |     2 |    1 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    6 |    50 |    8 |    50 | 3025 |  1500 | 1057 |   450 |    0 |    40 |   10 |    20 |    5 |    20 |
+| X0Y2              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   95 |  1800 |   13 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y2              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     1 |    0 |     0 |    0 |     0 |   83 |   950 |   51 |   300 |    0 |    10 |    0 |     5 |    1 |    20 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 * Global Clock column represents track count; while other columns represents cell counts
 
@@ -132,19 +132,42 @@ All Modules
 +----+----+----+
 |    | X0 | X1 |
 +----+----+----+
-| Y2 |  1 |  1 |
-| Y1 |  2 |  8 |
-| Y0 |  3 |  3 |
+| Y2 |  2 |  1 |
+| Y1 |  3 |  8 |
+| Y0 |  3 |  2 |
 +----+----+----+
 
 
 7. Device Cell Placement Summary for Global Clock g0
 ----------------------------------------------------
 
++-----------+-----------------+-------------------+------------------+-------------+---------------+-------------+----------+----------------+----------+-------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock            | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                     |
++-----------+-----------------+-------------------+------------------+-------------+---------------+-------------+----------+----------------+----------+-------------------------+
+| g0        | BUFG/O          | n/a               | clk_out1_clk_ref |       5.000 | {0.000 2.500} |        2421 |        0 |              0 |        0 | clk_refm0/inst/clk_out1 |
++-----------+-----------------+-------------------+------------------+-------------+---------------+-------------+----------+----------------+----------+-------------------------+
+* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+------+-------+-----------------------+
+|    | X0   | X1    | HORIZONTAL PROG DELAY |
++----+------+-------+-----------------------+
+| Y2 |    6 |     0 |                     0 |
+| Y1 |  606 |  1721 |                     0 |
+| Y0 |    7 |    81 |                     0 |
++----+------+-------+-----------------------+
+
+
+8. Device Cell Placement Summary for Global Clock g1
+----------------------------------------------------
+
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+----------------------------------------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                |
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+----------------------------------------------------+
-| g0        | BUFG/O          | n/a               |       |             |               |        9849 |        0 |              1 |        0 | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut |
+| g1        | BUFG/O          | n/a               |       |             |               |        1082 |        0 |              1 |        0 | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut |
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+----------------------------------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -152,22 +175,45 @@ All Modules
 **** GT Loads column represents load cell count of GT types
 
 
-+----+-------+-------+-----------------------+
-|    | X0    | X1    | HORIZONTAL PROG DELAY |
-+----+-------+-------+-----------------------+
-| Y2 |  1050 |   623 |                     0 |
-| Y1 |  2396 |  2551 |                     0 |
-| Y0 |  1423 |  1806 |                     0 |
-+----+-------+-------+-----------------------+
++----+----+------+-----------------------+
+|    | X0 | X1   | HORIZONTAL PROG DELAY |
++----+----+------+-----------------------+
+| Y2 |  0 |   84 |                     0 |
+| Y1 |  6 |  992 |                     0 |
+| Y0 |  0 |    0 |                     - |
++----+----+------+-----------------------+
 
 
-8. Device Cell Placement Summary for Global Clock g1
+9. Device Cell Placement Summary for Global Clock g2
 ----------------------------------------------------
+
++-----------+-----------------+-------------------+--------------------------------------------------------------------------------------------+-------------+----------------+-------------+----------+----------------+----------+----------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock                                                                                      | Period (ns) | Waveform (ns)  | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                    |
++-----------+-----------------+-------------------+--------------------------------------------------------------------------------------------+-------------+----------------+-------------+----------+----------------+----------+----------------------------------------+
+| g2        | BUFG/O          | n/a               | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK |      33.000 | {0.000 16.500} |         458 |        0 |              0 |        0 | dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i |
++-----------+-----------------+-------------------+--------------------------------------------------------------------------------------------+-------------+----------------+-------------+----------+----------------+----------+----------------------------------------+
+* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+------+-----+-----------------------+
+|    | X0   | X1  | HORIZONTAL PROG DELAY |
++----+------+-----+-----------------------+
+| Y2 |   89 |   0 |                     0 |
+| Y1 |  321 |  48 |                     0 |
+| Y0 |    0 |   0 |                     - |
++----+------+-----+-----------------------+
+
+
+10. Device Cell Placement Summary for Global Clock g3
+-----------------------------------------------------
 
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+----------------------------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                    |
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+----------------------------------------+
-| g1        | BUFR/O          | X1Y1              |       |             |               |         329 |        6 |              1 |        0 | dvi2rgb_m0/TMDS_ClockingX/PixelClk_int |
+| g3        | BUFR/O          | X1Y1              |       |             |               |         329 |        6 |              1 |        0 | dvi2rgb_m0/TMDS_ClockingX/PixelClk_int |
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+----------------------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -184,83 +230,37 @@ All Modules
 +----+----+----------+-----------------------+
 
 
-9. Device Cell Placement Summary for Global Clock g2
-----------------------------------------------------
-
-+-----------+-----------------+-------------------+------------------+-------------+---------------+-------------+----------+----------------+----------+-------------------------+
-| Global Id | Driver Type/Pin | Driver Region (D) | Clock            | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                     |
-+-----------+-----------------+-------------------+------------------+-------------+---------------+-------------+----------+----------------+----------+-------------------------+
-| g2        | BUFG/O          | n/a               | clk_out1_clk_ref |       5.000 | {0.000 2.500} |         165 |        0 |              0 |        0 | clk_refm0/inst/clk_out1 |
-+-----------+-----------------+-------------------+------------------+-------------+---------------+-------------+----------+----------------+----------+-------------------------+
-* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
-** IO Loads column represents load cell count of IO types
-*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
-**** GT Loads column represents load cell count of GT types
-
-
-+----+----+-----+-----------------------+
-|    | X0 | X1  | HORIZONTAL PROG DELAY |
-+----+----+-----+-----------------------+
-| Y2 |  0 |   0 |                     - |
-| Y1 |  0 |  85 |                     0 |
-| Y0 |  0 |  80 |                     0 |
-+----+----+-----+-----------------------+
-
-
-10. Device Cell Placement Summary for Global Clock g3
------------------------------------------------------
-
-+-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+---------------------+
-| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                 |
-+-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+---------------------+
-| g3        | BUFGCTRL/O      | n/a               |       |             |               |         152 |        0 |              1 |        0 | pixel_sync_inst/CLK |
-+-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+---------------------+
-* Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
-** IO Loads column represents load cell count of IO types
-*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
-**** GT Loads column represents load cell count of GT types
-
-
-+----+-----+------+-----------------------+
-|    | X0  | X1   | HORIZONTAL PROG DELAY |
-+----+-----+------+-----------------------+
-| Y2 |   0 |    0 |                     - |
-| Y1 |  40 |  104 |                     0 |
-| Y0 |   0 |    9 |                     0 |
-+----+-----+------+-----------------------+
-
-
 11. Device Cell Placement Summary for Global Clock g4
 -----------------------------------------------------
 
-+-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------------------------------+
-| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                 |
-+-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------------------------------+
-| g4        | BUFG/O          | n/a               |       |             |               |           0 |        8 |              0 |        0 | rgb2dvi_m0/ClockGenInternal.ClockGenX/PixelClk_BUFG |
-+-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------------------------------+
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                           |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-------------------------------+
+| g4        | BUFGCTRL/O      | n/a               |       |             |               |         154 |        0 |              1 |        0 | pixel_sync_inst/pixel_clk_out |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-------------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
 *** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
 **** GT Loads column represents load cell count of GT types
 
 
-+----+----+----+-----------------------+
-|    | X0 | X1 | HORIZONTAL PROG DELAY |
-+----+----+----+-----------------------+
-| Y2 |  0 |  0 |                     - |
-| Y1 |  0 |  8 |                     0 |
-| Y0 |  0 |  0 |                     - |
-+----+----+----+-----------------------+
++----+----+------+-----------------------+
+|    | X0 | X1   | HORIZONTAL PROG DELAY |
++----+----+------+-----------------------+
+| Y2 |  0 |    0 |                     - |
+| Y1 |  0 |  146 |                     0 |
+| Y0 |  0 |    9 |                     0 |
++----+----+------+-----------------------+
 
 
 12. Device Cell Placement Summary for Global Clock g5
 -----------------------------------------------------
 
-+-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+------------------------------------------------------+
-| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                  |
-+-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+------------------------------------------------------+
-| g5        | BUFG/O          | n/a               |       |             |               |           0 |        8 |              0 |        0 | rgb2dvi_m0/ClockGenInternal.ClockGenX/SerialClk_BUFG |
-+-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+------------------------------------------------------+
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                 |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------------------------------+
+| g5        | BUFG/O          | n/a               |       |             |               |           0 |        8 |              0 |        0 | rgb2dvi_m0/ClockGenInternal.ClockGenX/PixelClk_BUFG |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
 *** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
@@ -279,11 +279,11 @@ All Modules
 13. Device Cell Placement Summary for Global Clock g6
 -----------------------------------------------------
 
-+-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------+
-| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                   |
-+-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------+
-| g6        | BUFG/O          | n/a               |       |             |               |           4 |        0 |              0 |        0 | DMUX_Inst/green_light |
-+-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------+
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+------------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                  |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+------------------------------------------------------+
+| g6        | BUFG/O          | n/a               |       |             |               |           0 |        8 |              0 |        0 | rgb2dvi_m0/ClockGenInternal.ClockGenX/SerialClk_BUFG |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+------------------------------------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
 *** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
@@ -294,7 +294,7 @@ All Modules
 |    | X0 | X1 | HORIZONTAL PROG DELAY |
 +----+----+----+-----------------------+
 | Y2 |  0 |  0 |                     - |
-| Y1 |  0 |  4 |                     0 |
+| Y1 |  0 |  8 |                     0 |
 | Y0 |  0 |  0 |                     - |
 +----+----+----+-----------------------+
 
@@ -348,13 +348,13 @@ All Modules
 16. Clock Region Cell Placement per Global Clock: Region X0Y0
 -------------------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        1423 |               0 | 1403 |           3 |    0 |  15 |  0 |    0 |   0 |       0 | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut |
-| g7        | n/a   | BUFG/O          | None       |           1 |               0 |    0 |           0 |    0 |   0 |  0 |    1 |   0 |       0 | clk_refm0/inst/clk_in1_clk_ref                     |
-| g8        | n/a   | BUFG/O          | None       |           1 |               0 |    0 |           0 |    0 |   0 |  0 |    1 |   0 |       0 | clk_refm0/inst/clkfbout_buf_clk_ref                |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                 |
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |           7 |               0 |  4 |           1 |    2 |   0 |  0 |    0 |   0 |       0 | clk_refm0/inst/clk_out1             |
+| g7        | n/a   | BUFG/O          | None       |           1 |               0 |  0 |           0 |    0 |   0 |  0 |    1 |   0 |       0 | clk_refm0/inst/clk_in1_clk_ref      |
+| g8        | n/a   | BUFG/O          | None       |           1 |               0 |  0 |           0 |    0 |   0 |  0 |    1 |   0 |       0 | clk_refm0/inst/clkfbout_buf_clk_ref |
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
@@ -363,13 +363,12 @@ All Modules
 17. Clock Region Cell Placement per Global Clock: Region X1Y0
 -------------------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        1806 |               0 | 1786 |           1 |    0 |  16 |  0 |    0 |   0 |       0 | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut |
-| g2        | n/a   | BUFG/O          | None       |          80 |               0 |   80 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | clk_refm0/inst/clk_out1                            |
-| g3        | n/a   | BUFGCTRL/O      | None       |           9 |               0 |    8 |           0 |    0 |   0 |  0 |    1 |   0 |       0 | pixel_sync_inst/CLK                                |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                           |
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-------------------------------+
+| g0        | n/a   | BUFG/O          | None       |          81 |               0 | 68 |           0 |   13 |   0 |  0 |    0 |   0 |       0 | clk_refm0/inst/clk_out1       |
+| g4        | n/a   | BUFGCTRL/O      | None       |           9 |               0 |  8 |           0 |    0 |   0 |  0 |    1 |   0 |       0 | pixel_sync_inst/pixel_clk_out |
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
@@ -378,12 +377,13 @@ All Modules
 18. Clock Region Cell Placement per Global Clock: Region X0Y1
 -------------------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        2396 |               0 | 2361 |          12 |    0 |  20 |  0 |    0 |   0 |       0 | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut |
-| g3        | n/a   | BUFGCTRL/O      | None       |          40 |               0 |   40 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | pixel_sync_inst/CLK                                |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
++-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |         606 |               0 | 602 |           1 |    3 |   0 |  0 |    0 |   0 |       0 | clk_refm0/inst/clk_out1                            |
+| g1        | n/a   | BUFG/O          | None       |           6 |               0 |   6 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut |
+| g2        | n/a   | BUFG/O          | None       |         321 |               0 | 321 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i             |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
@@ -395,13 +395,13 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+------------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                  |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        2551 |               0 | 2504 |          20 |    3 |  20 |  0 |    0 |   0 |       0 | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut   |
-| g1        | n/a   | BUFR/O          | None       |         335 |               0 |  326 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | dvi2rgb_m0/TMDS_ClockingX/PixelClk_int               |
-| g2        | n/a   | BUFG/O          | None       |          85 |               0 |   84 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | clk_refm0/inst/clk_out1                              |
-| g3        | n/a   | BUFGCTRL/O      | None       |         104 |               0 |  104 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | pixel_sync_inst/CLK                                  |
-| g4        | n/a   | BUFG/O          | None       |           8 |               0 |    0 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | rgb2dvi_m0/ClockGenInternal.ClockGenX/PixelClk_BUFG  |
-| g5        | n/a   | BUFG/O          | None       |           8 |               0 |    0 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | rgb2dvi_m0/ClockGenInternal.ClockGenX/SerialClk_BUFG |
-| g6        | n/a   | BUFG/O          | None       |           4 |               0 |    0 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | DMUX_Inst/green_light                                |
+| g0        | n/a   | BUFG/O          | None       |        1721 |               0 | 1609 |         100 |   10 |   0 |  0 |    0 |   0 |       0 | clk_refm0/inst/clk_out1                              |
+| g1        | n/a   | BUFG/O          | None       |         990 |               2 |  898 |          85 |    0 |   5 |  0 |    0 |   0 |       0 | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut   |
+| g2        | n/a   | BUFG/O          | None       |          48 |               0 |   48 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i               |
+| g3        | n/a   | BUFR/O          | None       |         335 |               0 |  326 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | dvi2rgb_m0/TMDS_ClockingX/PixelClk_int               |
+| g4        | n/a   | BUFGCTRL/O      | None       |         144 |               2 |  144 |           1 |    0 |   0 |  0 |    0 |   0 |       0 | pixel_sync_inst/pixel_clk_out                        |
+| g5        | n/a   | BUFG/O          | None       |           8 |               0 |    0 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | rgb2dvi_m0/ClockGenInternal.ClockGenX/PixelClk_BUFG  |
+| g6        | n/a   | BUFG/O          | None       |           8 |               0 |    0 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | rgb2dvi_m0/ClockGenInternal.ClockGenX/SerialClk_BUFG |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -411,11 +411,12 @@ All Modules
 20. Clock Region Cell Placement per Global Clock: Region X0Y2
 -------------------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        1050 |               0 | 1038 |           0 |    0 |  10 |  0 |    0 |   0 |       0 | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                    |
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |           6 |               0 |  6 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | clk_refm0/inst/clk_out1                |
+| g2        | n/a   | BUFG/O          | None       |          89 |               0 | 89 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i |
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
@@ -424,11 +425,11 @@ All Modules
 21. Clock Region Cell Placement per Global Clock: Region X1Y2
 -------------------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                |
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |         623 |               0 | 614 |           0 |    0 |   9 |  0 |    0 |   0 |       0 | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut |
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                |
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
+| g1        | n/a   | BUFG/O          | None       |          84 |               0 | 83 |           0 |    0 |   1 |  0 |    0 |   0 |       0 | dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut |
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
@@ -440,10 +441,10 @@ set_property LOC BUFGCTRL_X0Y2 [get_cells rgb2dvi_m0/ClockGenInternal.ClockGenX/
 set_property LOC BUFGCTRL_X0Y1 [get_cells rgb2dvi_m0/ClockGenInternal.ClockGenX/PixelClk_BUFG_inst]
 set_property LOC BUFGCTRL_X0Y17 [get_cells pixel_sync_inst/pixel_clk_BUFG]
 set_property LOC BUFGCTRL_X0Y16 [get_cells dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/InstBUFG]
+set_property LOC BUFGCTRL_X0Y3 [get_cells dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck]
 set_property LOC BUFGCTRL_X0Y4 [get_cells clk_refm0/inst/clkf_buf]
 set_property LOC BUFGCTRL_X0Y0 [get_cells clk_refm0/inst/clkout1_buf]
 set_property LOC BUFGCTRL_X0Y5 [get_cells clk_refm0/inst/clkin1_bufg]
-set_property LOC BUFGCTRL_X0Y3 [get_cells prev_sel_reg[3]_i_1]
 
 # Location of BUFIO Primitives 
 set_property LOC BUFIO_X1Y5 [get_cells dvi2rgb_m0/TMDS_ClockingX/SerialClkBuffer]
@@ -472,11 +473,11 @@ add_cells_to_pblock [get_pblocks  {CLKAG_rgb2dvi_m0/ClockGenInternal.ClockGenX/P
 resize_pblock [get_pblocks {CLKAG_rgb2dvi_m0/ClockGenInternal.ClockGenX/PixelClk_BUFG}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
 #endgroup
 
-# Clock net "pixel_sync_inst/CLK" driven by instance "pixel_sync_inst/pixel_clk_BUFG" located at site "BUFGCTRL_X0Y17"
+# Clock net "pixel_sync_inst/pixel_clk_out" driven by instance "pixel_sync_inst/pixel_clk_BUFG" located at site "BUFGCTRL_X0Y17"
 #startgroup
-create_pblock {CLKAG_pixel_sync_inst/CLK}
-add_cells_to_pblock [get_pblocks  {CLKAG_pixel_sync_inst/CLK}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=rgb2dvi_m0/ClockGenInternal.ClockGenX/GenMMCM.DVI_ClkGenerator} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="pixel_sync_inst/CLK"}]]]
-resize_pblock [get_pblocks {CLKAG_pixel_sync_inst/CLK}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+create_pblock {CLKAG_pixel_sync_inst/pixel_clk_out}
+add_cells_to_pblock [get_pblocks  {CLKAG_pixel_sync_inst/pixel_clk_out}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=rgb2dvi_m0/ClockGenInternal.ClockGenX/GenMMCM.DVI_ClkGenerator} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="pixel_sync_inst/pixel_clk_out"}]]]
+resize_pblock [get_pblocks {CLKAG_pixel_sync_inst/pixel_clk_out}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
 #endgroup
 
 # Clock net "dvi2rgb_m0/TMDS_ClockingX/PixelClk_int" driven by instance "dvi2rgb_m0/TMDS_ClockingX/PixelClkBuffer" located at site "BUFR_X1Y5"
@@ -490,19 +491,19 @@ resize_pblock [get_pblocks {CLKAG_dvi2rgb_m0/TMDS_ClockingX/PixelClk_int}] -add 
 #startgroup
 create_pblock {CLKAG_dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut}
 add_cells_to_pblock [get_pblocks  {CLKAG_dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=pixel_sync_inst/pixel_clk_BUFG} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut"}]]]
-resize_pblock [get_pblocks {CLKAG_dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+resize_pblock [get_pblocks {CLKAG_dvi2rgb_m0/GenerateBUFG.ResyncToBUFG_X/PixelClkOut}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup
+
+# Clock net "dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i" driven by instance "dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck" located at site "BUFGCTRL_X0Y3"
+#startgroup
+create_pblock {CLKAG_dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i}
+add_cells_to_pblock [get_pblocks  {CLKAG_dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i"}]]]
+resize_pblock [get_pblocks {CLKAG_dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
 #endgroup
 
 # Clock net "clk_refm0/inst/clk_out1" driven by instance "clk_refm0/inst/clkout1_buf" located at site "BUFGCTRL_X0Y0"
 #startgroup
 create_pblock {CLKAG_clk_refm0/inst/clk_out1}
 add_cells_to_pblock [get_pblocks  {CLKAG_clk_refm0/inst/clk_out1}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="clk_refm0/inst/clk_out1"}]]]
-resize_pblock [get_pblocks {CLKAG_clk_refm0/inst/clk_out1}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
-#endgroup
-
-# Clock net "DMUX_Inst/green_light" driven by instance "prev_sel_reg[3]_i_1" located at site "BUFGCTRL_X0Y3"
-#startgroup
-create_pblock {CLKAG_DMUX_Inst/green_light}
-add_cells_to_pblock [get_pblocks  {CLKAG_DMUX_Inst/green_light}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="DMUX_Inst/green_light"}]]]
-resize_pblock [get_pblocks {CLKAG_DMUX_Inst/green_light}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+resize_pblock [get_pblocks {CLKAG_clk_refm0/inst/clk_out1}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
 #endgroup

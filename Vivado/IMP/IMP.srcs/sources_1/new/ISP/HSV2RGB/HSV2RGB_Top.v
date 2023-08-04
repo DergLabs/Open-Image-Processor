@@ -48,6 +48,12 @@ module HSV2RGB_Top(
     wire [15:0] s_out;
     wire [7:0] v_out;
 
+    wire [7:0] v_out_delayed;
+    wire [23:0] h_out_delayed;
+
+    wire [7:0] v_out_delayed_2;
+    wire [2:0] i_delayed;
+
     input_pixel_flow_controller input_pixel_flow_controller_inst
     (
         .clk(clk),
@@ -60,6 +66,20 @@ module HSV2RGB_Top(
         .h_out(h_out),
         .s_out(s_out),
         .v_out(v_out)
+    );
+
+    vector_delay_line #(8, 6) vout_data_delay( //8 bits, 7 stages
+        .clk(clk),
+        .reset(rst),
+        .data_in(v_out),
+        .data_out(v_out_delayed)
+    );
+
+    vector_delay_line #(24, 6) hout_data_delay( //24 bits, 7 stages
+        .clk(clk),
+        .reset(rst),
+        .data_in(h_out),
+        .data_out(h_out_delayed)
     );
 
     back_calculate_d back_calculate_d_inst
@@ -75,10 +95,10 @@ module HSV2RGB_Top(
     (
         .clk(clk),
         .rst(rst),
-        .h(h_out),
+        .h(h_out_delayed),
         .i(i),
         .d(d),
-        .v(v_out),
+        .v(v_out_delayed),
 
         .c(c),
         .m(m)
@@ -93,19 +113,42 @@ module HSV2RGB_Top(
     );
 
     wire Q;
+    /*
     c_shift_ram_17 data_valid_delay_hsv2rgb (
       .D(pixel_ready_in),      // input wire [0 : 0] D
       .CLK(clk),               // input wire CLK
       .SCLR(rst),              // input wire SCLR
       .Q(Q)      // output wire [0 : 0] Q
+    );*/
+
+    vector_delay_line #(1, 17) pixel_ready_delay( //1 bit, 19 stages -- Delay for pixel ready signal
+        .clk(clk),
+        .reset(rst),
+        .data_in(pixel_ready_in),
+        .data_out(Q)
     );
+
+    vector_delay_line #(8, 10) vout_data_delay_2( //8 bits, 7 stages
+        .clk(clk),
+        .reset(rst),
+        .data_in(v_out_delayed),
+        .data_out(v_out_delayed_2)
+    );
+
+    vector_delay_line #(3, 10) iout_data_delay( //24 bits, 7 stages
+        .clk(clk),
+        .reset(rst),
+        .data_in(i),
+        .data_out(i_delayed)
+    );
+
 
     generate_rgb_out generate_rgb_out_inst
     (
         .clk(clk),
         .rst(rst),
-        .i(i),
-        .v(v_out), 
+        .i(i_delayed),
+        .v(v_out_delayed_2), 
         .c(c),
         .m(m),
         .pixel_ready_in(Q),
@@ -117,15 +160,4 @@ module HSV2RGB_Top(
         .rgb_out(RGB_OUT)
     );
 
-    /*
-    output_pixel_flow_controller output_pixel_flow_controller_inst
-    (
-        .clk(clk),
-        .rst(rst),
-        .rgb_input(RGB_OUT_w),
-        .rgb_output(RGB_OUT),
-        .pixel_ready()
-    );
-    */
-    
 endmodule
