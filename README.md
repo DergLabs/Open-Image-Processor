@@ -28,7 +28,7 @@ The processing cores have 2 primary inputs (RGB in and Data Valid) and 4 primary
 - A Ryzen 9 3900X takes 0.83s to process 16.7 million pixels at 4Ghz (Measured using the C++ accuracy test program, which also records execution time). A rough estimation for the power draw is in the range of 10's of watts. In comparison, at a 148.5Mhz pixel clock (used for 1920x1080p 60Hz), a single ISP core can process 16.7 Million pixels in approximately 0.13s while consuming 0.5W.  
 
 ## Future Work
-- Add RGB/HSV adjustment cores using DSP processors, 32-bit registers will be used for control data
+- Add GUI Python tool for live image processing
 - Investigate convolution image compression engine & DDR3 Frame buffering
 - Add Instruction and image mask RAM for dynamic image adjustment
 
@@ -44,3 +44,16 @@ This is an example output using the integer conversion algorithm implemented in 
 
 ![Processed Image](https://imgur.com/z2iWIP8.png)
 
+
+## Example FPGA Output:
+
+These are some example outputs from the FPGA running at 1680x1050 60Hz. 
+
+## Original Image:
+![Original Image](https://imgur.com/ESCLlk1.png)
+
+## Processed Images:
+
+![V1](https://imgur.com/tdg8dgS.png)
+
+![V2](https://imgur.com/rfsa5HA.png)
