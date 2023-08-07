@@ -1,2 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_c_m.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'back_calculate_c_m'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/ALUs/HSV_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'HSV_ALU'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/johnh/Desktop/IMP/IMP.srcs/sim_1/new/ALU_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU_TB'

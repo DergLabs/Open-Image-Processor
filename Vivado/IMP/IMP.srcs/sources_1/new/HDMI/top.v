@@ -13,6 +13,10 @@ module top
     input[2:0] TMDS_data_hdmi_in_n,
     input[2:0] TMDS_data_hdmi_in_p,
 
+    input isp_alu_cs,
+    input isp_alu_sclk,
+    input[7:0] isp_alu_din,
+
     output [0:0]HDMI_hdmi_out_OEN,//HDMIOUT       
     output TMDS_clk_hdmi_out_n,
     output TMDS_clk_hdmi_out_p,
@@ -125,34 +129,10 @@ module top
        .I(sys_clk)  // 1-bit input: Clock input
     );
 
-    wire hsync_sr;
-    wire vsync_sr;
-    wire pvde_sr;
-    wire serial_clk_sr;
-    wire pixel_clk_sr;
-    wire hdmi_oen = 1'b1;
-    reg [5:0] count_cout;
-    Pixel_Sync pixel_sync_inst
-    (
-      .pixel_clk(PixelClk),
-      .rst_n(rst_n),
-      .vid_pVDE_in(vid_pVDE),
-      .vid_pHSync_in(vid_pHSync),
-      .vid_pVSync_in(vid_pVSync),
-      .serial_clk_in(SerialClk),
-      .hdmi_out_oen(hdmi_oen),
-
-      .vid_pVDE_out(pvde_sr),
-      .vid_pHSync_out(hsync_sr),
-      .vid_pVSync_out(vsync_sr),
-      .serial_clk_out(serial_clk_sr),
-      .pixel_clk_out(pixel_clk_sr),
-      .hdmi_out_oen_out(HDMI_hdmi_out_OEN),
-      .count_out(count_cout)
-    );
    
 
-    ila_0 internalDebug (
+    
+    /*ila_0 internalDebug (
       .clk(clk_200mhz), // input wire clk
 
 
@@ -168,48 +148,52 @@ module top
       .probe9(vsync_sr), // input wire [0:0]  probe9 
       .probe10(pixel_clk_sr), // input wire [0:0]  probe10 
       .probe11(HDMI_hdmi_out_OEN) // input wire [0:0]  probe11
+    );*/
+    
+
+    wire rst_p;
+    assign rst_p = ~rst_n;
+    wire [23:0] isp_rgb_out;
+    ISP_Top image_processor
+    (
+    .core_clk(PixelClk),
+    .ila_clk(clk_200mhz),
+    .rst(rst_p),
+    .rgb_in(vid_pData),
+    .cs(isp_alu_cs),
+    .sclk(isp_alu_sclk),
+    .din(isp_alu_din),
+    .rgb_out(isp_rgb_out),
+    .CE(pixel_ready_CE)
     );
 
-
-    /*wire core_clk;
-    clk_wiz_0 core_clk
+    // Pixel Sync logic. Accounts for 40 Cycle ISP latency
+    wire pixel_ready_CE;
+    wire hsync_sr;
+    wire vsync_sr;
+    wire pvde_sr;
+    wire serial_clk_sr;
+    wire pixel_clk_sr;
+    wire hdmi_oen = 1'b1;
+    reg [5:0] count_cout;
+    Pixel_Sync pixel_sync_inst
     (
-      // Clock out ports
-      .clk_out1(core_clk),     // output clk_out1
-      // Status and control signals
-      .resetn(rst_n), // input reset
-      .locked(),       // output locked
-    // Clock in ports
-      .clk_in1(sysclk_BUFG));*/      // input clk_in1
-
-      wire rst_p;
-      assign rst_p = ~rst_n;
-      wire [23:0] isp_rgb_out;
-      ISP_Top image_processor
-      (
       .pixel_clk(PixelClk),
-      .core_clk(PixelClk),
-      .rst(rst_p),
-      .rgb_in(vid_pData),
-      .rgb_out(isp_rgb_out)
-      );
+      .rst_n(rst_n),
+      .CE(pixel_ready_CE),
+      .vid_pVDE_in(vid_pVDE),
+      .vid_pHSync_in(vid_pHSync),
+      .vid_pVSync_in(vid_pVSync),
+      .serial_clk_in(SerialClk),
+      .hdmi_out_oen(hdmi_oen),
 
-      /*
-      always@(posedge PixelClk)
-      begin
-        //vid_pData_d0 <= vid_pData;
-        vid_pVDE_d0 <= vid_pVDE;
-        vid_pHSync_d0 <= vid_pHSync;
-        vid_pVSync_d0 <= vid_pVSync;
-
-
-        //vid_pData_d1 <= isp_rgb_out;
-        vid_pVDE_d1 <= vid_pVDE_d0;
-        vid_pHSync_d1 <= vid_pHSync_d0;
-        vid_pVSync_d1 <= vid_pVSync_d0;
-      end  */
-
-      //assign HDMI_hdmi_out_OEN = 1'b1;
+      .vid_pVDE_out(pvde_sr),
+      .vid_pHSync_out(hsync_sr),
+      .vid_pVSync_out(vsync_sr),
+      .serial_clk_out(serial_clk_sr),
+      .pixel_clk_out(pixel_clk_sr),
+      .hdmi_out_oen_out(HDMI_hdmi_out_OEN)
+    );
 
 
     clk_ref clk_refm0

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tfgg484-1" LaunchTime="1691127244" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/min_max_tb.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tfgg484-1" LaunchTime="1691367070" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/min_max_tb.dcp">
   <File Type="PA-TCL" Name="top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_reports.tcl"/>
@@ -18,7 +18,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/ISP/Pixel_Artibter/ISPCore.v">
+    <File Path="$PSRCDIR/sources_1/new/ISP/Core_controller_and_top/ISPCore.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -46,10 +46,16 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/ISP_Top.sv">
+    <File Path="$PSRCDIR/sources_1/new/ISP/Core_controller_and_top/ISP_Top.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ISP/ALUs/ALU_REG_CTRL_IO.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -149,12 +155,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/ISP/Common/delay_line.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/HDMI/src/dvi2rgb.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -163,6 +163,18 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/HDMI/src/rgb2dvi.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ISP/ALUs/RGB_ALU.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ISP/ALUs/HSV_ALU.vhd">
+      <FileInfo SFType="VHDL2008">
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -203,6 +215,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/ISP/Common/delay_line.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/ISP/HSV2RGB/generate_rgb_out.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -228,57 +246,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/DMUX.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/MUX.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/PriorityEncoder.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/Desktop/IMP/IMP.srcs/sim_1/new/DMUX_TB.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sim_1/new/DMUX_TB.vhd"/>
-        <Attr Name="ImportTime" Val="1689996548"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/Desktop/IMP/IMP.srcs/sim_1/new/MUX_TB.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sim_1/new/MUX_TB.vhd"/>
-        <Attr Name="ImportTime" Val="1689996548"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/Desktop/IMP/IMP.srcs/sim_1/new/PriorityEncoder_TB.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sim_1/new/PriorityEncoder_TB.vhd"/>
-        <Attr Name="ImportTime" Val="1689996548"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/Desktop/divisor_inv.coe">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../divisor_inv.coe"/>
@@ -295,24 +262,15 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/Desktop/IMP/IMP.srcs/sim_1/new/Pixel_Sync_TB.vhd">
+    <File Path="$PSRCDIR/sim_1/new/ALU_TB.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sim_1/new/ALU_CTRL_TB.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sim_1/new/Pixel_Sync_TB.vhd"/>
-        <Attr Name="ImportTime" Val="1689996548"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/ISP/ALUs/RGB_ALU.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/ISP/ALUs/HSV_ALU.vhd">
-      <FileInfo SFType="VHDL2008">
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -353,12 +311,12 @@
   <Strategy Version="1" Minor="2">
     <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design">
+      <Option Id="NoCombineLuts">1</Option>
       <Option Id="Directive">7</Option>
       <Option Id="ResourceSharing">2</Option>
       <Option Id="KeepEquivalentRegisters">1</Option>
       <Option Id="FsmExtraction">1</Option>
       <Option Id="ShregMinSize">5</Option>
-      <Option Id="NoCombineLuts">1</Option>
     </Step>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="clk_ref"/>

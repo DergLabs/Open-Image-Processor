@@ -23,6 +23,7 @@
 module Pixel_Sync(
     input pixel_clk,
     input rst_n,
+    input CE,
     input vid_pVDE_in,
     input vid_pHSync_in,
     input vid_pVSync_in,
@@ -34,13 +35,8 @@ module Pixel_Sync(
     output vid_pVSync_out,
     output serial_clk_out,
     output pixel_clk_out,
-    output hdmi_out_oen_out, 
-    output [5:0] count_out
+    output hdmi_out_oen_out
     );
-
-    reg CE = 0;
-    reg counter_CE = 1;
-    wire [5:0] count;
 
     reg vid_pVDE_d0 = 1'b0;
     reg vid_pHSync_d0 = 1'b0;
@@ -48,22 +44,6 @@ module Pixel_Sync(
     reg sierial_clk_d0 = 1'b0;
     reg pixel_clk_d0 = 1'b0;
     reg hdm_out_oen_d0 = 1'b0;
-
-    c_counter_binary_0 lost_pixel_counter (
-      .CLK(pixel_clk),  // input wire CLK
-      .CE(counter_CE),    // input wire CE
-      .Q(count)      // output wire [4 : 0] Q
-    );
-
-    always @(pixel_clk) begin
-      if (rst_n == 1'b0) begin
-        CE <= 1'b0;
-        counter_CE <= 1'b1;
-      end else if (count == 6'h1E) begin //Count to 30 (number of pixels we need to delay by before they're present on output)
-          CE <= 1'b1;
-          counter_CE <= 1'b0;
-      end
-    end
 
     always @(*) begin
       if (CE == 1'b1) begin
@@ -90,27 +70,5 @@ module Pixel_Sync(
     assign vid_pHSync_out = vid_pHSync_d0;
     assign vid_pVSync_out = vid_pVSync_d0;
     assign hdmi_out_oen_out = hdm_out_oen_d0;
-
-    /*c_shift_ram_sync_buffer hsync_sr (
-      .D(vid_pHSync_in),      // input wire [0 : 0] D
-      .CLK(pixel_clk),  // input wire CLK
-      .CE(CE),
-      .Q(vid_pHSync_out)      // output wire [0 : 0] Q
-    );
-
-    c_shift_ram_sync_buffer vsync_sr (
-      .D(vid_pVSync_in),      // input wire [0 : 0] D
-      .CLK(pixel_clk),  // input wire CLK
-      .CE(CE),
-      .Q(vid_pVSync_out)      // output wire [0 : 0] Q
-    );
-
-    c_shift_ram_sync_buffer pvde_sr (
-      .D(vid_pVDE_in),      // input wire [0 : 0] D
-      .CLK(pixel_clk),  // input wire CLK
-      .CE(CE),
-      .Q(vid_pVDE_out)      // output wire [0 : 0] Q
-    );*/
-      
 
 endmodule

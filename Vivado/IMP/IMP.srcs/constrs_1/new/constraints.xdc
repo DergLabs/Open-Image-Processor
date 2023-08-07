@@ -17,6 +17,37 @@ set_property PACKAGE_PIN F20 [get_ports {rst_n}]
 #set_property CLOCK_DEDICATED_ROUTE FALSE[get_nets {rst_n_IBUF}]
 #set_property CLOCK_DEDICATED_ROUTE FALSE[get_nets {rst_n}]
 
+#####################ISP GPIO###############################
+set_property PACKAGE_PIN E16 [get_ports isp_alu_cs]
+set_property IOSTANDARD LVCMOS33 [get_ports isp_alu_cs]
+
+set_property PACKAGE_PIN F14 [get_ports isp_alu_sclk]
+set_property IOSTANDARD LVCMOS33 [get_ports isp_alu_sclk]
+
+set_property PACKAGE_PIN E14 [get_ports {isp_alu_din[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {isp_alu_din[0]}]
+
+set_property PACKAGE_PIN D14 [get_ports {isp_alu_din[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {isp_alu_din[1]}]
+
+set_property PACKAGE_PIN B13 [get_ports {isp_alu_din[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {isp_alu_din[2]}]
+
+set_property PACKAGE_PIN A14 [get_ports {isp_alu_din[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {isp_alu_din[3]}]
+
+set_property PACKAGE_PIN C15 [get_ports {isp_alu_din[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {isp_alu_din[4]}]
+
+set_property PACKAGE_PIN A16 [get_ports {isp_alu_din[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {isp_alu_din[5]}]
+
+set_property PACKAGE_PIN B16 [get_ports {isp_alu_din[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {isp_alu_din[6]}]
+
+set_property PACKAGE_PIN B18 [get_ports {isp_alu_din[7]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {isp_alu_din[7]}]
+
 #####################HDMI_IN###############################
 set_property PACKAGE_PIN N5 [get_ports hdmi_ddc_scl_io]
 set_property IOSTANDARD LVCMOS33 [get_ports hdmi_ddc_scl_io]

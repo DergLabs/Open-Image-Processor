@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Fri Aug  4 01:38:09 2023
+| Date         : Sun Aug  6 20:15:15 2023
 | Host         : DESKTOP-U9NB2CD running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_drc_opted.rpt -pb top_drc_opted.pb -rpx top_drc_opted.rpx
 | Design       : top
@@ -24,17 +24,97 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 6
+             Violations found: 44
 +---------+----------+-------------------------------------------------------------------+------------+
 | Rule    | Severity | Description                                                       | Violations |
 +---------+----------+-------------------------------------------------------------------+------------+
-| AVAL-4  | Advisory | enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND | 4          |
+| DPIP-1  | Warning  | Input pipelining                                                  | 9          |
+| DPOP-1  | Warning  | PREG Output pipelining                                            | 3          |
+| DPREG-4 | Warning  | DSP48E1_PregDynOpmodeZmuxP:                                       | 2          |
+| AVAL-4  | Advisory | enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND | 7          |
+| AVAL-5  | Advisory | enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND   | 3          |
+| REQP-20 | Advisory | enum_AREG_0_connects_CEA1_GND_connects_CEA2_GND                   | 3          |
 | REQP-22 | Advisory | enum_AREG_1_connects_CEA1_GND                                     | 1          |
+| REQP-24 | Advisory | enum_BREG_0_connects_CEB1_GND_connects_CEB2_GND                   | 3          |
 | REQP-26 | Advisory | enum_BREG_1_connects_CEB1_GND                                     | 1          |
+| REQP-28 | Advisory | enum_USE_MULT_NONE_connects_CEM_GND                               | 3          |
+| REQP-29 | Advisory | enum_CREG_0_connects_CEC_GND                                      | 3          |
+| REQP-30 | Advisory | enum_MREG_0_connects_CEM_GND                                      | 3          |
+| REQP-31 | Advisory | enum_PREG_0_connects_CEP_GND                                      | 3          |
 +---------+----------+-------------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+DPIP-1#1 Warning
+Input pipelining  
+DSP image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU input image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU input image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU input image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU input image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#5 Warning
+Input pipelining  
+DSP image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU input image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#6 Warning
+Input pipelining  
+DSP image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU input image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#7 Warning
+Input pipelining  
+DSP image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU input image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#8 Warning
+Input pipelining  
+DSP image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU input image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#9 Warning
+Input pipelining  
+DSP image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU input image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-1#1 Warning
+PREG Output pipelining  
+DSP image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU output image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#2 Warning
+PREG Output pipelining  
+DSP image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU output image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#3 Warning
+PREG Output pipelining  
+DSP image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU output image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPREG-4#1 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
+DPREG-4#2 Warning
+DSP48E1_PregDynOpmodeZmuxP:  
+The DSP48E1 cell image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+Related violations: <none>
+
 AVAL-4#1 Advisory
 enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
 image_processor/u_ISPCore/HSV2RGB_Core_Inst/back_calculate_c_m_inst/DSP48E1_F_Calculate: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
@@ -47,12 +127,57 @@ Related violations: <none>
 
 AVAL-4#3 Advisory
 enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
-image_processor/u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
 Related violations: <none>
 
 AVAL-4#4 Advisory
 enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#5 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/u_ISPCore/RGB2HSV_Core_Inst/calculate_h_inst/DSP48E1_h_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#6 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
 image_processor/u_ISPCore/RGB2HSV_Core_Inst/calculate_s_inst/DSP48E1_s_mult: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#7 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#1 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#2 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#3 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+REQP-20#1 Advisory
+enum_AREG_0_connects_CEA1_GND_connects_CEA2_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU: When DSP48E1 attribute AREG is set to 0, the CEA1 and CEA2 pins should be tied to GND to save power.
+Related violations: <none>
+
+REQP-20#2 Advisory
+enum_AREG_0_connects_CEA1_GND_connects_CEA2_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU: When DSP48E1 attribute AREG is set to 0, the CEA1 and CEA2 pins should be tied to GND to save power.
+Related violations: <none>
+
+REQP-20#3 Advisory
+enum_AREG_0_connects_CEA1_GND_connects_CEA2_GND  
+image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU: When DSP48E1 attribute AREG is set to 0, the CEA1 and CEA2 pins should be tied to GND to save power.
 Related violations: <none>
 
 REQP-22#1 Advisory
@@ -60,9 +185,84 @@ enum_AREG_1_connects_CEA1_GND
 image_processor/u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 AREG attribute is set to 1, the CEA1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
 Related violations: <none>
 
+REQP-24#1 Advisory
+enum_BREG_0_connects_CEB1_GND_connects_CEB2_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU: When DSP48E1 attribute BREG is set to 0, the CEB1 and CEB2 pins should be tied to GND to save power.
+Related violations: <none>
+
+REQP-24#2 Advisory
+enum_BREG_0_connects_CEB1_GND_connects_CEB2_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU: When DSP48E1 attribute BREG is set to 0, the CEB1 and CEB2 pins should be tied to GND to save power.
+Related violations: <none>
+
+REQP-24#3 Advisory
+enum_BREG_0_connects_CEB1_GND_connects_CEB2_GND  
+image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU: When DSP48E1 attribute BREG is set to 0, the CEB1 and CEB2 pins should be tied to GND to save power.
+Related violations: <none>
+
 REQP-26#1 Advisory
 enum_BREG_1_connects_CEB1_GND  
 image_processor/u_ISPCore/RGB2HSV_Core_Inst/calculate_min_max_inst/DSP48E1_minMax: When the DSP48E1 BREG attribute is set to 1, the CEB1 input pin is preferred to be tied to GND to save power when OPMODE0 and OPMODE1 are 1.
+Related violations: <none>
+
+REQP-28#1 Advisory
+enum_USE_MULT_NONE_connects_CEM_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU: When the DSP48E1 USE_MULT attribute is set to NONE, the CEM input pin should be tied to GND to save power.
+Related violations: <none>
+
+REQP-28#2 Advisory
+enum_USE_MULT_NONE_connects_CEM_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU: When the DSP48E1 USE_MULT attribute is set to NONE, the CEM input pin should be tied to GND to save power.
+Related violations: <none>
+
+REQP-28#3 Advisory
+enum_USE_MULT_NONE_connects_CEM_GND  
+image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU: When the DSP48E1 USE_MULT attribute is set to NONE, the CEM input pin should be tied to GND to save power.
+Related violations: <none>
+
+REQP-29#1 Advisory
+enum_CREG_0_connects_CEC_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU: When the DSP48E1 CREG attribute is set to 0, the CEC input pin should be tied to GND to save power.
+Related violations: <none>
+
+REQP-29#2 Advisory
+enum_CREG_0_connects_CEC_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU: When the DSP48E1 CREG attribute is set to 0, the CEC input pin should be tied to GND to save power.
+Related violations: <none>
+
+REQP-29#3 Advisory
+enum_CREG_0_connects_CEC_GND  
+image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU: When the DSP48E1 CREG attribute is set to 0, the CEC input pin should be tied to GND to save power.
+Related violations: <none>
+
+REQP-30#1 Advisory
+enum_MREG_0_connects_CEM_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU: When the DSP48E1 MREG attribute is set to 0, the CEM input pin should be tied to GND to save power.
+Related violations: <none>
+
+REQP-30#2 Advisory
+enum_MREG_0_connects_CEM_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU: When the DSP48E1 MREG attribute is set to 0, the CEM input pin should be tied to GND to save power.
+Related violations: <none>
+
+REQP-30#3 Advisory
+enum_MREG_0_connects_CEM_GND  
+image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU: When the DSP48E1 MREG attribute is set to 0, the CEM input pin should be tied to GND to save power.
+Related violations: <none>
+
+REQP-31#1 Advisory
+enum_PREG_0_connects_CEP_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_H_ALU: When the DSP48E1 PREG attribute is set to 0, the CEP input pin should be tied to GND to save power.
+Related violations: <none>
+
+REQP-31#2 Advisory
+enum_PREG_0_connects_CEP_GND  
+image_processor/u_ISPCore/HSV_ALU_Core_Inst/DSP48E1_SV_ALU: When the DSP48E1 PREG attribute is set to 0, the CEP input pin should be tied to GND to save power.
+Related violations: <none>
+
+REQP-31#3 Advisory
+enum_PREG_0_connects_CEP_GND  
+image_processor/u_ISPCore/RGB_ALU_Core_Inst/DSP48E1_RGB_ALU: When the DSP48E1 PREG attribute is set to 0, the CEP input pin should be tied to GND to save power.
 Related violations: <none>
 
 

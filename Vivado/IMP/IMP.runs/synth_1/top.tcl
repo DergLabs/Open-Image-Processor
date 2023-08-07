@@ -71,7 +71,10 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/johnh/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-31052-DESKTOP-U9NB2CD/incrSyn
+set_param chipscope.maxJobs 6
+set_param synth.incrementalSynthesisCache C:/Users/johnh/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-22796-DESKTOP-U9NB2CD/incrSyn
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -90,18 +93,33 @@ set_property ip_output_repo c:/Users/johnh/Desktop/IMP/IMP.cache/ip [current_pro
 set_property ip_cache_permissions disable [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files C:/Users/johnh/Desktop/divisor_inv.coe
-add_files C:/Users/johnh/Desktop/IMP/divisor_inv.coe
+add_files C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/imports/Desktop/divisor_inv.coe
+add_files C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/imports/Desktop/IMP/divisor_inv.coe
 read_verilog -library xil_defaultlib -sv {
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ArbiterV2/ISP_Top.sv
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Core_controller_and_top/ISP_Top.sv
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/top.v
 }
 read_verilog -library xil_defaultlib {
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/HSV2RGB_Top.v
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Pixel_Artibter/ISPCore.v
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Core_controller_and_top/ISPCore.v
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/Pixel_Sync.v
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/RGB2HSV_Top.v
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/inverse_value_ram.v
+}
+read_vhdl -vhdl2008 -library xil_defaultlib {
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/ALUs/ALU_REG_CTRL_IO.vhd
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/ALUs/RGB_ALU.vhd
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/ALUs/HSV_ALU.vhd
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_c_m.vhd
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_d.vhd
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_i.vhd
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_h.vhd
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_min_max.vhd
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_s.vhd
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Common/delay_line.vhd
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/generate_rgb_out.vhd
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/input_pixel_flow_controller.vhd
+  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/pixel_flow_controller.vhd
 }
 read_vhdl -library xil_defaultlib {
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/DVI_Constants.vhd
@@ -120,20 +138,8 @@ read_vhdl -library xil_defaultlib {
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Clocking.vhd
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Decoder.vhd
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/TMDS_Encoder.vhd
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/Common/delay_line.vhd
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/dvi2rgb.vhd
   C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/HDMI/src/rgb2dvi.vhd
-}
-read_vhdl -vhdl2008 -library xil_defaultlib {
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_c_m.vhd
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_d.vhd
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/back_calculate_i.vhd
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_h.vhd
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_min_max.vhd
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/calculate_s.vhd
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/generate_rgb_out.vhd
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/HSV2RGB/input_pixel_flow_controller.vhd
-  C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/new/ISP/RGB2HSV/pixel_flow_controller.vhd
 }
 read_ip -quiet C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/clk_ref/clk_ref.xci
 set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/clk_ref/clk_ref_board.xdc]

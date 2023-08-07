@@ -3,180 +3,115 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="FullChain_TB_behav.wdb" id="1">
+      <db_ref path="ALU_TB_behav.wdb" id="1">
          <top_modules>
-            <top_module name="FullChain_TB" />
+            <top_module name="ALU_TB" />
             <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="359.350 ns"></ZoomStartTime>
-      <ZoomEndTime time="543.251 ns"></ZoomEndTime>
-      <Cursor1Time time="410.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,013.018 ns"></ZoomEndTime>
+      <Cursor1Time time="430.100 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="372"></NameColumnWidth>
-      <ValueColumnWidth column_width="131"></ValueColumnWidth>
+      <ValueColumnWidth column_width="103"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="38" />
+   <WVObjectSize size="19" />
    <wave_markers>
       <marker time="3100000" label="" />
       <marker time="100000" label="" />
    </wave_markers>
-   <wvobject fp_name="/FullChain_TB/clk" type="logic">
+   <wvobject fp_name="/ALU_TB/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/rst" type="logic">
+   <wvobject fp_name="/ALU_TB/rst" type="logic">
       <obj_property name="ElementShortName">rst</obj_property>
       <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/rgb_in" type="array">
-      <obj_property name="ElementShortName">rgb_in[23:0]</obj_property>
-      <obj_property name="ObjectShortName">rgb_in[23:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/rgb_data_in" type="array">
+      <obj_property name="ElementShortName">rgb_data_in[23:0]</obj_property>
+      <obj_property name="ObjectShortName">rgb_data_in[23:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/data_in_valid" type="logic">
-      <obj_property name="ElementShortName">data_in_valid</obj_property>
-      <obj_property name="ObjectShortName">data_in_valid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/RGB2HSV_Core_Inst/data_valid" type="logic">
-      <obj_property name="ElementShortName">data_valid</obj_property>
-      <obj_property name="ObjectShortName">data_valid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/RGB2HSV_Core_Inst/h" type="array">
-      <obj_property name="ElementShortName">h[23:0]</obj_property>
-      <obj_property name="ObjectShortName">h[23:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/RGB2HSV_Core_Inst/s" type="array">
-      <obj_property name="ElementShortName">s[15:0]</obj_property>
-      <obj_property name="ObjectShortName">s[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/RGB2HSV_Core_Inst/v" type="array">
-      <obj_property name="ElementShortName">v[7:0]</obj_property>
-      <obj_property name="ObjectShortName">v[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/RGB2HSV_Core_Inst/data_out_ready" type="logic">
-      <obj_property name="ElementShortName">data_out_ready</obj_property>
-      <obj_property name="ObjectShortName">data_out_ready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/input_pixel_flow_controller_inst/pixel_ready" type="logic">
-      <obj_property name="ElementShortName">pixel_ready</obj_property>
-      <obj_property name="ObjectShortName">pixel_ready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/rgb_out" type="array">
-      <obj_property name="ElementShortName">rgb_out[23:0]</obj_property>
-      <obj_property name="ObjectShortName">rgb_out[23:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/rgb_data_out" type="array">
+      <obj_property name="ElementShortName">rgb_data_out[23:0]</obj_property>
+      <obj_property name="ObjectShortName">rgb_data_out[23:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_i_inst/i" type="array">
-      <obj_property name="ElementShortName">i[2:0]</obj_property>
-      <obj_property name="ObjectShortName">i[2:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/h_in" type="array">
+      <obj_property name="ElementShortName">h_in[23:0]</obj_property>
+      <obj_property name="ObjectShortName">h_in[23:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_d_inst/d" type="array">
-      <obj_property name="ElementShortName">d[7:0]</obj_property>
-      <obj_property name="ObjectShortName">d[7:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/s_in" type="array">
+      <obj_property name="ElementShortName">s_in[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s_in[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/v_out_delayed" type="array">
-      <obj_property name="ElementShortName">v_out_delayed[7:0]</obj_property>
-      <obj_property name="ObjectShortName">v_out_delayed[7:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/v_in" type="array">
+      <obj_property name="ElementShortName">v_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">v_in[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/h_out_delayed" type="array">
-      <obj_property name="ElementShortName">h_out_delayed[23:0]</obj_property>
-      <obj_property name="ObjectShortName">h_out_delayed[23:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/c" type="array">
-      <obj_property name="ElementShortName">c[7:0]</obj_property>
-      <obj_property name="ObjectShortName">c[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/m" type="array">
-      <obj_property name="ElementShortName">m[7:0]</obj_property>
-      <obj_property name="ObjectShortName">m[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/i_delayed" type="array">
-      <obj_property name="ElementShortName">i_delayed[2:0]</obj_property>
-      <obj_property name="ObjectShortName">i_delayed[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/v_out_delayed_2" type="array">
-      <obj_property name="ElementShortName">v_out_delayed_2[7:0]</obj_property>
-      <obj_property name="ObjectShortName">v_out_delayed_2[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/i_reg" type="array">
-      <obj_property name="ElementShortName">i_reg[2:0]</obj_property>
-      <obj_property name="ObjectShortName">i_reg[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/h_reg" type="array">
-      <obj_property name="ElementShortName">h_reg[23:0]</obj_property>
-      <obj_property name="ObjectShortName">h_reg[23:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/a_input" type="array">
-      <obj_property name="ElementShortName">a_input[29:0]</obj_property>
-      <obj_property name="ObjectShortName">a_input[29:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/b_input" type="array">
-      <obj_property name="ElementShortName">b_input[17:0]</obj_property>
-      <obj_property name="ObjectShortName">b_input[17:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/p_out" type="array">
-      <obj_property name="ElementShortName">p_out[47:0]</obj_property>
-      <obj_property name="ObjectShortName">p_out[47:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/p_out_reg" type="array">
-      <obj_property name="ElementShortName">p_out_reg[23:0]</obj_property>
-      <obj_property name="ObjectShortName">p_out_reg[23:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/h_delayed" type="array">
-      <obj_property name="ElementShortName">h_delayed[23:0]</obj_property>
-      <obj_property name="ObjectShortName">h_delayed[23:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/p_out_24b_reg" type="array">
-      <obj_property name="ElementShortName">p_out_24b_reg[23:0]</obj_property>
-      <obj_property name="ObjectShortName">p_out_24b_reg[23:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/h_op" type="array">
+      <obj_property name="ElementShortName">h_op[24:0]</obj_property>
+      <obj_property name="ObjectShortName">h_op[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/p_out_24b_sub_reg" type="array">
-      <obj_property name="ElementShortName">p_out_24b_sub_reg[23:0]</obj_property>
-      <obj_property name="ObjectShortName">p_out_24b_sub_reg[23:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/s_op" type="array">
+      <obj_property name="ElementShortName">s_op[16:0]</obj_property>
+      <obj_property name="ObjectShortName">s_op[16:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/i_delayed" type="array">
-      <obj_property name="ElementShortName">i_delayed[2:0]</obj_property>
-      <obj_property name="ObjectShortName">i_delayed[2:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/v_op" type="array">
+      <obj_property name="ElementShortName">v_op[8:0]</obj_property>
+      <obj_property name="ObjectShortName">v_op[8:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/f" type="array">
-      <obj_property name="ElementShortName">f[23:0]</obj_property>
-      <obj_property name="ObjectShortName">f[23:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/h_out" type="array">
+      <obj_property name="ElementShortName">h_out[23:0]</obj_property>
+      <obj_property name="ObjectShortName">h_out[23:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/d_delayed" type="array">
-      <obj_property name="ElementShortName">d_delayed[7:0]</obj_property>
-      <obj_property name="ObjectShortName">d_delayed[7:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/s_out" type="array">
+      <obj_property name="ElementShortName">s_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s_out[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/d_reg" type="array">
-      <obj_property name="ElementShortName">d_reg[7:0]</obj_property>
-      <obj_property name="ObjectShortName">d_reg[7:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/v_out" type="array">
+      <obj_property name="ElementShortName">v_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">v_out[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d" type="array">
-      <obj_property name="ElementShortName">f_d[31:0]</obj_property>
-      <obj_property name="ObjectShortName">f_d[31:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/HSV_ALU/s_in" type="array">
+      <obj_property name="ElementShortName">s_in[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s_in[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/v_delayed" type="array">
-      <obj_property name="ElementShortName">v_delayed[7:0]</obj_property>
-      <obj_property name="ObjectShortName">v_delayed[7:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/HSV_ALU/v_in" type="array">
+      <obj_property name="ElementShortName">v_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">v_in[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/f_d_shift" type="array">
-      <obj_property name="ElementShortName">f_d_shift[7:0]</obj_property>
-      <obj_property name="ObjectShortName">f_d_shift[7:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/HSV_ALU/a_input_sv" type="array">
+      <obj_property name="ElementShortName">a_input_sv[29:0]</obj_property>
+      <obj_property name="ObjectShortName">a_input_sv[29:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/min" type="array">
-      <obj_property name="ElementShortName">min[7:0]</obj_property>
-      <obj_property name="ObjectShortName">min[7:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/HSV_ALU/b_input_sv" type="array">
+      <obj_property name="ElementShortName">b_input_sv[17:0]</obj_property>
+      <obj_property name="ObjectShortName">b_input_sv[17:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/c" type="array">
-      <obj_property name="ElementShortName">c[7:0]</obj_property>
-      <obj_property name="ObjectShortName">c[7:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/HSV_ALU/c_input_sv" type="array">
+      <obj_property name="ElementShortName">c_input_sv[47:0]</obj_property>
+      <obj_property name="ObjectShortName">c_input_sv[47:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/FullChain_TB/TOP/HSV2RGB_Core_Inst/back_calculate_c_m_inst/m" type="array">
-      <obj_property name="ElementShortName">m[7:0]</obj_property>
-      <obj_property name="ObjectShortName">m[7:0]</obj_property>
+   <wvobject fp_name="/ALU_TB/HSV_ALU/p_out_sv" type="array">
+      <obj_property name="ElementShortName">p_out_sv[47:0]</obj_property>
+      <obj_property name="ObjectShortName">p_out_sv[47:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>
