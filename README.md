@@ -11,29 +11,26 @@ An open-source, multi-core image processor capable of real-time video and image 
 -  **Python Programs:** The **fast_image_editor** provides a live image editing window with RGB and HSV sliders, used for quality and functionality testing. The **integer_based_rgb2hsv** script includes live image editing, color accuracy testing, single-color conversions, and more.
 
 **Vivado Project & FPGA Implementation:** 
-- The full project is found in Vivado/IMP, built in Vivado 2022.1 and synthesized for an Artix-7 35T FPGA on the Alynx AX7035 board. In the near future, expect implementation on the Artix Duo FPGA board and Kintex/Zynq FPGA's. Current power consumption is estimated at ~0.8W at 1680x1050p 60FPS with 15 Cores.
+- The full project is found in Vivado/IMP, built in Vivado 2022.1 and synthesized for an Artix-7 35T FPGA on the Alynx AX7035 board. In the near future, expect implementation on the Artix Duo FPGA board and Kintex/Zynq FPGA's. Current power consumption is estimated at ~0.5W at 1680x1050p 60FPS with 1 Core.
 
 ## Architecture
-The processing cores currently perform a simple RGB-HSV-RGB passthrough. DSP cores will be added to provide RGB and HSV adjustment. With the RGB and HSV adjustment included, upto 10 Cores can be implemented on the Artix-7 35T. This is purely limited by the number of DSP cores. A total of 9 DSP's are used per core, 3 in the RGB-HSV conversion, 3 in the HSV-RGB conversion, 1 for the RGB adjustment, and 2 for the HSV adjustment. The cores are linked using a simple combinational logic-based arbiter. The arbiter consists of a dual clock input FIFO, input DMUX, core priority/availability encoder, output MUX and output dual clock FIFO. 
+The processing cores currently perform a simple RGB-HSV-RGB passthrough. DSP cores will be added to provide RGB and HSV adjustment. With the RGB and HSV adjustment included, upto 10 Cores can be implemented on the Artix-7 35T. This is purely limited by the number of DSP cores. A total of 9 DSP's are used per core, 3 in the RGB-HSV conversion, 3 in the HSV-RGB conversion, 1 for the RGB adjustment, and 2 for the HSV adjustment. With the newest architecture overhaul, the need for multiple cores has been removed. The ISP cores are now fully pipelined, supporting a throughput of 1 pixel/clock cycle. Additionally, the cores now feature dynamic clocking, and are configured to operate at the input pixel clock. Two or more ISP cores may be needed when working with pixel clock frequencies higher than FMAX (~300Mhz).
 
-The processing cores have 2 primary inputs (RGB in and Data Valid) and 4 primary outputs (RGB OUT, rgb2hsv_data_ready, n_core_busy, hsv2rgb_data_ready). When a pixel is sent to the core, data valid must be pulsed high at the same time for exactly one clock cycle. Once a pixel is sent to the core, the n_core_busy signal will be driven low (This is an active low signal). The data valid pulse will propagate through the core with the pixel and after 13 clock cycles, the pixel will be sent from the RGB2HSV core to the HSV2RGB core. At this time, n_core_busy will go high, signifying that it is free to receive a new pixel. The n_core_busy signals of all cores are connected to a priority encoder. The output of this encoder is then connected to the DMUX select input. A similar scheme is used for the output MUX. When a pixel has finished processing, the hsv2rgb_data_ready signal will go high. This signal is sent to another priority encoder with its output connected to the MUX select signal. The output of the mux feeds into the output fifo which handles the clk domain crossing. 
+The processing cores have 2 primary inputs (RGB in and Data Valid) and 4 primary outputs (RGB OUT, rgb2hsv_data_ready, n_core_busy, hsv2rgb_data_ready). When a pixel is sent to the core, data valid must be pulsed high at the same time. Once a pixel is sent to the core, the n_core_busy signal will be driven low (This is an active low signal). When data on the ISP core output is valid, the pixel_ready_out signal will go high. The current implementation does not need the pixel ready out signal since only one ISP core is used and operates at the pixel clock, it can be inferred that there will always be a new valid pixel on each clock cycle. 
 
-**FPGA Implementation (Blue - 15 Processor Cores, Red - HDMI-RGB, Orange - RGB-HDMI):**
+**FPGA Implementation (Blue - Single ISP Processor Core, Red - HDMI to RGB, Green - RGB to HDMI, Light Turquoise - Internal Logic Analyzer):**
 
-![(Core)](https://imgur.com/8mgcja6.png)
+![(Core)](https://imgur.com/20avd61.png)
 
 ## Performance: 
-- Each core takes 13 clock cycles to process a pixel. At 250Mhz with 15 cores, a theoretical total throughput of 288.46 Million Pixels/second is possible. (~19.2MP/s/core)
-- Adding the RGB and HSV ALU's will increase the cycle count to ~17 cycles, resulting in a theoretical total throughput of 147.05 Million Pixels/second (~14.7MP/s/core, 5 cores lost due to an increase in DSP usage)
-- A Ryzen 9 3900X takes 0.83s to process 16.7 million pixels at 4Ghz (Measured using the C++ accuracy test program, which also records execution time). A rough estimation for the power draw is in the range of 10's of watts. In comparison, at 250Mhz, 10 OIP cores can process 16.7 million pixels in ~0.113s while consuming ~1W of power. 
+- One pixel is processed per clock cycle at the input pixel clock. The total latency from input to output is 39 pixels.
+- Adding the RGB and HSV ALU's will increase the latency to ~43 pixels.
+- A Ryzen 9 3900X takes 0.83s to process 16.7 million pixels at 4Ghz (Measured using the C++ accuracy test program, which also records execution time). A rough estimation for the power draw is in the range of 10's of watts. In comparison, at a 148.5Mhz pixel clock (used for 1920x1080p 60Hz), a single ISP core can process 16.7 Million pixels in approximately 0.13s while consuming 0.5W.  
 
 ## Future Work
-- Add RGB/HSV adjustment cores using DSP processors, 32-bit registers will be used for control data
-- Fix Hsync/Vsync delays
-- Fix unexpected reset behavior
-- Fix core clock incompatibility (Currently the cores must operate at an integer multiple of pixel clk)
-- Add 1920x1080p 60FPS support. The cores can support this but some issue in the encode/decode logic causes instability
+- Add GUI Python tool for live image processing
 - Investigate convolution image compression engine & DDR3 Frame buffering
+- Add Instruction and image mask RAM for dynamic image adjustment
 
 ## Example Outputs:
 
@@ -47,3 +44,16 @@ This is an example output using the integer conversion algorithm implemented in 
 
 ![Processed Image](https://imgur.com/z2iWIP8.png)
 
+
+## Example FPGA Output:
+
+These are some example outputs from the FPGA running at 1680x1050 60Hz. 
+
+## Original Image:
+![Original Image](https://imgur.com/ESCLlk1.png)
+
+## Processed Images:
+
+![V1](https://imgur.com/tdg8dgS.png)
+
+![V2](https://imgur.com/rfsa5HA.png)
