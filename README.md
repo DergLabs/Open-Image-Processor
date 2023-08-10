@@ -23,9 +23,10 @@ The processing cores have 2 primary inputs (RGB in and Data Valid) and 4 primary
 ![(Core)](https://imgur.com/20avd61.png)
 
 ## Performance: 
-- One pixel is processed per clock cycle at the input pixel clock. The total latency from input to output is 39 pixels.
-- Adding the RGB and HSV ALU's will increase the latency to ~43 pixels.
-- A Ryzen 9 3900X takes 0.83s to process 16.7 million pixels at 4Ghz (Measured using the C++ accuracy test program, which also records execution time). A rough estimation for the power draw is in the range of 10's of watts. In comparison, at a 148.5Mhz pixel clock (used for 1920x1080p 60Hz), a single ISP core can process 16.7 Million pixels in approximately 0.13s while consuming 0.5W.  
+- One pixel is processed per clock cycle at the input pixel clock. The total latency from input to output is 42 pixels.
+- A Ryzen 9 3900X takes 0.83s to process 16.7 million pixels at 4Ghz (Measured using the C++ accuracy test program, which also records execution time). A rough estimation for the power draw is in the range of 10's of watts. In comparison, at a 148.5Mhz pixel clock (used for 1920x1080p 60Hz), a single ISP core can process 16.7 Million pixels in approximately 0.13s while consuming >0.5W. 
+- By nature of how the ISP cores work, their relative performance when compared to something like a CPU will go up as the resolution/frame rate increases. The current maximum throughput is ~300 Million Pixels/Sec/Core.
+- Combining 10 cores in parallel operating at 250Mhz would result in a throughput of 2.5 Billion Pixels/Second
 
 ## Future Work
 - Add GUI Python tool for live image processing
