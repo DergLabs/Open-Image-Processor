@@ -8,7 +8,11 @@ An open-source, multi-core image processor capable of real-time video and image 
   
 -  **C++ Program:** Offers a fast accuracy test for the integer-based RGB-HSV and HSV-RGB conversion algorithm used in the image processor cores. Detailed functionality in the **integer_based_rgb2hsv** Python program, but faster in C++.
   
--  **Python Programs:** The **fast_image_editor** provides a live image editing window with RGB and HSV sliders, used for quality and functionality testing. The **integer_based_rgb2hsv** script includes live image editing, color accuracy testing, single-color conversions, and more.
+-  **Python Programs:** The **fast_image_editor** provides a live image editing window with RGB and HSV sliders, used for quality and functionality testing. The **integer_based_rgb2hsv** script includes live image editing, color accuracy testing, single-color conversions, and more. 
+
+- **GUI Tool:** The provided GUI tool creates a TKinter window with 6 sliders for RGB and HSV control. This tool will construct the appropriate serial commands to be sent to the RP2040. Assuming the RP2040 has been flashed with the provided firmware, it will decode the incoming serial commands and send the appropriate data to the FPGA via a 1Mhz SPI interface.
+
+- **RP2040 Firmware:** This firmware receives serial commands from either the GUI tool or a serial terminal in the following format "R:<VALUE>|G:<VALUE>|B:<VALUE>|H:<VALUE>|S:<VALUE>|V:<VALUE>" any of these fields can be filled or left empty. When the correct command is sent, a 64-bit word will be constructed according to the register format for the RGB/HSV ALU. This 64-bit word is then sent to the FPGA over a 1Mhz SPI interface one byte at a time.
 
 **Vivado Project & FPGA Implementation:** 
 - The full project is found in Vivado/IMP, built in Vivado 2022.1 and synthesized for an Artix-7 35T FPGA on the Alynx AX7035 board. In the near future, expect implementation on the Artix Duo FPGA board and Kintex/Zynq FPGA's. Current power consumption is estimated at ~0.5W at 1680x1050p 60FPS with 1 Core.
