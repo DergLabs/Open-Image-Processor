@@ -28,7 +28,7 @@ module ISPCore(
     input data_in_valid,
     input cs,
     input sclk,
-    input [7:0] din,
+    input din,
 
     output [23:0] RGB_OUT,
     output data_out_ready_rgb2hsv,
@@ -63,11 +63,11 @@ module ISPCore(
     wire en_sv;
 
     // ALU CTRL IO signals
-    wire [47:0] hsv_operand;
+    wire [50:0] hsv_operand;
 
-    assign h_operand = hsv_operand[47:24];
-    assign s_operand = hsv_operand[23:8];
-    assign v_operand = hsv_operand[7:0];
+    assign h_operand = hsv_operand[50:26];
+    assign s_operand = hsv_operand[25:9];
+    assign v_operand = hsv_operand[8:0];
 
     assign r_operand = rgb_operand[26:18];
     assign g_operand = rgb_operand[17:9];
@@ -76,24 +76,24 @@ module ISPCore(
     wire [23:0] dummy1 = 0;
     wire [23:0] dummy2 = 0;
     wire [5:0] dummy3 = 0;
+    wire [5:0] dummy4 = 0;
 
-    ila_0 internalDebug_ALU_CTRL (
-      .clk(ila_clk), // input wire clk
+    ila_alu alu_ila (
+	.clk(ila_clk), // input wire clk
 
 
-      .probe0(dummy1), // input wire [23:0]  probe0  
-      .probe1(dummy2), // input wire [23:0]  probe1 
-      .probe2(dummy3), // input wire [5:0]  probe2 
-      .probe3(sclk), // input wire [0:0]  probe3 
-      .probe4(cs), // input wire [0:0]  probe4 
-      .probe5(din[0]), // input wire [0:0]  probe5 
-      .probe6(din[1]), // input wire [0:0]  probe6 
-      .probe7(din[2]), // input wire [0:0]  probe7 
-      .probe8(din[3]), // input wire [0:0]  probe8 
-      .probe9(din[4]), // input wire [0:0]  probe9 
-      .probe10(din[5]), // input wire [0:0]  probe10 
-      .probe11(din[6]) // input wire [0:0]  probe11
-    );
+	.probe0(cs), // input wire [0:0]  probe0  
+	.probe1(sclk), // input wire [0:0]  probe1 
+	.probe2(din), // input wire [0:0]  probe2 
+	.probe3(rgb_operand), // input wire [26:0]  probe3 
+	.probe4(rgb_alu_op), // input wire [10:0]  probe4 
+	.probe5(hsv_operand), // input wire [50:0]  probe5 
+	.probe6(opcode_h), // input wire [10:0]  probe6 
+	.probe7(opcode_sv), // input wire [10:0]  probe7 
+	.probe8(en_h), // input wire [0:0]  probe8 
+	.probe9(en_sv) // input wire [0:0]  probe9
+);
+
 
 
     ALU_REG_CTRL_IO ALU_IO

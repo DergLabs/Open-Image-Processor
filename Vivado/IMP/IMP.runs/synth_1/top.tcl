@@ -70,11 +70,11 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 6
-set_param synth.incrementalSynthesisCache C:/Users/johnh/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-22796-DESKTOP-U9NB2CD/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/johnh/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14744-DESKTOP-U9NB2CD/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -156,11 +156,11 @@ set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop
 read_ip -quiet C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/c_counter_binary_0_1/c_counter_binary_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.gen/sources_1/ip/c_counter_binary_0/c_counter_binary_0_ooc.xdc]
 
-read_ip -quiet C:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_0/ila_0.xci
-set_property used_in_synthesis false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc]
+read_ip -quiet c:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_alu/ila_alu.xci
+set_property used_in_synthesis false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_alu/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_alu/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_alu/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/johnh/Desktop/IMP/IMP.srcs/sources_1/ip/ila_alu/ila_alu_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

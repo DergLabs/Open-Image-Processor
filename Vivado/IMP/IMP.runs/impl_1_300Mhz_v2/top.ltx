@@ -11,11 +11,11 @@
                         "type": "XSDB_V3",
                         "name": "dbg_hub",
                         "spec": "labtools_xsdbm_v3",
-                        "clk_input_freq_hz": "200000001"
+                        "clk_input_freq_hz": "50000000"
                     },
                     {
                         "type": "ILA_V3",
-                        "name": "image_processor/u_ISPCore/internalDebug_ALU_CTRL",
+                        "name": "image_processor/u_ISPCore/alu_ila",
                         "spec": "labtools_ila_v6",
                         "ipName": "ila",
                         "core_location": {
@@ -23,249 +23,17 @@
                             "slave_index": 0,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "B89E8159D2425EB2A3B65E4BD3EC6045",
+                        "uuid": "A067AD9FD1A0578AB6FC141BF17DD8AF",
                         "pins": [
                             {
                                 "name": "probe0",
                                 "id": 0,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": true,
+                                "isVector": false,
                                 "leftIndex": 0,
-                                "rightIndex": 23,
+                                "rightIndex": 0,
                                 "portIndex": 0,
-                                "nets": [
-                                    {
-                                        "name": "image_processor/u_ISPCore/dummy1",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[23]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[22]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[21]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[20]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[19]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[18]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[17]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[16]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[15]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[14]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[13]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[12]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[11]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[10]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[9]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[8]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[7]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[6]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[5]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[4]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[3]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[2]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[1]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy1[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe1",
-                                "id": 1,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 23,
-                                "portIndex": 1,
-                                "nets": [
-                                    {
-                                        "name": "image_processor/u_ISPCore/dummy2",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[23]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[22]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[21]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[20]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[19]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[18]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[17]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[16]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[15]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[14]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[13]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[12]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[11]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[10]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[9]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[8]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[7]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[6]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[5]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[4]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[3]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[2]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[1]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy2[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe2",
-                                "id": 2,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 5,
-                                "portIndex": 2,
-                                "nets": [
-                                    {
-                                        "name": "image_processor/u_ISPCore/dummy3",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy3[5]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy3[4]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy3[3]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy3[2]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy3[1]"
-                                            },
-                                            {
-                                                "name": "image_processor/u_ISPCore/dummy3[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe3",
-                                "id": 3,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 3,
-                                "nets": [
-                                    {
-                                        "name": "image_processor/u_ISPCore/sclk",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe4",
-                                "id": 4,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 4,
                                 "nets": [
                                     {
                                         "name": "image_processor/u_ISPCore/cs",
@@ -274,21 +42,353 @@
                                 ]
                             },
                             {
-                                "name": "probe5",
-                                "id": 5,
+                                "name": "probe1",
+                                "id": 1,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
                                 "leftIndex": 0,
                                 "rightIndex": 0,
-                                "portIndex": 5,
+                                "portIndex": 1,
                                 "nets": [
                                     {
-                                        "name": "image_processor/u_ISPCore/din_1",
+                                        "name": "image_processor/u_ISPCore/sclk",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 2,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "image_processor/u_ISPCore/din",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 3,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 26,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "image_processor/u_ISPCore/rgb_operand",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "image_processor/u_ISPCore/din_1[0]"
+                                                "name": "image_processor/u_ISPCore/rgb_operand[26]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[25]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[24]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[23]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[22]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[21]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[20]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[19]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[18]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[17]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[16]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[15]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[14]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[13]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[12]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[11]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[10]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[9]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[8]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[7]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[6]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[5]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[4]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[3]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[2]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[1]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_operand[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 4,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 10,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "image_processor/u_ISPCore/rgb_alu_op",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_alu_op[10]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_alu_op[9]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_alu_op[8]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_alu_op[7]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_alu_op[6]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_alu_op[5]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_alu_op[4]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_alu_op[3]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_alu_op[2]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_alu_op[1]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/rgb_alu_op[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe5",
+                                "id": 5,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 50,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "image_processor/u_ISPCore/hsv_operand",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[50]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[49]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[48]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[47]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[46]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[45]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[44]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[43]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[42]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[41]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[40]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[39]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[38]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[37]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[36]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[35]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[34]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[33]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[32]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[31]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[30]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[29]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[28]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[27]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[26]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[25]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[24]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[23]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[22]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[21]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[20]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[19]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[18]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[17]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[16]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[15]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[14]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[13]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[12]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[11]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[10]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[9]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[8]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[7]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[6]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[5]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[4]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[3]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[2]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[1]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/hsv_operand[0]"
                                             }
                                         ]
                                     }
@@ -299,17 +399,47 @@
                                 "id": 6,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
+                                "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
+                                "rightIndex": 10,
                                 "portIndex": 6,
                                 "nets": [
                                     {
-                                        "name": "image_processor/u_ISPCore/din_2",
+                                        "name": "image_processor/u_ISPCore/opcode_h",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "image_processor/u_ISPCore/din_2[1]"
+                                                "name": "image_processor/u_ISPCore/opcode_h[10]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_h[9]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_h[8]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_h[7]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_h[6]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_h[5]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_h[4]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_h[3]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_h[2]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_h[1]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_h[0]"
                                             }
                                         ]
                                     }
@@ -320,17 +450,47 @@
                                 "id": 7,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
+                                "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
+                                "rightIndex": 10,
                                 "portIndex": 7,
                                 "nets": [
                                     {
-                                        "name": "image_processor/u_ISPCore/din_3",
+                                        "name": "image_processor/u_ISPCore/opcode_sv",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "image_processor/u_ISPCore/din_3[2]"
+                                                "name": "image_processor/u_ISPCore/opcode_sv[10]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_sv[9]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_sv[8]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_sv[7]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_sv[6]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_sv[5]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_sv[4]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_sv[3]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_sv[2]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_sv[1]"
+                                            },
+                                            {
+                                                "name": "image_processor/u_ISPCore/opcode_sv[0]"
                                             }
                                         ]
                                     }
@@ -347,13 +507,8 @@
                                 "portIndex": 8,
                                 "nets": [
                                     {
-                                        "name": "image_processor/u_ISPCore/din_4",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "image_processor/u_ISPCore/din_4[3]"
-                                            }
-                                        ]
+                                        "name": "image_processor/u_ISPCore/en_h",
+                                        "isBus": false
                                     }
                                 ]
                             },
@@ -368,55 +523,8 @@
                                 "portIndex": 9,
                                 "nets": [
                                     {
-                                        "name": "image_processor/u_ISPCore/din_5",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "image_processor/u_ISPCore/din_5[4]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe10",
-                                "id": 10,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 10,
-                                "nets": [
-                                    {
-                                        "name": "image_processor/u_ISPCore/din_6",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "image_processor/u_ISPCore/din_6[5]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe11",
-                                "id": 11,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 11,
-                                "nets": [
-                                    {
-                                        "name": "image_processor/u_ISPCore/din",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "image_processor/u_ISPCore/din[6]"
-                                            }
-                                        ]
+                                        "name": "image_processor/u_ISPCore/en_sv",
+                                        "isBus": false
                                     }
                                 ]
                             }

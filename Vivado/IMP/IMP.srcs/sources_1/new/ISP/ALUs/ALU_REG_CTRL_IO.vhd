@@ -38,15 +38,12 @@ library UNISIM;
 use UNISIM.VComponents.all;
 
 entity ALU_REG_CTRL_IO is
-    generic (
-        DIN_WIDTH : integer := 8
-    );
     Port ( 
         clk : in STD_LOGIC;
         rst : in STD_LOGIC;
         cs : in STD_LOGIC;
         sclk : in STD_LOGIC;
-        din : in STD_LOGIC_VECTOR (DIN_WIDTH-1 downto 0);
+        din : in STD_LOGIC;
 
         rgb_alu_operand : out STD_LOGIC_VECTOR (26 downto 0);
         rgb_alu_opmode : out STD_LOGIC_VECTOR (10 downto 0);
@@ -62,12 +59,11 @@ entity ALU_REG_CTRL_IO is
 end ALU_REG_CTRL_IO;
 
 architecture Behavioral of ALU_REG_CTRL_IO is
-    constant SRL_DEPTH : std_logic_vector(3 downto 0) := "0011"; -- 3-bit deep shift register
+    constant SRL_DEPTH : std_logic_vector(3 downto 0) := "0011"; -- 3-bit deep shift register used for clock alignment
 
     signal sclk_a : std_logic := '0';
     signal cs_a : std_logic := '0';
-    signal din_a : std_logic_vector(DIN_WIDTH-1 downto 0) := (others => '0');
-
+    signal din_a : std_logic := '0';
     signal alu_data : std_logic_vector(63 downto 0) := (others => '0');
 
 begin
@@ -103,21 +99,20 @@ begin
     );
     
     -- Shift register to align DIN to CLK
-    din_align : for i in 0 to DIN_WIDTH-1 generate
-        SRL16E_din_sync : SRL16E
-        generic map (
-            INIT => X"0000")
-        port map (
-            Q => din_a(i),       -- SRL data output
-            A0 => SRL_DEPTH(0),     -- Select[0] input
-            A1 => SRL_DEPTH(1),     -- Select[1] input
-            A2 => SRL_DEPTH(2),     -- Select[2] input
-            A3 => SRL_DEPTH(3),     -- Select[3] input
-            CE => '1',     -- Clock enable input
-            CLK => clk,   -- Clock input
-            D => din(i)        -- SRL data input
-        );
-    end generate;
+    SRL16E_din_sync : SRL16E
+    generic map (
+        INIT => X"0000")
+    port map (
+        Q => din_a,       -- SRL data output
+        A0 => SRL_DEPTH(0),     -- Select[0] input
+        A1 => SRL_DEPTH(1),     -- Select[1] input
+        A2 => SRL_DEPTH(2),     -- Select[2] input
+        A3 => SRL_DEPTH(3),     -- Select[3] input
+        CE => '1',     -- Clock enable input
+        CLK => clk,   -- Clock input
+        D => din        -- SRL data input
+    );
+
 
     recieve_data : process(sclk_a) -- Pack data into 64-bit input register
     begin
@@ -125,15 +120,8 @@ begin
             if (rst = '1') then
                 alu_data <= (others => '0');
             else
-                if (cs_a = '1') then
-                    alu_data(7 downto 0) <= din_a;
-                    alu_data(15 downto 8) <= alu_data(7 downto 0);
-                    alu_data(23 downto 16) <= alu_data(15 downto 8);
-                    alu_data(31 downto 24) <= alu_data(23 downto 16);
-                    alu_data(39 downto 32) <= alu_data(31 downto 24);
-                    alu_data(47 downto 40) <= alu_data(39 downto 32);
-                    alu_data(55 downto 48) <= alu_data(47 downto 40);
-                    alu_data(63 downto 56) <= alu_data(55 downto 48);   
+                if (cs_a = '0') then
+                    alu_data <= alu_data(62 downto 0) & din_a; -- Shift in data one bit per clock
                 end if;
             end if;
         end if;
@@ -148,7 +136,7 @@ begin
                 hsv_alu_operand <= (others => '0');
                 h_alu_opmode <= (others => '0');   
             else
-                if (cs_a = '1') then
+                if (cs_a = '1') then -- Only dispatch data if CS is high and a transmission is complete
                     if (alu_data(63)) then
                         rgb_alu_en <= alu_data(63);
                         rgb_alu_operand <= alu_data(26 downto 0); -- ALU Data

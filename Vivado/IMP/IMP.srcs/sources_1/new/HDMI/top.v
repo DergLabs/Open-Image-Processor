@@ -15,7 +15,7 @@ module top
 
     input isp_alu_cs,
     input isp_alu_sclk,
-    input[7:0] isp_alu_din,
+    input isp_alu_din,
 
     output [0:0]HDMI_hdmi_out_OEN,//HDMIOUT       
     output TMDS_clk_hdmi_out_n,
@@ -157,7 +157,7 @@ module top
     ISP_Top image_processor
     (
     .core_clk(PixelClk),
-    .ila_clk(clk_200mhz),
+    .ila_clk(sysclk_BUFG),
     .rst(rst_p),
     .rgb_in(vid_pData),
     .cs(isp_alu_cs),

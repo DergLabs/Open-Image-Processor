@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Wed Aug  9 21:39:03 2023
+# Process ID: 19196
+# Current directory: C:/Users/johnh/Desktop/IMP/IMP.runs/impl_1_300Mhz_v2
+# Command line: vivado.exe -log top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
+# Log file: C:/Users/johnh/Desktop/IMP/IMP.runs/impl_1_300Mhz_v2/top.vdi
+# Journal file: C:/Users/johnh/Desktop/IMP/IMP.runs/impl_1_300Mhz_v2\vivado.jou
+# Running On: DESKTOP-U9NB2CD, OS: Windows, CPU Frequency: 3793 MHz, CPU Physical cores: 24, Host memory: 68638 MB
+#-----------------------------------------------------------
+source top.tcl -notrace

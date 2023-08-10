@@ -28,7 +28,7 @@ module ISP_Top(
     
     input cs,
     input sclk,
-    input [7:0] din,
+    input din,
 
     output reg [23:0] rgb_out,
     output reg CE
