@@ -2,18 +2,21 @@ import tkinter as tk
 import serial
 
 # Initialize PySerial connection
-ser = serial.Serial('COM6', 115200, timeout=1)
+# ser = serial.Serial('COM6', 115200, timeout=1) # For Windows, replace COM6 with RP2040 com port
+ser = serial.Serial('/dev/tty.usbmodem2101', 115200, timeout=1) # For Mac, replace usbmodem2101 with RP2040 port
 ser.flush()
 
 
 def send_message(name, *args):
+    # G and B channels are swapped in the FPGA for some stupid reason due to the way HDMI is decoded, swapping them here is just
+    # a quick fix to make the sliders work as expected
     # Determine which variable changed based on the name
     if name == var_r._name:
-        message = f"R:{var_r.get()}|G:{var_g.get()}|B:{var_b.get()}"
+        message = f"R:{var_r.get()}|G:{var_b.get()}|B:{var_g.get()}"
     elif name == var_g._name:
-        message = f"R:{var_r.get()}|G:{var_g.get()}|B:{var_b.get()}"
+        message = f"R:{var_r.get()}|G:{var_b.get()}|B:{var_g.get()}"
     elif name == var_b._name:
-        message = f"R:{var_r.get()}|G:{var_g.get()}|B:{var_b.get()}"
+        message = f"R:{var_r.get()}|G:{var_b.get()}|B:{var_g.get()}"
     else:
         message = f"H:{var_h.get()}|S:{var_s.get()}|V:{var_v.get()}"
 
@@ -23,7 +26,13 @@ def send_message(name, *args):
     # Send the constructed message via PySerial
     ser.write(message.encode('utf-8'))
 
-
+def zero_out():
+    var_h.set(0)
+    var_s.set(0)
+    var_v.set(0)
+    var_r.set(0)
+    var_g.set(0)
+    var_b.set(0)
 
 
 # Create the main window
@@ -45,7 +54,7 @@ var_b = tk.IntVar()
 var_b.trace("w", send_message)
 
 # Create sliders
-h_slider = tk.Scale(root, from_=-195_000, to=195_000, length=500, label='Hue Adjust', orient='horizontal', variable=var_h)
+h_slider = tk.Scale(root, from_=-390_000, to=390_000, length=500, label='Hue Adjust', orient='horizontal', variable=var_h)
 h_slider.grid(row=0, column=1)
 tk.Label(root, text="H:").grid(row=0, column=0)
 
@@ -61,6 +70,7 @@ r_slider = tk.Scale(root, from_=-255, to=255, length=500, label='Red CH Adjust',
 r_slider.grid(row=3, column=1)
 tk.Label(root, text="R:").grid(row=3, column=0)
 
+
 g_slider = tk.Scale(root, from_=-255, to=255, length=500, label='Green CH Adjust', orient='horizontal', variable=var_g)
 g_slider.grid(row=4, column=1)
 tk.Label(root, text="G:").grid(row=4, column=0)
@@ -68,6 +78,9 @@ tk.Label(root, text="G:").grid(row=4, column=0)
 b_slider = tk.Scale(root, from_=-255, to=255, length=500, label='Blue CH Adjust', orient='horizontal', variable=var_b)
 b_slider.grid(row=5, column=1)
 tk.Label(root, text="B:").grid(row=5, column=0)
+
+zero_out_btn = tk.Button(root, text="Zero Out", command=zero_out)
+zero_out_btn.grid(row=6, column=1)
 
 root.mainloop()
 
