@@ -1,6 +1,28 @@
 import tkinter as tk
 import serial
 
+""" 
+TODO - Add ability to stream Image to FPGA over SPI (This will be slow as shit)
+- Far future: Configure USB-Serial IO on FPGA for faster comms
+- Add selection boxes for conditional computing register (Select Color condition, true exec, false exec)
+- Start with option for upto 16 color conditions (Expand later)
+- Use either color slider or enter hex values for conditon
+- Allow for programmign via CCL (Color Condition Language) HSV conditions will be supported in the future
+- CCL Follows this format: 
+    IF (<COLOR VALUE>, <HUE VALUE>, <SAT VALUE>, <LUMINANCE VALUE>) THEN
+        ADJUST RGBHSV {<R VALUE>, <G VALUE>, <B VALUE>, <H VALUE>, <S VALUE>, <V VALUE>}
+    ELSE 
+        ADJUST RGBHSV {<R VALUE>, <G VALUE>, <B VALUE>, <H VALUE>, <S VALUE>, <V VALUE>}
+    END
+
+Color Condition Processor function:
+16 RAM locations will be used to contain the SET RGBHSV values
+LUT will be used to select RAM location based on COLOR or HSV Value's
+Condition Processor will contain RGB and HSV ALU's, it will be placed inbetween RGB-HSV and HSV-RGB converters
+    
+"""
+
+
 # Initialize PySerial connection
 # ser = serial.Serial('COM6', 115200, timeout=1) # For Windows, replace COM6 with RP2040 com port
 ser = serial.Serial('/dev/tty.usbmodem2101', 115200, timeout=1) # For Mac, replace usbmodem2101 with RP2040 port
