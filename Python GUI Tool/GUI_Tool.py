@@ -5,7 +5,7 @@ import serial
 TODO - Add ability to stream Image to FPGA over SPI (This will be slow as shit)
 - Far future: Configure USB-Serial IO on FPGA for faster comms
 - Add selection boxes for conditional computing register (Select Color condition, true exec, false exec)
-- Start with option for upto 16 color conditions (Expand later)
+- Start with option for upto 16 color conditions (Expand to 1K Colors later)
 - Use either color slider or enter hex values for conditon
 - Allow for programmign via CCL (Color Condition Language) HSV conditions will be supported in the future
 - CCL Follows this format: 
